@@ -55,6 +55,8 @@ body {
     }
     .action-row{
       margin-top: 2rem;
+      display: flex;
+      gap: 2rem;
     }
   }
 
@@ -170,14 +172,18 @@ footer{
   }
 }
 
-button.outline{
+button.outline,
+a.button.outline{
   --color: var(--spruce);
   --background: transparent;
   --border-color: var(--spruce);
+  --hover-color: var(--paper);
+  --hover-background: var(--spruce);
   &.inverted{
     --color: var(--paper);
     --background: var(--spruce);
-
+    /*--hover-color: var(--spruce);*/
+    /*--hover-background: transparent;*/
   }
 
   border: 1px solid var(--border-color);
@@ -189,8 +195,8 @@ button.outline{
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover{
-    background: var(--spruce);
-    color: var(--paper);
+    background: var(--hover-background);
+    color: var(--hover-color);
     transform: scale(1.25);
   }
   &:active{
