@@ -1,0 +1,29 @@
+include components/topic
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Book Library
+    link(rel="stylesheet", href="style.css")
+
+  body
+    header
+        include components/navbar
+
+
+    main.books
+      +topic("Topic A")
+      +topic("Topic B")
+      +topic("Topic C")
+      include components/staff-picks
+      include components/events
+
+    include components/endfooter
+    //-   each book in books
+    //-     article.book
+    //-       img(src=book.image, alt=book.title)
+    //-       .book-info
+    //-         h2= book.title
+    //-         p.author= book.author
+    //-         p.summary= book.summary

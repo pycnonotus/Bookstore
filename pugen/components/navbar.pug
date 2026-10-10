@@ -1,0 +1,15 @@
+-
+  const navLinks = [
+    { name: "Home", href: "#topic-a" },
+    { name: "Books", href: "#topic-b" },
+    { name: "About", href: "#topic-c" }
+  ]
+
+div.flex-space.nav-wrapper
+  a(href="/") Book Library
+
+  nav(aria-label="Main navigation")
+    ul
+      each link in navLinks
+        li
+          a(href=link.href)= link.name
