@@ -20,6 +20,7 @@
 }
 html{
   height: 100%;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -32,8 +33,40 @@ body {
   flex-direction: column;
 }
 
+
+
+
 body > header{
   border-bottom: 1px solid #ddd;
+}
+
+nav > ul{
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  a {
+    color: var(--ink);
+    text-decoration: none;
+    min-width: 15rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+    border-bottom: 0 solid var(--spruce);
+
+    &:hover{
+      color: var(--spruce);
+      border-bottom: 2px solid var(--spruce);
+    }
+    &:active,
+    &:focus,
+    &:focus-visible{
+      color: var(--marigold);
+      border-bottom: 2px solid var(--marigold);
+    }
+
+
+  }
+
 }
 
 footer{
@@ -64,7 +97,7 @@ footer{
 
 .topic{
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0.75rem;
   max-width: var(--large);
   position: relative;
   &:nth-child(2n){
@@ -83,6 +116,7 @@ footer{
     /*color: var(--paper);*/
   }
   main{
+    margin-top: 1em;
     --item-width: 200px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--item-width), 1fr));
@@ -99,7 +133,6 @@ footer{
   width: var(--item-width);
   height: 420px;
   object-fit: cover;
-  overflow: hidden;
   img{
     width: 100%;
     max-height: 300px;
@@ -118,6 +151,15 @@ button.outline{
   padding: 0.5em 1em;
   border-radius: 0.25em;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    background: var(--spruce);
+    color: var(--paper);
+    transform: scale(1.25);
+  }
+  &:active{
+    transform: scale(0.95);
+  }
 }
 
 button.large{
