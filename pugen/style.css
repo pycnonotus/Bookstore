@@ -189,7 +189,6 @@ footer {
 
 .thumbnail {
   width: var(--item-width);
-  height: 420px;
   object-fit: cover;
 
   img {
@@ -249,4 +248,22 @@ button {
   }
 
 
+}
+
+
+#staff-picks {
+  main {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+
+  }
+
+  .staff-pick {
+    border-inline-start: 2px solid var(--cherry);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
 }
