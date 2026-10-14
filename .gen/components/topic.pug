@@ -1,0 +1,9 @@
+﻿mixin topic(name, required = true)
+    section(id=name).topic
+        header
+            h1 Lorem ipsum.
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi excepturi harum quaerat sint sunt.
+
+        main
+            each i in [1,2,3,4,5,6,7,8]
+                include book-thumbnail
