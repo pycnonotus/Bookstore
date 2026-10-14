@@ -1,0 +1,20 @@
+include components/topic
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Book Library
+        link(rel="stylesheet", href="style.css")
+
+    body
+        header
+            include components/navbar
+        main
+            include components/hero
+            +topic("topic-a")
+            +topic("topic-b")
+            +topic("topic-c")
+            include components/staff-picks
+            include components/events
+        include components/endfooter

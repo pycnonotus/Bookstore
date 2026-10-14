@@ -1,0 +1,15 @@
+-
+ const books = [
+    {color:'red', size: 11},
+    {color:'pink', size: 8.5}, 
+    {color:'green', size: 12.5},
+    {color:'blue', size: 9.5},
+    {color:'yellow', size: 11.5},
+    {color:'pink', size: 12},
+    {color:'green', size:9},
+    {color:'blue', size: 9.5},
+
+ ]
+.books-widget
+    each book in books 
+        span(style=`--color: ${book.color}; --size:${book.size}rem`)
