@@ -1,0 +1,159 @@
+[
+  {
+    "id": "b3aed4d5-d7da-4096-8ece-81ab735eb87a",
+    "name": "Forms of Silence",
+    "image": "4d7c20ef-c340-48f0-8e26-869a09dd1d5d.jpeg",
+    "topic": "art",
+    "auth": "Elena Marlowe",
+    "descriptoin": "A visual journey through classical sculpture, quiet forms, and the enduring beauty of marble."
+  },
+  {
+    "id": "417d3301-4be7-4ae9-bcaf-435d03d13c90",
+    "name": "Spectral Blooms",
+    "image": "e958430c-c83f-4253-952c-0d649333989a.jpeg",
+    "topic": "art",
+    "auth": "Julian Voss",
+    "descriptoin": "An expressive collection exploring color, emotion, and the dramatic language of floral painting."
+  },
+  {
+    "id": "347de658-9ddf-436a-a0dc-035b7c6a3c21",
+    "name": "Horizons Within",
+    "image": "ad05f839-b1af-45f9-b0fc-af29d5af5f22.jpeg",
+    "topic": "art",
+    "auth": "Mira Bellamy",
+    "descriptoin": "A curated tour of imagined landscapes, distant mountains, and tranquil waters."
+  },
+  {
+    "id": "04df4951-cb38-44e0-88bd-9baace4607eb",
+    "name": "The Geometry of Feeling",
+    "image": "155c600f-a6e6-4d1a-b606-bf7fa90dcd1d.jpeg",
+    "topic": "programming",
+    "auth": "Theo Calder",
+    "descriptoin": "An exploration of geometric abstraction and the algorithms behind generative visual art."
+  },
+  {
+    "id": "577370df-9b8e-4389-8b53-307c6c8d415b",
+    "name": "Human Studies",
+    "image": "a5d2d9bb-6692-4597-aeca-2f34dc1b7d05.jpeg",
+    "topic": "art",
+    "auth": "Amara Winslow",
+    "descriptoin": "Portraits across eras that reveal the changing ways artists depict identity and expression."
+  },
+
+  {
+    "id": "263fc74a-b6f6-4acd-a559-0146a50d68b8",
+    "name": "The Fleeting Beauty",
+    "image": "4cd0d76a-c735-4ef1-9b1b-4e46ae3b0e48.jpeg",
+    "topic": "art",
+    "auth": "Clara Renwick",
+    "descriptoin": "An intimate study of still-life painting, delicate flowers, and the passing of time."
+  },
+  {
+    "id": "2e29f4d7-63d1-47f4-8b28-4c5fcc1021ed",
+    "name": "Waves and Worlds",
+    "image": "abc14d96-dc1d-4f82-8f58-a5d4b4a7201f.jpeg",
+    "topic": "art",
+    "auth": "Naomi Takeda",
+    "descriptoin": "A celebration of Japanese woodblock prints and the artistic legacy of waves and motion."
+  },
+  {
+    "id": "8b21d83e-69a9-4cb0-9b91-b2a0e3d3a04f",
+    "name": "Interiors of the Mind",
+    "image": "b8567487-fe6d-4cd9-a5c4-31adb17f2582.jpeg",
+    "topic": "art",
+    "auth": "Elias Verne",
+    "descriptoin": "A study of evocative interiors and the memories, spaces, and identities they hold."
+  },
+
+  {
+    "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
+    "name": "Places Beyond",
+    "image": "96095aaa-f1ab-418b-8570-e9ca4477cebc.jpeg",
+    "topic": "art",
+    "auth": "Sofia Arden",
+    "descriptoin": "A collection of dreamlike cityscapes and imagined architecture beyond familiar horizons."
+  },
+
+  {
+    "id": "1dda2362-29e9-4316-903b-1e9074eaf60a",
+    "name": "Matter and Meaning",
+    "image": "c171a56c-bb0c-408a-83d3-fa6a2d134d72.jpeg",
+    "topic": "art",
+    "auth": "Adrian Kessler",
+    "description": "A creative coding perspective on textures, layered compositions, and procedural art."
+  },
+  {
+    "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
+    "name": "Places Beyond",
+    "image": "96095aaa-f1ab-418b-8570-e9ca4477cebc.jpeg",
+    "topic": "art",
+    "auth": "Sofia Arden",
+    "description": "A collection of dreamlike cityscapes and imagined architecture beyond familiar horizons."
+  },
+  {
+    "id": "c34d81c9-8e39-4752-b17f-5fdaa41005e8",
+    "name": "HTMX",
+    "image": "0027dec1-ce64-4820-b838-0753584baa17.png",
+    "topic": "programming",
+    "auth": "Morgan Vale",
+    "description": "Discover how HTMX brings dynamic interactions to web pages using familiar HTML attributes instead of large client-side frameworks. Through practical examples, learn requests, swaps, triggers, and progressive enhancement while building responsive interfaces that stay simple, accessible, and easy to maintain."
+  },
+  {
+    "id": "555976f8-f46c-4bbf-ad5f-669c7c6c362f",
+    "name": "Html Psudo classes",
+    "image": "0442d2ae-cc9c-4d1f-ab03-6a7573c7937b.png",
+    "topic": "programming",
+    "auth": "Avery Quinn",
+    "description": "A playful guide to CSS pseudo-classes and the subtle behaviors they unlock in everyday interfaces. Explore hover, focus, checked, structural selectors, and modern patterns through visual examples that make styling forms, navigation, and interactive components feel intuitive rather than mysterious."
+  },
+  {
+    "id": "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5",
+    "name": "React, Angular, or Vue, Pug!",
+    "image": "7bf4c9a5-e980-4d31-bd43-b232b1ff35a6.png",
+    "topic": "programming",
+    "auth": "Jamie Rowan",
+    "description": "Choosing a frontend stack should be informed, not tribal. Compare React, Angular, Vue, and the surprisingly charming Pug templating language through approachable examples, tradeoffs, and real project scenarios. Find out when each tool shines and when a simpler solution wins."
+  },
+
+
+  {
+    "id": "cd92e446-70e5-4865-a963-21ab07550111",
+    "name": "Jquery",
+    "image": "8182e202-a477-43eb-9568-2f417048bd20.png",
+    "topic": "programming",
+    "auth": "Casey Reed",
+    "description": "Take a nostalgic yet practical tour of jQuery, the library that changed web development. Learn how selectors, events, animations, and AJAX reshaped interactive sites, then see how its classic techniques compare with modern JavaScript and where legacy code still matters."
+  },
+  {
+    "id": "5f0fcd15-bdb5-4d05-813f-92ca2776ae45",
+    "name": "Is rem 16px",
+    "image": "8fa0449c-7cde-4ce6-8e40-6e5933b86b97.png",
+    "topic": "programming",
+    "auth": "Riley Brooks",
+    "description": "One tiny CSS unit raises a surprisingly big question. Unpack rem, em, pixels, root font sizes, browser defaults, and user preferences with clear examples. Build a sizing system that respects accessibility while keeping layouts consistent across devices and screen settings."
+  },
+  {
+    "id": "c556a18b-82ed-4472-b70f-4f1ed29659bc",
+    "name": "HTML5",
+    "image": "c6e3f775-7056-43d7-beba-b6c0eeb64aea.png",
+    "topic": "programming",
+    "auth": "Taylor Finch",
+    "description": "Get to know the building blocks of the modern web with a friendly tour of HTML5. From semantic elements and forms to multimedia and accessibility, this book shows how thoughtful markup creates pages that are robust, understandable, and ready for any framework."
+  },
+  {
+    "id": "92234e61-e3cf-4801-944e-50cc684c0317",
+    "name": "Version control the old times",
+    "image": "de04448b-157b-4094-80a7-65c26513f166.png",
+    "topic": "programming",
+    "auth": "Drew Mercer",
+    "description": "Travel back through the history of version control, from copied folders and shared archives to CVS, Subversion, and Git. Explore the problems early teams faced, the workflows they invented, and the ideas that still shape how developers collaborate today."
+  },
+  {
+    "id": "bec8cf6d-34c1-484e-9e48-a4039d469d91",
+    "name": "Html React and Fun",
+    "image": "fcc18c7d-3e8a-4970-a95e-ef8651f9cf01.png",
+    "topic": "programming",
+    "auth": "Skylar Ellis",
+    "description": "Build small, delightful web projects while learning how HTML and React work together. Start with semantic markup, add reusable components and state, then experiment with interactive details. The focus is curiosity, confidence, and enjoying the creative side of frontend development."
+  }
+]
