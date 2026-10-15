@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c41df27c-a807-4c1e-a562-426b33db504d" name="Changes" comment="hero css" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="24" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Pug File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pycnonotus&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/pycnonotus/Bookstore&quot;,
+    &quot;accountId&quot;: &quot;076a7d80-87ee-4559-9e8e-f20ae81c7813&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0069926301934295" />
+      <entry key="MS500" value="1.4218112919449493" />
+      <entry key="S2" value="2.6704833729114092" />
+      <entry key="S5" value="4.166237011613589" />
+      <entry key="S10" value="5.590172446970074" />
+      <entry key="S30" value="9.8154421549772" />
+      <entry key="S60" value="15.438234165922353" />
+      <entry key="M2" value="24.811144571705185" />
+      <entry key="M5" value="48.68920352732695" />
+      <entry key="M10" value="78.09355795365914" />
+      <entry key="M15" value="99.92079505532304" />
+      <entry key="M30" value="153.8764365205687" />
+      <entry key="H1" value="248.07784675418313" />
+      <entry key="H2" value="375.4906525040224" />
+      <entry key="H4" value="492.762577774453" />
+      <entry key="D1" value="640.763270670424" />
+      <entry key="W1" value="672.496968566826" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="6.22432351334436E-241" />
+      <entry key="S2" value="1.4368565815477507E-60" />
+      <entry key="S5" value="1.7898034259994123E-24" />
+      <entry key="S10" value="2.078820136472095E-12" />
+      <entry key="S30" value="2.793792682389404E-4" />
+      <entry key="S60" value="0.03888184344852012" />
+      <entry key="M2" value="0.6348301091166968" />
+      <entry key="M5" value="5.187939654788655" />
+      <entry key="M10" value="12.87784640674304" />
+      <entry key="M15" value="19.06511926083706" />
+      <entry key="M30" value="33.75192454345037" />
+      <entry key="H1" value="54.437985252650826" />
+      <entry key="H2" value="77.6188893809359" />
+      <entry key="H4" value="97.03612132162942" />
+      <entry key="D1" value="120.29081913714865" />
+      <entry key="W1" value="125.15913528776139" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9395122791952507" />
+      <entry key="MS500" value="1.4016559227684355" />
+      <entry key="S2" value="2.6605287777288478" />
+      <entry key="S5" value="4.1591520857347275" />
+      <entry key="S10" value="5.561689792315167" />
+      <entry key="S30" value="9.612567002235348" />
+      <entry key="S60" value="15.227330417277471" />
+      <entry key="M2" value="25.226629102084978" />
+      <entry key="M5" value="53.70975699223181" />
+      <entry key="M10" value="90.84241689839612" />
+      <entry key="M15" value="118.87763595457486" />
+      <entry key="M30" value="187.5480777891899" />
+      <entry key="H1" value="302.45786439961023" />
+      <entry key="H2" value="453.0711005542619" />
+      <entry key="H4" value="589.775671033143" />
+      <entry key="D1" value="761.049512174016" />
+      <entry key="W1" value="797.6554280928285" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3KVwLCCxswT2i5OLBn5WuxvcZx6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Node.js.build.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/src/Bookstore/pugen&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\src\Bookstore\pugen\components" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/pugen/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="build.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/build.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="Node.js.build.js" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.10315.144" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c41df27c-a807-4c1e-a562-426b33db504d" name="Changes" comment="" />
+      <created>1791655984999</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1791655984999</updated>
+      <workItem from="1791655986014" duration="4576000" />
+      <workItem from="1791662744080" duration="9660000" />
+      <workItem from="1791843955642" duration="1201000" />
+    </task>
+    <task id="LOCAL-00001" summary="book thumbnail">
+      <option name="closed" value="true" />
+      <created>1791668493211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1791668493211</updated>
+    </task>
+    <task id="LOCAL-00002" summary="css">
+      <option name="closed" value="true" />
+      <created>1791669710375</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1791669710375</updated>
+    </task>
+    <task id="LOCAL-00003" summary="hero">
+      <option name="closed" value="true" />
+      <created>1791673138076</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1791673138076</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hero css">
+      <option name="closed" value="true" />
+      <created>1791673571313</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1791673571313</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="basic skeleton" />
+    <MESSAGE value="book thumbnail" />
+    <MESSAGE value="css" />
+    <MESSAGE value="hero" />
+    <MESSAGE value="hero css" />
+    <option name="LAST_COMMIT_MESSAGE" value="hero css" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/build.js</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
