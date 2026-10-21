@@ -32,15 +32,17 @@ The navbar stays at the top while scrolling. Its measured height keeps topic hea
 
 Topic shelves stack over the previous shelf as you scroll, with a subtle parallax depth effect. Each topic heading and book count stays visible above its books until the next topic takes over. Taller shelves scroll through all their books before pinning. Stack offsets respond to viewport and filter changes. Reduced-motion preferences and keyboard focus inside the shelves use normal document flow while keeping topic headings sticky and every book accessible.
 
-## Client-side book search
+## Client-side shelf search
 
-Use **Find a book** in the navbar. Enter a free-text description and press Search or Enter. Each submission is an independent query; there is no chat history or inherited budget. All matching books are shown, with their raw cosine similarity, only when the score is **at least 0.9**. This strict cutoff can produce no results for broad queries. Keyword scores and the trained topic classifier cannot bypass it.
+The free-text **Search our shelves** field lives in the same filter panel as the topic chips. Enter a title, author, subject, cover description, or price rule and press Search/Enter. It filters the existing shelf grid and shows **all** matching books. Selected topics further narrow the results. Clear search restores the shelves while retaining the selected topics. There is no separate chat or three-book limit.
 
-MiniLM text embeddings load automatically on first search in a Web Worker. Models are static assets served with the website; no AI server or API key is used at runtime. The model and catalog vectors are cached in the browser. Changing catalog descriptions invalidates the text index. Failed model loading shows an error rather than unscored recommendations.
+Search combines exact titles/topics, weighted title/subject/alias matching, limited spelling correction, and local semantic retrieval. MiniLM text embeddings and CLIP cover embeddings run in Web Workers. Common queries work immediately from catalog metadata; missing models leave that fallback available. Ranking combines lexical and semantic ranks rather than treating cosine scores as confidence percentages. The initial semantic candidate floors are 0.5 for text and 0.25 for image-text matches, with independent metadata matches still eligible.
 
-For visual search, type a description such as `the book with a marble sculpture on its cover`. A separate CLIP worker compares the text with embeddings of all catalog covers. The same raw 0.9 cutoff applies, so visual queries may return no results. No photo upload is needed. The larger vision and text encoders (about 147 MB) load only on first visual search.
+The JSON stores subjects, aliases, editorial reading levels (`unspecified` where unclear), and locally generated cover descriptions. These descriptions are searchable and editable; they can contain AI mistakes. Indexed metadata changes invalidate the text-vector cache. Prices remain hard constraints taken directly from the JSON.
 
-Topic and price constraints use the current query and the JSON catalog prices. Queries can include `math cost 40$ ore more`, `no more than $30`, or `between $20 and $40`. Save controls stay synchronized with the catalog and staff picks.
+Try `math books`, `JS libs`, `flower`, `algebra for beginners`, `math cost 40$ ore more`, or `the book with white flowers on the cover`.
+
+See [the training walkthrough](docs/search-training.md) for indexing versus training, local fine-tuning steps, and the local-Qwen/assistant review process. `training/retrieval-train.json` contains 33 accepted examples; `training/retrieval-rejected.json` explains three rejections. The separate 26-case development regression set and reports are in `training/retrieval-eval*.json`. Run `npm run test:search:hybrid` to regenerate the direct retrieval report. The real-model browser suite writes `training/browser-retrieval-report.json`, including a comparison with the previous 0.9 policy on the same enriched catalog.
 
 Prepare static models before building on a fresh checkout:
 
@@ -48,7 +50,7 @@ Prepare static models before building on a fresh checkout:
 npm run models:prepare
 npm run build
 npm run test:search
-npm run test:search:strict
+npm run test:search:hybrid
 npm run test:prices
 npm run test:embeddings
 npm run test:browser:embeddings
@@ -56,7 +58,7 @@ npm run test:browser:embeddings
 
 Model weights are ignored by Git and downloaded by `models:prepare`. `npm run build` runs this preparation automatically before Vite copies them from `public/models/` into the built site. Existing downloads are reused. Never force-add `public/models/` to Git. Source and model licenses remain with their original publishers.
 
-Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the generated intent artifact is retained in `src/data/search-intent-model.json` for later experiments; the strict search UI uses raw embedding similarity. To start a new 30-minute interval while retaining existing examples:
+Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the generated intent artifact is retained in `src/data/search-intent-model.json` for later experiments; the shelf search uses metadata and local embeddings; the topic classifier is retained only for experiments. To start a new 30-minute interval while retaining existing examples:
 
 ```powershell
 $env:TRAIN_NEW_RUN = '1'
