@@ -20,15 +20,14 @@ const documents = books.map(book => {
 const frequency = new Map();
 for (const { counts } of documents) for (const word of counts.keys()) frequency.set(word, (frequency.get(word) || 0) + 1);
 
-export function searchBooks(message, previousQuery = '', semanticMatches = []) {
-  const followUp = /\b(more|those|these|similar|cheaper|under|below|less than|over|above|at least|at most|between|up to|any price)\b/i.test(message) && explicitTopics(message).length === 0;
-  const query = (followUp ? `${previousQuery} ${message}` : message).slice(-2000);
+export function searchBooks(message, semanticMatches = []) {
+  const query = message.slice(-2000);
   const price = parsePriceConstraints(query);
   const selectedTopics = explicitTopics(price.freeText);
   const prediction = predictTopic(price.freeText, intentModel);
   const words = tokenize(price.freeText);
   const expanded = [...new Set(words.flatMap(word => [word, ...tokenize(aliases[word] || '')]))];
-  const terms = expanded.filter(word => !/^\d+$/.test(word) && !['under', 'below', 'less', 'than', 'max', 'maximum', 'cheaper', 'those', 'these', 'similar'].includes(word));
+  const terms = expanded.filter(word => !/^\d+$/.test(word) && !['under', 'below', 'less', 'than', 'max', 'maximum', 'cheaper'].includes(word));
   const semanticScores = new Map(semanticMatches.map(match => [match.id, match.score]));
   const results = documents.map(({ book, counts, length }) => {
     let score = 0;

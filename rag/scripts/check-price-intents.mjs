@@ -39,11 +39,9 @@ for (const text of [...minimums, ...strictMin, ...maximums, ...strictMax]) {
     assert.ok(matchesPrice(book.price , result.constraints), `${text}: ${book.name}`);
   }
 }
-const followUp = searchBooks('at least $40', searchBooks('math books').query);
-assert.ok(followUp.books.every(book => book.topic === 'math' && book.price >= 40));
 assert.ok(searchBooks('under $0').books.length === 0);
 assert.ok(searchBooks('math above 100').books.length === 0);
-console.log('Passed: minimum/maximum/range rules, equality boundaries, typo, suffix currencies, contradictory limits, topic and budget follow-ups.');
+console.log('Passed: minimum/maximum/range rules, equality boundaries, typo, suffix currencies, contradictory limits, topic and price filters.');
 
 // Budget ranges must return every eligible catalog book, even when dense scores
 // strongly prefer books outside the requested topic or price range.
