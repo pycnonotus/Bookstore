@@ -31,7 +31,7 @@ async function assertBookPrices(scope, expectedPrices) {
     const [price] = prices;
     assert.match(price, /^\$(?:0|[1-9]\d*)\.\d{2}$/, `${title} must show a dollar price with two decimals`);
     const amount = Number(price.slice(1));
-    assert.ok(amount >= 4.99 && amount <= 49.99, `${title} price must be between $4.99 and $49.99`);
+    assert.equal(amount, books.find(book => book.name === title)?.price, `${title} must display its catalog JSON price`);
     if (expectedPrices) assert.equal(price, expectedPrices.get(title), `${title} price must remain consistent`);
     pricesByTitle.set(title, price);
   }
@@ -316,7 +316,7 @@ async function assertReducedMotionFlow(width) {
   await assertStickyTopicHeading({width, context:`reduced motion at ${width}px`});
 }
 assert.equal(new Set(books.map(book => book.id)).size, books.length, 'Book IDs must be unique');
-page.on('pageerror', error => errors.push(error.message));
+page.on('pageerror', error => { errors.push(error.message); console.log('Browser error:', error.message); });
 try {
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.goto('http://127.0.0.1:5174');

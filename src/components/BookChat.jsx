@@ -82,7 +82,7 @@ export default function BookChat({ savedIds, onSavedChange }) {
       try {
         const visual = await searchCovers(result.constraints.freeText);
         const topics = explicitTopics(result.constraints.freeText);
-        const matched = visual.map(match => books.find(book => book.id === match.id)).filter(book => book && matchesPrice(getBookPrice(book.name), result.constraints) && (!topics.length || topics.includes(book.topic))).slice(0, 3);
+        const matched = visual.map(match => books.find(book => book.id === match.id)).filter(book => book && matchesPrice(getBookPrice(book), result.constraints) && (!topics.length || topics.includes(book.topic))).slice(0, 3);
         result = { ...result, books: matched, answer: matched.length ? `Top ${matched.length} picks by cover image${result.constraints.description ? ` ${result.constraints.description}` : ''}: ` + matched.map(book => `"${book.name}"`).join('; ') + '. Visual matches are approximate.' : 'No cover matches within those filters. Try a different price range.' };
         setProgress('Cover-image matches ready. All processing stayed in your browser.');
       } catch { setProgress('Cover-image search unavailable. Showing catalog text matches.'); }

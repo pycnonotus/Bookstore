@@ -19,7 +19,9 @@
       "quiet forms",
       "beauty",
       "stone art"
-    ]
+    ],
+    "price": 11.56,
+    "currency": "USD"
   },
   {
     "id": "417d3301-4be7-4ae9-bcaf-435d03d13c90",
@@ -45,7 +47,9 @@
       "color palette",
       "dramatic art",
       "botanical art"
-    ]
+    ],
+    "price": 30.92,
+    "currency": "USD"
   },
   {
     "id": "347de658-9ddf-436a-a0dc-035b7c6a3c21",
@@ -66,7 +70,9 @@
       "art",
       "imagined",
       "curated"
-    ]
+    ],
+    "price": 14.08,
+    "currency": "USD"
   },
   {
     "id": "04df4951-cb38-44e0-88bd-9baace4607eb",
@@ -88,7 +94,9 @@
       "art",
       "design",
       "computational"
-    ]
+    ],
+    "price": 16.47,
+    "currency": "USD"
   },
   {
     "id": "577370df-9b8e-4389-8b53-307c6c8d415b",
@@ -104,7 +112,9 @@
       "expression",
       "artists",
       "eras"
-    ]
+    ],
+    "price": 16.35,
+    "currency": "USD"
   },
   {
     "id": "263fc74a-b6f6-4acd-a559-0146a50d68b8",
@@ -121,7 +131,9 @@
       "time",
       "beauty",
       "delicate"
-    ]
+    ],
+    "price": 35.92,
+    "currency": "USD"
   },
   {
     "id": "2e29f4d7-63d1-47f4-8b28-4c5fcc1021ed",
@@ -140,7 +152,9 @@
       "art",
       "legacy",
       "celebration"
-    ]
+    ],
+    "price": 48.18,
+    "currency": "USD"
   },
   {
     "id": "8b21d83e-69a9-4cb0-9b91-b2a0e3d3a04f",
@@ -158,7 +172,9 @@
       "art",
       "study",
       "evocative"
-    ]
+    ],
+    "price": 12.19,
+    "currency": "USD"
   },
   {
     "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
@@ -178,7 +194,9 @@
       "urban art",
       "visuals",
       "art book"
-    ]
+    ],
+    "price": 38.59,
+    "currency": "USD"
   },
   {
     "id": "1dda2362-29e9-4316-903b-1e9074eaf60a",
@@ -194,7 +212,9 @@
       "textures",
       "layered composition",
       "procedural art"
-    ]
+    ],
+    "price": 20.86,
+    "currency": "USD"
   },
   {
     "id": "c34d81c9-8e39-4752-b17f-5fdaa41005e8",
@@ -216,7 +236,9 @@
       "accessibility",
       "progressive enhancement",
       "frameworks"
-    ]
+    ],
+    "price": 28.55,
+    "currency": "USD"
   },
   {
     "id": "555976f8-f46c-4bbf-ad5f-669c7c6c362f",
@@ -238,7 +260,9 @@
       "navigation",
       "interactive components",
       "web development"
-    ]
+    ],
+    "price": 44.69,
+    "currency": "USD"
   },
   {
     "id": "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5",
@@ -260,7 +284,9 @@
       "software engineering",
       "coding tutorials",
       "tech stack"
-    ]
+    ],
+    "price": 44.06,
+    "currency": "USD"
   },
   {
     "id": "cd92e446-70e5-4865-a963-21ab07550111",
@@ -282,7 +308,9 @@
       "modern javascript",
       "interactive sites",
       "library"
-    ]
+    ],
+    "price": 21.84,
+    "currency": "USD"
   },
   {
     "id": "5f0fcd15-bdb5-4d05-813f-92ca2776ae45",
@@ -304,7 +332,9 @@
       "viewport scaling",
       "fluid typography",
       "layout consistency"
-    ]
+    ],
+    "price": 41.13,
+    "currency": "USD"
   },
   {
     "id": "c556a18b-82ed-4472-b70f-4f1ed29659bc",
@@ -326,7 +356,9 @@
       "frameworks",
       "programming",
       "html"
-    ]
+    ],
+    "price": 44.01,
+    "currency": "USD"
   },
   {
     "id": "92234e61-e3cf-4801-944e-50cc684c0317",
@@ -348,7 +380,9 @@
       "developer workflows",
       "archiving software",
       "programming history"
-    ]
+    ],
+    "price": 38.72,
+    "currency": "USD"
   },
   {
     "id": "bec8cf6d-34c1-484e-9e48-a4039d469d91",
@@ -370,7 +404,9 @@
       "css",
       "jsx",
       "fun"
-    ]
+    ],
+    "price": 47.23,
+    "currency": "USD"
   },
   {
     "id": "395fa775-bb0f-4f5c-9eb4-73ff7820cd94",
@@ -392,7 +428,9 @@
       "fresh herbs",
       "balanced dishes",
       "joy on the table"
-    ]
+    ],
+    "price": 17.34,
+    "currency": "USD"
   },
   {
     "id": "05e682cb-57e3-42c6-b375-b2f7b42c6406",
@@ -412,7 +450,9 @@
       "regional pasta",
       "recreate classics",
       "simple ingredients"
-    ]
+    ],
+    "price": 43.83,
+    "currency": "USD"
   },
   {
     "id": "85400acb-5a7c-4fd9-b6f2-e6a6c9085e1f",
@@ -434,7 +474,9 @@
       "farm to table",
       "seasonal ingredients",
       "sustainable dining"
-    ]
+    ],
+    "price": 21.21,
+    "currency": "USD"
   },
   {
     "id": "ef968620-8d4c-48b8-9528-9291852ab7e9",
@@ -456,7 +498,9 @@
       "temperature control",
       "seasoning",
       "outdoor cooking"
-    ]
+    ],
+    "price": 21.55,
+    "currency": "USD"
   },
   {
     "id": "6e26cef3-0196-4df2-9c14-b816ea6c62e7",
@@ -478,7 +522,9 @@
       "treats",
       "loaf",
       "sweet"
-    ]
+    ],
+    "price": 43.52,
+    "currency": "USD"
   },
   {
     "id": "3c33cfdb-20a1-41f2-bbe2-7acecc6dcd65",
@@ -500,7 +546,9 @@
       "dishes",
       "culinary",
       "aromatic"
-    ]
+    ],
+    "price": 42.16,
+    "currency": "USD"
   },
   {
     "id": "3fcfdf42-7e76-481d-993e-5509ca3a29f0",
@@ -522,7 +570,9 @@
       "restorative food",
       "easy dinners",
       "soup and stew"
-    ]
+    ],
+    "price": 49.18,
+    "currency": "USD"
   },
   {
     "id": "004619de-ea0c-4509-bb01-425b242d8a80",
@@ -544,7 +594,9 @@
       "cooking",
       "cakes",
       "tarts"
-    ]
+    ],
+    "price": 30.27,
+    "currency": "USD"
   },
   {
     "id": "0827420d-dc6f-4d89-9a0b-647cc3d8a360",
@@ -566,7 +618,9 @@
       "home cooking",
       "food ideas",
       "simple meals"
-    ]
+    ],
+    "price": 46.57,
+    "currency": "USD"
   },
   {
     "id": "b8c903e8-0b66-431a-b0bc-45740288a915",
@@ -588,7 +642,9 @@
       "simple recipes",
       "family meals",
       "cook at home"
-    ]
+    ],
+    "price": 34.98,
+    "currency": "USD"
   },
   {
     "id": "9d3b1a3c-7ce3-4f88-b748-0e95a395c44b",
@@ -610,7 +666,9 @@
       "cooking for one",
       "meal ideas",
       "weeknight cook"
-    ]
+    ],
+    "price": 5.53,
+    "currency": "USD"
   },
   {
     "id": "9f9c1593-055c-4f86-b53c-61af26165036",
@@ -630,7 +688,9 @@
       "cookbook",
       "italian meals",
       "italian ingredients"
-    ]
+    ],
+    "price": 36.93,
+    "currency": "USD"
   },
   {
     "id": "8b8e7bd1-6184-44ee-972c-ee9ebc4bc151",
@@ -652,7 +712,9 @@
       "cooking",
       "food",
       "healthy"
-    ]
+    ],
+    "price": 32.78,
+    "currency": "USD"
   },
   {
     "id": "2e3bcedd-d9f7-43b5-9a93-e721bfba1c7d",
@@ -674,7 +736,9 @@
       "cooking basics",
       "healthy bowls",
       "home cooking"
-    ]
+    ],
+    "price": 20.54,
+    "currency": "USD"
   },
   {
     "id": "45e91fd5-d659-4df4-a135-42fe61283663",
@@ -696,7 +760,9 @@
       "greek",
       "lemon",
       "fresh"
-    ]
+    ],
+    "price": 39.62,
+    "currency": "USD"
   },
   {
     "id": "4e078833-13e8-4708-bdbb-4ad01b1625da",
@@ -711,7 +777,9 @@
       "noodle dishes",
       "asian inspired food",
       "everyday asian cuisine"
-    ]
+    ],
+    "price": 24.43,
+    "currency": "USD"
   },
   {
     "id": "91dbb479-3844-4218-bad6-96433d52a878",
@@ -727,7 +795,9 @@
       "classic dishes",
       "simple cooking",
       "joyful meals"
-    ]
+    ],
+    "price": 13.39,
+    "currency": "USD"
   },
   {
     "id": "b2923fe5-5c95-4d82-a01d-552d1c5e3e28",
@@ -749,7 +819,9 @@
       "delicious quick food",
       "cooking shortcuts",
       "dinner ideas"
-    ]
+    ],
+    "price": 38.53,
+    "currency": "USD"
   },
   {
     "id": "db1fbb11-2bbf-4f06-be97-6b066844218d",
@@ -771,7 +843,9 @@
       "home baking",
       "pastry",
       "sweets"
-    ]
+    ],
+    "price": 12.51,
+    "currency": "USD"
   },
   {
     "id": "8c67d607-acd6-4e31-a6c4-0c22d3cde300",
@@ -793,7 +867,9 @@
       "gourmet recipes",
       "flavor profiles",
       "cultural food"
-    ]
+    ],
+    "price": 7.12,
+    "currency": "USD"
   },
   {
     "id": "55cc5c7d-e842-4cbd-a976-778ae44b1119",
@@ -815,7 +891,9 @@
       "dishes",
       "culinary",
       "kitchen"
-    ]
+    ],
+    "price": 30.74,
+    "currency": "USD"
   },
   {
     "id": "c5109152-ded0-40d7-9b94-20aa4cccdf5b",
@@ -837,7 +915,9 @@
       "fermented veg",
       "food preservation",
       "starter cultures"
-    ]
+    ],
+    "price": 20.22,
+    "currency": "USD"
   },
   {
     "id": "fb8e3213-0225-4001-b047-1bbdca91efe2",
@@ -855,7 +935,9 @@
       "healthy eating",
       "cookbook",
       "food inspiration"
-    ]
+    ],
+    "price": 27.22,
+    "currency": "USD"
   },
   {
     "id": "62ab501d-083d-4f4f-85bb-88f65c3a3d58",
@@ -877,7 +959,9 @@
       "recipes",
       "cooking",
       "home baking"
-    ]
+    ],
+    "price": 46.74,
+    "currency": "USD"
   },
   {
     "id": "ebe83ff8-ee1d-4034-921a-00342a24eb87",
@@ -899,7 +983,9 @@
       "culinary",
       "dishes",
       "spice"
-    ]
+    ],
+    "price": 17.27,
+    "currency": "USD"
   },
   {
     "id": "5aa84653-2546-47a9-a0c7-a2084fbdc1a5",
@@ -917,7 +1003,9 @@
       "healthy eating",
       "fresh salads",
       "cooking ideas"
-    ]
+    ],
+    "price": 49.02,
+    "currency": "USD"
   },
   {
     "id": "78d4bdc3-afc2-469f-a784-a22e2f86d004",
@@ -935,7 +1023,9 @@
       "fresh",
       "every",
       "season"
-    ]
+    ],
+    "price": 30.81,
+    "currency": "USD"
   },
   {
     "id": "dc5e950b-2298-4d30-a727-26990735f40b",
@@ -951,7 +1041,9 @@
       "warming bowl",
       "cold weather cooking",
       "sunny day recipes"
-    ]
+    ],
+    "price": 24.68,
+    "currency": "USD"
   },
   {
     "id": "8a380af6-7334-4fbc-9075-f386e1942d54",
@@ -970,7 +1062,9 @@
       "flavor",
       "texture",
       "easy prep"
-    ]
+    ],
+    "price": 25.92,
+    "currency": "USD"
   },
   {
     "id": "ef47c90f-e746-4155-ae48-ea045adecb6e",
@@ -988,7 +1082,9 @@
       "quick meals",
       "food hacks",
       "kitchen tips"
-    ]
+    ],
+    "price": 29.56,
+    "currency": "USD"
   },
   {
     "id": "9ff1afdc-0c25-4a8c-bc01-acee9ea0b0cc",
@@ -1006,7 +1102,9 @@
       "intuition",
       "exercises",
       "thought experiments"
-    ]
+    ],
+    "price": 11.19,
+    "currency": "USD"
   },
   {
     "id": "7e360e1d-49b3-4565-bc65-1fb618e054ea",
@@ -1024,7 +1122,9 @@
       "algebra made simple",
       "introductory math",
       "basic algebra"
-    ]
+    ],
+    "price": 19.09,
+    "currency": "USD"
   },
   {
     "id": "f1e65c7f-e550-40c5-9788-76bcb89b2eff",
@@ -1042,7 +1142,9 @@
       "thought experiments",
       "intuition",
       "applications"
-    ]
+    ],
+    "price": 35.55,
+    "currency": "USD"
   },
   {
     "id": "157ac9bb-50f3-4925-874a-bd76a08e63c4",
@@ -1064,7 +1166,9 @@
       "techniques",
       "exercises",
       "applications"
-    ]
+    ],
+    "price": 28.36,
+    "currency": "USD"
   },
   {
     "id": "e226eff2-2877-4e6b-ae02-4fe5e73994ff",
@@ -1086,7 +1190,9 @@
       "algebra",
       "curious readers",
       "thought experiments"
-    ]
+    ],
+    "price": 9.88,
+    "currency": "USD"
   },
   {
     "id": "e8baaccb-abb2-4d88-9fb3-4e1878e29b7b",
@@ -1106,7 +1212,9 @@
       "exercises",
       "thought experiments",
       "applications"
-    ]
+    ],
+    "price": 20.67,
+    "currency": "USD"
   },
   {
     "id": "55f23886-84eb-4849-8f25-92f7fe8e7aa1",
@@ -1128,7 +1236,9 @@
       "applications",
       "curious readers",
       "world"
-    ]
+    ],
+    "price": 45.88,
+    "currency": "USD"
   },
   {
     "id": "99879ad2-ed5f-44cc-a0c5-896e3bb9c4e6",
@@ -1143,7 +1253,9 @@
       "math",
       "discrete maths",
       "introductory math"
-    ]
+    ],
+    "price": 40.65,
+    "currency": "USD"
   },
   {
     "id": "7d414634-a893-4f3d-b69e-61727792d081",
@@ -1165,7 +1277,9 @@
       "physics",
       "science",
       "education"
-    ]
+    ],
+    "price": 47.27,
+    "currency": "USD"
   },
   {
     "id": "477b13c3-06e9-47ef-b9d1-ca4e6be6b2b4",
@@ -1187,7 +1301,9 @@
       "applications",
       "curious",
       "world"
-    ]
+    ],
+    "price": 30.55,
+    "currency": "USD"
   },
   {
     "id": "c6c180e1-d4de-40c3-b610-1b2d78d1844f",
@@ -1205,7 +1321,9 @@
       "visuals",
       "exercises",
       "thought experiments"
-    ]
+    ],
+    "price": 44.57,
+    "currency": "USD"
   },
   {
     "id": "6ee20cc3-3303-487e-9108-a81aac61659d",
@@ -1227,7 +1345,9 @@
       "mathematics",
       "thinking",
       "guide"
-    ]
+    ],
+    "price": 18.85,
+    "currency": "USD"
   },
   {
     "id": "f520e08b-8c6c-4cae-8ba3-daeae29a847f",
@@ -1249,7 +1369,9 @@
       "analysis",
       "intuition",
       "examples"
-    ]
+    ],
+    "price": 10.8,
+    "currency": "USD"
   },
   {
     "id": "540ec8a3-8d04-4d3a-b672-6ad1cfe6f113",
@@ -1271,7 +1393,9 @@
       "equations",
       "visuals",
       "examples"
-    ]
+    ],
+    "price": 14.32,
+    "currency": "USD"
   },
   {
     "id": "0deb43be-c6f6-47a9-b4cf-e9c054234b74",
@@ -1290,7 +1414,9 @@
       "introductory math",
       "real questions",
       "curious readers"
-    ]
+    ],
+    "price": 15.89,
+    "currency": "USD"
   },
   {
     "id": "446a6584-c8d3-4958-a9bf-75f700c94143",
@@ -1312,7 +1438,9 @@
       "physics",
       "science",
       "tutorial"
-    ]
+    ],
+    "price": 39.26,
+    "currency": "USD"
   },
   {
     "id": "1ce1c2a8-172f-4926-91dd-56686b96cc33",
@@ -1332,7 +1460,9 @@
       "linear algebra",
       "analysis",
       "science"
-    ]
+    ],
+    "price": 10.68,
+    "currency": "USD"
   },
   {
     "id": "08376551-81c4-47f1-bcd2-3e5698737d44",
@@ -1354,7 +1484,9 @@
       "applications",
       "clear explanations",
       "memorable visuals"
-    ]
+    ],
+    "price": 33.66,
+    "currency": "USD"
   },
   {
     "id": "e9f3ef08-6efc-4113-aa25-6fe4e6ce00c2",
@@ -1372,7 +1504,9 @@
       "introduction to abstract algebra",
       "college math",
       "higher algebra"
-    ]
+    ],
+    "price": 43.28,
+    "currency": "USD"
   },
   {
     "id": "22fd69f7-20df-4691-be7c-e98081a1de78",
@@ -1390,7 +1524,9 @@
       "intuition",
       "exercises",
       "thought experiments"
-    ]
+    ],
+    "price": 33.34,
+    "currency": "USD"
   },
   {
     "id": "153420a1-041b-48db-9a2a-346945cc5ec9",
@@ -1412,7 +1548,9 @@
       "exercises",
       "thought experiments",
       "visuals"
-    ]
+    ],
+    "price": 40.93,
+    "currency": "USD"
   },
   {
     "id": "a47a6adb-32b3-44f4-8b1d-bbb7c67b597b",
@@ -1434,7 +1572,9 @@
       "techniques",
       "curious readers",
       "world"
-    ]
+    ],
+    "price": 6.34,
+    "currency": "USD"
   },
   {
     "id": "1e626520-1532-4e86-98f5-606923120d9e",
@@ -1456,7 +1596,9 @@
       "visuals",
       "examples",
       "exercises"
-    ]
+    ],
+    "price": 35.71,
+    "currency": "USD"
   },
   {
     "id": "fd9c9656-fb4f-480b-9f97-21bbce11c1bf",
@@ -1478,7 +1620,9 @@
       "algebra",
       "calculus",
       "visualization"
-    ]
+    ],
+    "price": 45.8,
+    "currency": "USD"
   },
   {
     "id": "5b8d4921-c5e2-4ed8-89a3-633d91831e87",
@@ -1498,7 +1642,9 @@
       "approachable examples",
       "real questions",
       "curious readers"
-    ]
+    ],
+    "price": 33.68,
+    "currency": "USD"
   },
   {
     "id": "e0c5e282-3aaf-42ab-9427-16cf47d2cbf6",
@@ -1513,7 +1659,9 @@
       "order in disorder",
       "math",
       "science books"
-    ]
+    ],
+    "price": 26.46,
+    "currency": "USD"
   },
   {
     "id": "45938797-d3ef-4c1d-b323-2c65fcfb34e7",
@@ -1535,7 +1683,9 @@
       "exercises",
       "intuition",
       "applications"
-    ]
+    ],
+    "price": 11.69,
+    "currency": "USD"
   },
   {
     "id": "e9adbcb6-f0c7-42f1-8c92-19961df97d23",
@@ -1557,7 +1707,9 @@
       "intuition",
       "examples",
       "exercises"
-    ]
+    ],
+    "price": 40.59,
+    "currency": "USD"
   },
   {
     "id": "ec654a4c-d40b-43af-a25c-acf299ff57aa",
@@ -1579,7 +1731,9 @@
       "real questions",
       "curious readers",
       "practical applications"
-    ]
+    ],
+    "price": 25.42,
+    "currency": "USD"
   },
   {
     "id": "940eff5d-a275-4666-9a7b-6565c6b839b8",
@@ -1597,7 +1751,9 @@
       "visual math",
       "math intuition",
       "applied math"
-    ]
+    ],
+    "price": 10.6,
+    "currency": "USD"
   },
   {
     "id": "ac1b97fb-9511-403b-8e23-5dbe53a5b20d",
@@ -1617,7 +1773,9 @@
       "quantitative finance",
       "financial engineering",
       "investment analysis"
-    ]
+    ],
+    "price": 46.9,
+    "currency": "USD"
   },
   {
     "id": "6eabff67-22c4-4393-b22c-526428fa9de8",
@@ -1639,7 +1797,9 @@
       "math",
       "biology",
       "science"
-    ]
+    ],
+    "price": 49.48,
+    "currency": "USD"
   },
   {
     "id": "b390162d-019f-4d1a-90ef-d425b321f5fe",
@@ -1661,7 +1821,9 @@
       "number theory",
       "logic",
       "exercises"
-    ]
+    ],
+    "price": 26.58,
+    "currency": "USD"
   },
   {
     "id": "4864bb37-5f69-4731-95a4-25ba077b6352",
@@ -1681,7 +1843,9 @@
       "problem solving",
       "intuition",
       "exercises"
-    ]
+    ],
+    "price": 47.35,
+    "currency": "USD"
   },
   {
     "id": "d126d1be-8920-4e93-8bec-6c875189bc23",
@@ -1703,7 +1867,9 @@
       "clear explanations",
       "approachable examples",
       "transform understanding"
-    ]
+    ],
+    "price": 31.95,
+    "currency": "USD"
   },
   {
     "id": "1c78d18c-6f7e-406c-9713-8cb5fd30e1ae",
@@ -1721,7 +1887,9 @@
       "visuals",
       "exercises",
       "thought experiments"
-    ]
+    ],
+    "price": 14.2,
+    "currency": "USD"
   },
   {
     "id": "9b339d0a-736f-439b-a8cc-a5303c9f98bf",
@@ -1741,7 +1909,9 @@
       "visual math",
       "thought experiments",
       "practical applications"
-    ]
+    ],
+    "price": 23.7,
+    "currency": "USD"
   },
   {
     "id": "8d2edb24-351f-4327-b384-7419553e58cf",
@@ -1761,7 +1931,9 @@
       "visual math",
       "math exercises",
       "math examples"
-    ]
+    ],
+    "price": 48.1,
+    "currency": "USD"
   },
   {
     "id": "ca1be560-247f-4efa-aea0-b45a8a4aceac",
@@ -1781,7 +1953,9 @@
       "intuition building",
       "visual explanations",
       "curious readers"
-    ]
+    ],
+    "price": 5.64,
+    "currency": "USD"
   },
   {
     "id": "4f33907e-a48c-4662-9c9e-e93ca1759239",
@@ -1803,7 +1977,9 @@
       "intuition",
       "exercises",
       "practical applications"
-    ]
+    ],
+    "price": 45.62,
+    "currency": "USD"
   },
   {
     "id": "b5e5591b-f73c-4c2d-bd38-e8f4bb99b2b6",
@@ -1821,7 +1997,9 @@
       "mathematical ideas",
       "real questions",
       "curious readers"
-    ]
+    ],
+    "price": 38,
+    "currency": "USD"
   },
   {
     "id": "2ff705b3-4897-4b29-908c-4cee601daac0",
@@ -1839,7 +2017,9 @@
       "intuition",
       "exercises",
       "thought experiments"
-    ]
+    ],
+    "price": 12.32,
+    "currency": "USD"
   },
   {
     "id": "e7b1b3e0-521b-4a29-abd9-746bb8d5cef6",
@@ -1857,7 +2037,9 @@
       "math intuition",
       "math exercises",
       "applied math"
-    ]
+    ],
+    "price": 5.3,
+    "currency": "USD"
   },
   {
     "id": "f791b724-3fd5-434b-a3d6-8b761e719e97",
@@ -1879,7 +2061,9 @@
       "practical applications",
       "curious readers",
       "world understanding"
-    ]
+    ],
+    "price": 32.08,
+    "currency": "USD"
   },
   {
     "id": "ba9b9d10-a8fa-4359-8f2b-84b10ebc40a1",
@@ -1901,7 +2085,9 @@
       "applications",
       "curious readers",
       "world"
-    ]
+    ],
+    "price": 12.11,
+    "currency": "USD"
   },
   {
     "id": "13f44e96-9f0e-405f-a90e-e1d293026f65",
@@ -1921,7 +2107,9 @@
       "visual math",
       "math intuition",
       "practical math"
-    ]
+    ],
+    "price": 19.09,
+    "currency": "USD"
   },
   {
     "id": "e6e43dd4-e405-4b98-ba8d-57db4834a9e7",
@@ -1941,7 +2129,9 @@
       "math basics",
       "visual math",
       "math exercises"
-    ]
+    ],
+    "price": 22.79,
+    "currency": "USD"
   },
   {
     "id": "d54c69b7-6802-4f0e-9b71-55a8322e830e",
@@ -1963,7 +2153,9 @@
       "curious readers",
       "transform understanding",
       "clear explanations"
-    ]
+    ],
+    "price": 15.06,
+    "currency": "USD"
   },
   {
     "id": "fb8c8400-dd70-4d68-8ce1-f0f5fa791411",
@@ -1985,7 +2177,9 @@
       "practical applications",
       "math for curious readers",
       "math world transformation"
-    ]
+    ],
+    "price": 29.33,
+    "currency": "USD"
   },
   {
     "id": "b3bccec5-95a9-49cb-94b2-0fff509daf62",
@@ -2007,6 +2201,8 @@
       "exercises",
       "thought experiments",
       "applications"
-    ]
+    ],
+    "price": 15.47,
+    "currency": "USD"
   }
 ]
