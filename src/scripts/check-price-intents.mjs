@@ -1,8 +1,8 @@
 import assert from 'node:assert/strict';
-import books from '../../src/data/books.json' with { type: 'json' };
-import { hybridBookMatches } from '../../src/utils/hybridSearch.js';
-import { parsePriceConstraints, matchesPrice } from '../../src/utils/searchConstraints.js';
-import { searchBooks } from '../../src/utils/bookSearch.js';
+import books from '../data/books.json' with { type: 'json' };
+import { hybridBookMatches } from '../utils/hybridSearch.js';
+import { parsePriceConstraints, matchesPrice } from '../utils/searchConstraints.js';
+import { searchBooks } from '../utils/bookSearch.js';
 const minimums = ['40$ or more', '$40 or more', '40 dollars or more', '40$ ore more', 'at least 40', 'no less than $40', 'minimum of 40', 'not under 40'];
 const strictMin = ['over 40', 'above $40', 'more than 40 dollars'];
 const maximums = ['up to $40', 'at most 40', 'no more than $40', 'not over 40', '40$ or less', 'maximum of 40'];

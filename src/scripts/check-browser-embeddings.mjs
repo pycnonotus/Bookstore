@@ -1,9 +1,9 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import books from '../../src/data/books.json' with { type: 'json' };
-import { readFile, writeFile } from 'node:fs/promises';
-import { strictBookMatches } from '../../src/utils/strictBookSearch.js';
+import books from '../data/books.json' with { type: 'json' };
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { strictBookMatches } from '../utils/strictBookSearch.js';
 const server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', '0'], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
 let browser;
 let serverUrl;
@@ -42,7 +42,7 @@ try {
   assert.ok((await search('flower')).includes('The Fleeting Beauty'));
   assert.ok((await search('the book with a marble sculpture on its cover')).includes('Forms of Silence'));
   assert.deepEqual(await search('zzzznonexistent'),[]);
-  const cases = JSON.parse(await readFile(new URL('../training/retrieval-eval.json', import.meta.url), 'utf8'));
+  const cases = JSON.parse(await readFile(new URL('../tests/fixtures/retrieval-eval.json', import.meta.url), 'utf8'));
   const comparisons = [];
   for (const test of cases) {
     const titles = await search(test.query);
@@ -53,7 +53,8 @@ try {
     comparisons.push({query:test.query, baselineHit:hit(before), hybridHit:hit(actualIds), baselineIds:before, hybridIds:actualIds});
   }
   const comparison = { note:'Reviewed development regressions, not an untouched test set. Baseline applies the prior 0.9 policy to the same enriched catalog/index.', cases:cases.length, baselinePasses:comparisons.filter(row=>row.baselineHit).length, hybridPasses:comparisons.filter(row=>row.hybridHit).length, details:comparisons };
-  await writeFile(new URL('../training/browser-retrieval-report.json',import.meta.url),JSON.stringify(comparison,null,2)+'\n');
+  await mkdir(new URL('../../artifacts/', import.meta.url), { recursive: true });
+await writeFile(new URL('../../artifacts/browser-retrieval-report.json',import.meta.url),JSON.stringify(comparison,null,2)+'\n');
   console.log('Real-model comparison:',JSON.stringify({cases:comparison.cases,baselinePasses:comparison.baselinePasses,hybridPasses:comparison.hybridPasses}));
   assert.equal(comparison.hybridPasses,comparison.cases,'Real-model retrieval must pass reviewed regressions');
   assert.ok((await page.evaluate(async () => (await (await caches.open('book-cover-embeddings-v1')).keys()).length)) > 0);

@@ -1,3 +1,0 @@
-import {readFile} from 'node:fs/promises';
-const data=await readFile('public/images/4d7c20ef-c340-48f0-8e26-869a09dd1d5d.jpeg');
-const r=await fetch('http://127.0.0.1:1234/v1/chat/completions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'qwen3.5-4b',temperature:0,max_tokens:150,chat_template_kwargs:{enable_thinking:false},messages:[{role:'user',content:[{type:'text',text:'Read the title and describe this book cover in one short sentence. If you cannot see the image, say so.'},{type:'image_url',image_url:{url:'data:image/jpeg;base64,'+data.toString('base64')}}]}]}),signal:AbortSignal.timeout(45000)});console.log('HTTP',r.status);const result=await r.json();console.log(result.choices?.[0]?.message?.content||result.error||result);

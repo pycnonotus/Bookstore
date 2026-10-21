@@ -3,21 +3,6 @@ export function features(text) {
   return [...new Set([...words, ...words.slice(1).map((word, i) => `${words[i]}_${word}`)])];
 }
 
-export function trainIntentModel(rows) {
-  const vocabulary = new Set();
-  const classes = {};
-  for (const row of rows) {
-    const cls = classes[row.topic] ||= { documents: 0, total: 0, counts: {} };
-    cls.documents++;
-    for (const word of features(row.query)) {
-      vocabulary.add(word);
-      cls.counts[word] = (cls.counts[word] || 0) + 1;
-      cls.total++;
-    }
-  }
-  return { version: 1, samples: rows.length, vocabularySize: vocabulary.size, classes };
-}
-
 export function predictTopic(query, model) {
   const words = features(query);
   const scores = Object.entries(model.classes).map(([topic, cls]) => {

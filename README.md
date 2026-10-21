@@ -23,4 +23,9 @@ npm run models:prepare
 
 - `src/data/books.json` — the books.
 - `public/images/` — book covers.
-- `rag/` — embeddings for free text search offline , no backend as we can't use backend at this part 🥲 
+- `src/workers/` — search embeddings run in the browser, no backend 🥲
+- `src/scripts/` — model setup and checks.
+- `src/tests/fixtures/` — search test cases.
+- `rag/` — local training and experiments, ignored by Git.
+
+To run local training (if you have the local files), use `node rag/scripts/train-search-local.mjs`. Generated checkpoints stay in `rag/`; the search code uses the saved model in `src/data/`. 

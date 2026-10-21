@@ -1,10 +1,10 @@
 import assert from 'node:assert/strict';
-import { readFile, writeFile } from 'node:fs/promises';
-import { hybridBookMatches } from '../../src/utils/hybridSearch.js';
-import { matchesPrice, parsePriceConstraints } from '../../src/utils/searchConstraints.js';
-import books from '../../src/data/books.json' with { type: 'json' };
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { hybridBookMatches } from '../utils/hybridSearch.js';
+import { matchesPrice, parsePriceConstraints } from '../utils/searchConstraints.js';
+import books from '../data/books.json' with { type: 'json' };
 
-const cases = JSON.parse(await readFile(new URL('../training/retrieval-eval.json', import.meta.url), 'utf8'));
+const cases = JSON.parse(await readFile(new URL('../tests/fixtures/retrieval-eval.json', import.meta.url), 'utf8'));
 const details = cases.map(test => {
   const rows = hybridBookMatches(test.query, [], { kind: test.kind || 'text', limit: 3 });
   const ids = rows.map(row => row.book.id);
@@ -15,7 +15,8 @@ const details = cases.map(test => {
   return { query: test.query, passed: relevantFound && constraintsCorrect, hitAt3: relevantFound, precisionAt3: ids.length ? hits / ids.length : null, constraintsCorrect, returnedIds: ids, returnedTitles: rows.map(row => row.book.name) };
 });
 const report = { evaluatedAt: new Date().toISOString(), source: 'Assistant-reviewed catalog query/book labels; independent of Qwen synthetic classifier training examples', mode: 'lexical and structured retrieval; real embedding integration checked separately in browser tests', cases: details.length, passed: details.filter(row => row.passed).length, hitAt3: details.filter(row => row.hitAt3).length / details.length, constraintFailures: details.filter(row => !row.constraintsCorrect).length, details };
-await writeFile(new URL('../training/retrieval-eval-report.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
+await mkdir(new URL('../../artifacts/', import.meta.url), { recursive: true });
+await writeFile(new URL('../../artifacts/retrieval-eval-report.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ cases: report.cases, passed: report.passed, hitAt3: report.hitAt3, constraintFailures: report.constraintFailures }));
 for (const row of details.filter(row => !row.passed)) console.log('FAILED:', row.query, row.returnedTitles);
 assert.equal(report.passed, report.cases, 'Every reviewed query must retrieve a relevant book and respect constraints');

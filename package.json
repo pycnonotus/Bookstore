@@ -8,15 +8,14 @@
     "build": "vite build",
     "prebuild": "npm run models:prepare",
     "preview": "vite preview",
-    "test:browser": "node rag/scripts/check-browser.mjs",
-    "test:search": "node rag/scripts/check-search.mjs",
-    "test:search:strict": "node rag/scripts/check-strict-search.mjs",
-    "test:search:hybrid": "node rag/scripts/evaluate-hybrid-search.mjs",
-    "test:embeddings": "node rag/scripts/check-embeddings.mjs",
-    "test:prices": "node rag/scripts/check-price-intents.mjs",
-    "test:browser:embeddings": "node rag/scripts/check-browser-embeddings.mjs",
-    "train:search": "node rag/scripts/train-search-local.mjs",
-    "models:prepare": "node rag/scripts/prepare-browser-models.mjs"
+    "test:browser": "node src/scripts/check-browser.mjs",
+    "test:search": "node src/scripts/check-search.mjs",
+    "test:search:strict": "node src/scripts/check-strict-search.mjs",
+    "test:search:hybrid": "node src/scripts/evaluate-hybrid-search.mjs",
+    "test:embeddings": "node src/scripts/check-embeddings.mjs",
+    "test:prices": "node src/scripts/check-price-intents.mjs",
+    "test:browser:embeddings": "node src/scripts/check-browser-embeddings.mjs",
+    "models:prepare": "node src/scripts/prepare-browser-models.mjs"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.1",

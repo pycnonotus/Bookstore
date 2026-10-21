@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
-import books from '../../src/data/books.json' with { type: 'json' };
-import { strictBookMatches } from '../../src/utils/strictBookSearch.js';
-import { rankEmbeddings } from '../../src/utils/embeddingSearch.js';
+import books from '../data/books.json' with { type: 'json' };
+import { strictBookMatches } from '../utils/strictBookSearch.js';
+import { rankEmbeddings } from '../utils/embeddingSearch.js';
 const ids = books.slice(0, 6).map(book => book.id);
 const matches = [0.899999, 0.9, 0.900001, 0.99, NaN, Infinity].map((score, index) => ({ id: ids[index], score }));
 assert.deepEqual(strictBookMatches('', matches).map(row => row.score), [0.99, 0.900001, 0.9]);
