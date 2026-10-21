@@ -22,7 +22,7 @@ npm run preview
 - `mock-data/data.json`: the single catalog array; images live alongside it in `photos/`.
 - `src/index.css`: Tailwind import, theme colors, and base styles. The old `style.css` has been removed.
 
-MainContent owns the topic filter and saved-book state using useState. SaveToggle is controlled through its value and onChange props. Saved selections survive filter changes and reset on reload.
+MainContent owns the topic filter using useState. App owns saved-book state so the catalog and StaffPicks share the same selections. Staff recommendations are stored on books in the catalog data array. SaveToggle is controlled through its value and onChange props. Saved selections survive filter changes and reset on reload.
 
 The layout starts with one column and expands at sm, md, and lg breakpoints. Containers, wrapping navigation, and shrinkable grid children prevent horizontal overflow without hiding content.
 

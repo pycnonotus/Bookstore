@@ -4,19 +4,10 @@ import BookCard from './BookCard';
 
 const topics = [...new Set(books.map(book => book.topic))].sort();
 
-export default function MainContent() {
+export default function MainContent({ savedIds, onSavedChange }) {
   const [topic, setTopic] = useState('all');
-  const [savedIds, setSavedIds] = useState(new Set());
   const visibleBooks = books.filter(book => topic === 'all' || book.topic === topic);
 
-  function setSaved(id, saved) {
-    setSavedIds(previous => {
-      const next = new Set(previous);
-      if (saved) next.add(id);
-      else next.delete(id);
-      return next;
-    });
-  }
 
   return <section id="catalog" aria-labelledby="catalog-title" className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div className="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
@@ -30,7 +21,7 @@ export default function MainContent() {
     </div>
     <p role="status" className="mb-5 text-sm text-ink/65">{visibleBooks.length} books · {savedIds.size} saved</p>
     <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      {visibleBooks.map(book => <BookCard key={book.id} book={book} saved={savedIds.has(book.id)} onSavedChange={saved => setSaved(book.id, saved)} />)}
+      {visibleBooks.map(book => <BookCard key={book.id} book={book} saved={savedIds.has(book.id)} onSavedChange={saved => onSavedChange(book.id, saved)} />)}
     </div>
   </section>;
 }
