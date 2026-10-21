@@ -17,7 +17,7 @@ const documents = books.map(book => {
 const frequency = new Map();
 for (const { counts } of documents) for (const word of counts.keys()) frequency.set(word, (frequency.get(word) || 0) + 1);
 
-export function searchBooks(message, previousQuery = '') {
+export function searchBooks(message, previousQuery = '', semanticMatches = []) {
   const followUp = /\b(more|those|these|similar|cheaper|under|below|less than)\b/i.test(message);
   const query = (followUp ? `${previousQuery} ${message}` : message).slice(-2000);
   const words = tokenize(query);
@@ -25,6 +25,7 @@ export function searchBooks(message, previousQuery = '') {
   const budgetMatch = [...query.matchAll(/(?:under|below|less than|max(?:imum)?)\s*\$?\s*(\d+(?:\.\d{1,2})?)/gi)].at(-1);
   const budget = budgetMatch ? Number(budgetMatch[1]) : null;
   const terms = expanded.filter(word => !/^\d+$/.test(word) && !['under', 'below', 'less', 'than', 'max', 'maximum', 'cheaper', 'those', 'these', 'similar'].includes(word));
+  const semanticScores = new Map(semanticMatches.map(match => [match.id, match.score]));
   const results = documents.map(({ book, counts, length }) => {
     let score = 0;
     for (const term of terms) {
@@ -32,6 +33,8 @@ export function searchBooks(message, previousQuery = '') {
       score += Math.log(1 + documents.length / (1 + (frequency.get(term) || 0))) * count / (count + 0.6 + 0.4 * length / 35);
     }
     if (book.name.toLowerCase().includes(message.toLowerCase().trim())) score += 10;
+    // Preserve exact-name/keyword relevance while allowing meaning-only matches.
+    score += Math.max(0, (semanticScores.get(book.id) || 0) - 0.25) * 8;
     return { book, score };
   }).filter(({ book, score }) => (score > 0 || (terms.length === 0 && budget !== null)) && (budget === null || getBookPrice(book.name) < budget))
     .sort((a, b) => /\bcheaper\b/i.test(message) ? getBookPrice(a.book.name) - getBookPrice(b.book.name) : b.score - a.score)

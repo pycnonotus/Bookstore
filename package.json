@@ -9,9 +9,10 @@
     "preview": "vite preview",
     "test:browser": "node scripts/check-browser.mjs",
     "test:search": "node scripts/check-search.mjs",
-    "search:enrich": "node scripts/enrich-book-search.mjs"
+    "test:embeddings": "node scripts/check-embeddings.mjs"
   },
   "dependencies": {
+    "@huggingface/transformers": "^3.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
