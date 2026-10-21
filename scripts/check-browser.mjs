@@ -15,21 +15,25 @@ assert.equal(new Set(books.map(book => book.id)).size, books.length, 'Book IDs m
 page.on('pageerror', error => errors.push(error.message));
 try {
   await page.goto('http://127.0.0.1:5174');
-  await page.locator('article').first().waitFor();
-  assert.equal(await page.locator('article').count(), books.length);
+  await page.locator('#catalog article').first().waitFor();
+  assert.equal(await page.locator('#catalog article').count(), books.length);
+  assert.equal(await page.locator('#events article').count(), 3);
+  await page.getByRole('link', {name:'Events', exact:true}).click();
+  assert.equal(new URL(page.url()).hash, '#events');
+  assert.match(await page.getByRole('link', {name:'Ask about a seat →'}).first().getAttribute('href'), /^mailto:.*subject=Seat%20inquiry/);
   const first = books[0];
   await page.getByRole('button', {name:`Save ${first.name}`, exact:true}).click();
   await page.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).waitFor();
   const other = books.find(book => book.topic !== first.topic).topic;
   await page.getByRole('combobox').selectOption(other);
-  await page.waitForFunction(count => document.querySelectorAll('article').length === count, books.filter(book => book.topic === other).length);
-  assert.equal(await page.locator('article').count(), books.filter(book => book.topic === other).length);
+  await page.waitForFunction(count => document.querySelectorAll('#catalog article').length === count, books.filter(book => book.topic === other).length);
+  assert.equal(await page.locator('#catalog article').count(), books.filter(book => book.topic === other).length);
   await page.getByRole('combobox').selectOption(first.topic);
   await page.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).waitFor();
   assert.equal(await page.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).getAttribute('aria-pressed'), 'true');
   await page.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).click();
   await page.getByRole('combobox').selectOption('all');
-  await page.waitForFunction(count => document.querySelectorAll('article').length === count, books.length);
+  await page.waitForFunction(count => document.querySelectorAll('#catalog article').length === count, books.length);
   for (const width of [240, 320, 375, 639, 640, 767, 768, 1024, 1280, 1920]) {
     await page.setViewportSize({width, height:900});
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);

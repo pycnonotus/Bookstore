@@ -6,6 +6,7 @@ export default function Hero() {
         <h1 id="hero-title" className="max-w-2xl font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">Make room for your next great read.</h1>
         <p className="mt-5 max-w-lg leading-relaxed text-paper/80">Art, ideas, and discoveries. Explore our shelves and find something that stays with you long after the last page.</p>
         <a href="#catalog" className="mt-7 inline-block rounded bg-amber-300 px-6 py-3 font-semibold text-spruce-deep hover:bg-amber-200">Explore the shelves &rarr;</a>
+        <a href="#events" className="ml-0 mt-4 block text-sm font-semibold text-amber-200 underline sm:ml-6 sm:inline-block">Upcoming events</a>
       </div>
       <div aria-hidden="true" className="flex h-44 min-w-0 items-end justify-center gap-2 border-b-8 border-paper/25 md:h-60">
         <span className="h-36 w-10 rounded-t bg-amber-300 md:h-48" />
