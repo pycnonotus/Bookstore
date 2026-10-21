@@ -10,3 +10,176 @@
   button, select, a { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-spruce; }
   button { @apply cursor-pointer; }
 }
+
+@layer components {
+  .topic-option {
+    display: inline-flex;
+    max-width: 100%;
+    min-width: 0;
+    cursor: pointer;
+  }
+
+  .topic-chip,
+  .topic-reset {
+    display: inline-flex;
+    min-height: 2.75rem;
+    max-width: 100%;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: 1px solid rgb(31 92 77 / 22%);
+    border-radius: 999px;
+    background: #fff;
+    padding: 0.55rem 0.85rem;
+    color: var(--color-ink);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: background-color 180ms ease, border-color 180ms ease,
+      color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  }
+
+  .topic-chip > span:nth-child(2) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .topic-check {
+    display: inline-flex;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(31 92 77 / 35%);
+    border-radius: 0.3rem;
+    background: var(--color-paper);
+    transition: background-color 180ms ease, border-color 180ms ease;
+  }
+
+  .topic-check svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity 150ms ease, transform 180ms ease;
+  }
+
+  .topic-chip-count {
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: rgb(31 92 77 / 8%);
+    padding: 0.1rem 0.4rem;
+    color: var(--color-spruce);
+    font-size: 0.7rem;
+    font-variant-numeric: tabular-nums;
+    transition: background-color 180ms ease, color 180ms ease;
+  }
+
+  .topic-input:checked + .topic-chip,
+  .topic-reset[aria-pressed="true"] {
+    border-color: var(--color-spruce);
+    background: var(--color-spruce);
+    color: #fff;
+    box-shadow: 0 3px 9px rgb(31 92 77 / 12%);
+  }
+
+  .topic-input:checked + .topic-chip .topic-check {
+    border-color: rgb(255 255 255 / 45%);
+    background: rgb(255 255 255 / 17%);
+  }
+
+  .topic-input:checked + .topic-chip .topic-check svg {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .topic-input:checked + .topic-chip .topic-chip-count {
+    background: rgb(255 255 255 / 17%);
+    color: #fff;
+  }
+
+  .topic-input:focus-visible + .topic-chip {
+    outline: 3px solid var(--color-spruce);
+    outline-offset: 3px;
+  }
+
+  .topic-section {
+    min-width: 0;
+    animation: topic-reveal 340ms ease-out both;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  .topic-book {
+    min-width: 0;
+    animation: topic-reveal 300ms ease-out both;
+    animation-delay: var(--card-delay, 0ms);
+  }
+
+  .topic-book > article {
+    flex: 1;
+    transition: border-color 200ms ease, box-shadow 200ms ease,
+      transform 200ms ease;
+  }
+
+  @media (hover: hover) {
+    .topic-option:hover .topic-chip,
+    .topic-reset:hover {
+      border-color: var(--color-spruce);
+      box-shadow: 0 3px 10px rgb(31 92 77 / 10%);
+      transform: translateY(-1px);
+    }
+
+    .topic-input:checked + .topic-chip:hover,
+    .topic-reset[aria-pressed="true"]:hover {
+      background: var(--color-spruce-deep);
+    }
+
+    .topic-book > article:hover {
+      border-color: rgb(31 92 77 / 35%);
+      box-shadow: 0 8px 24px rgb(29 43 58 / 7%);
+      transform: translateY(-3px);
+    }
+  }
+
+  .topic-option:active .topic-chip,
+  .topic-reset:active {
+    transform: scale(0.98);
+  }
+
+  @keyframes topic-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(7px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .topic-chip,
+    .topic-reset,
+    .topic-check,
+    .topic-check svg,
+    .topic-chip-count,
+    .topic-section,
+    .topic-book,
+    .topic-book > article {
+      animation: none;
+      transition: none;
+      transform: none;
+    }
+
+    .topic-option:hover .topic-chip,
+    .topic-option:active .topic-chip,
+    .topic-reset:hover,
+    .topic-reset:active,
+    .topic-input:checked + .topic-chip .topic-check svg,
+    .topic-book > article:hover {
+      transform: none;
+    }
+  }
+}
