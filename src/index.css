@@ -1,4 +1,7 @@
 @import "tailwindcss";
+:root {
+  --site-header-height: 4rem;
+}
 @theme {
   --color-paper: #f2f5f1;
   --color-ink: #1d2b3a;

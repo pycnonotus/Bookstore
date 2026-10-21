@@ -3,8 +3,6 @@ import SaveToggle from './SaveToggle';
 export default function BookCard({book, saved, onSavedChange, headingAs: Heading = 'h3'}) {
     const image = `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}`;
     const price = `$${book.price.toFixed(2)}`;
-    const purchaseSubject = encodeURIComponent(`Book order: ${book.name}`);
-    const purchaseBody = encodeURIComponent(`Hi, I'd like to buy a copy of "${book.name}" by ${book.auth}, listed at ${price}.\n\nPlease let me know about availability and how to place my order.\n\nThank you!`);
     return <article className="mx-auto flex h-[450px] max-h-[450px] w-full max-w-[450px] min-w-0 flex-col rounded-xl border border-spruce/15 bg-white p-4">
         <img src={image} alt={`Cover of ${book.name}`} loading="lazy"
              className="h-40 w-full shrink-0 rounded-lg bg-paper object-cover"/>
