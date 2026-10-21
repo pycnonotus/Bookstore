@@ -1,0 +1,12 @@
+@import "tailwindcss";
+@theme {
+  --color-paper: #f2f5f1;
+  --color-ink: #1d2b3a;
+  --color-spruce: #1f5c4d;
+  --color-spruce-deep: #164237;
+}
+@layer base {
+  body { @apply m-0 min-w-0 bg-paper text-ink antialiased; }
+  button, select, a { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-spruce; }
+  button { @apply cursor-pointer; }
+}
