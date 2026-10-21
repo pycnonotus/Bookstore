@@ -6,6 +6,7 @@
   --color-spruce-deep: #164237;
 }
 @layer base {
+  html { scroll-padding-top: calc(var(--site-header-height, 0px) + 1rem); }
   body { @apply m-0 min-w-0 bg-paper text-ink antialiased; }
   button, select, a { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-spruce; }
   button { @apply cursor-pointer; }
@@ -113,7 +114,7 @@
 
   .topic-section {
     position: sticky;
-    top: var(--stack-top, 1.5rem);
+    top: var(--stack-top, calc(var(--site-header-height, 0px) + 1.5rem));
     z-index: var(--stack-level, 1);
     min-width: 0;
   }
@@ -148,7 +149,7 @@
 
   .topic-heading {
     position: sticky;
-    top: 1rem;
+    top: calc(var(--site-header-height, 0px) + 1rem);
     z-index: 2;
     margin-top: -0.75rem;
     margin-inline: -0.5rem;
@@ -186,7 +187,7 @@
     }
 
     .topic-heading {
-      top: 1.5rem;
+      top: calc(var(--site-header-height, 0px) + 1.5rem);
     }
   }
 

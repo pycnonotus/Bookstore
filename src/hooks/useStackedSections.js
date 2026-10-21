@@ -6,6 +6,7 @@ export default function useStackedSections(stackRef, sectionKey) {
     if (!stack) return;
 
     const sections = [...stack.querySelectorAll(':scope > .topic-section')];
+    const header = document.querySelector('.site-header');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let frame = 0;
     let focusedTarget = null;
@@ -36,10 +37,11 @@ export default function useStackedSections(stackRef, sectionKey) {
 
     function measure() {
       const gap = window.innerWidth < 640 ? 16 : 24;
+      const headerHeight = header?.offsetHeight ?? 0;
       const heights = sections.map(section => section.offsetHeight);
       sections.forEach((section, index) => {
         // Tall shelves must scroll through every row before they stick.
-        const top = Math.min(gap, window.innerHeight - heights[index] - gap);
+        const top = Math.min(headerHeight + gap, window.innerHeight - heights[index] - gap);
         section.style.setProperty('--stack-top', `${top}px`);
       });
       scheduleDepth();
@@ -53,6 +55,7 @@ export default function useStackedSections(stackRef, sectionKey) {
     const resizeObserver = new ResizeObserver(measure);
     sections.forEach(section => resizeObserver.observe(section));
     resizeObserver.observe(stack);
+    if (header) resizeObserver.observe(header);
     window.addEventListener('resize', measure);
     window.addEventListener('scroll', scheduleDepth, { passive: true });
     reducedMotion.addEventListener('change', measure);

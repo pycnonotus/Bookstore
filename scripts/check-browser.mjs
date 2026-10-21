@@ -155,7 +155,7 @@ async function readTopicHeading(topic) {
     const bounds = heading.getBoundingClientRect();
     const hit = document.elementFromPoint(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
     return {title:heading.textContent.trim(), top:bounds.top, bottom:bounds.bottom,
-      readable:heading.contains(hit), scrollY};
+      readable:heading.contains(hit), headerBottom:document.querySelector('.site-header').getBoundingClientRect().bottom, scrollY};
   });
 }
 async function assertStickyTopicHeading({width, context, screenshotPath}) {
@@ -165,8 +165,9 @@ async function assertStickyTopicHeading({width, context, screenshotPath}) {
   const current = candidates.reduce((longest, section) => section.height > longest.height ? section : longest);
   const assertReadable = (heading, topic) => {
     assert.equal(heading.title, topicName(topic), `${context}: the current title must match its topic`);
-    assert.ok(heading.readable && heading.top >= 0 && heading.top <= 64 && heading.bottom < 140,
-      `${context}: ${topic}'s title must remain readable near the viewport top (${JSON.stringify(heading)})`);
+    assert.ok(heading.readable && heading.top >= heading.headerBottom && heading.top <= heading.headerBottom + 64
+      && heading.bottom < heading.headerBottom + 140,
+      `${context}: ${topic}'s title must remain readable below the navbar (${JSON.stringify(heading)})`);
   };
   await scrollToY(current.top + current.height * 0.35);
   const before = await readTopicHeading(current.topic);
@@ -183,6 +184,42 @@ async function assertStickyTopicHeading({width, context, screenshotPath}) {
     assertReadable(await readTopicHeading(next.topic), next.topic);
     assert.equal((await readTopicHeading(current.topic)).readable, false,
       `${context}: the next topic title must replace the previous title`);
+  }
+}
+async function assertStickyNavbar(width) {
+  await page.setViewportSize({width, height:900});
+  const natural = await naturalTopicLayout();
+  const longest = natural.reduce((largest, section) => section.height > largest.height ? section : largest);
+  await scrollToY(longest.top + longest.height * 0.35);
+  const nav = page.getByRole('navigation', {name:'Main navigation', exact:true});
+  const state = await nav.evaluate(nav => {
+    const header = nav.closest('header').getBoundingClientRect();
+    return {top:header.top, bottom:header.bottom, links:[...nav.querySelectorAll('a')].map(link => {
+      const bounds = link.getBoundingClientRect();
+      const hit = document.elementFromPoint(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
+      return {name:link.textContent, visible:bounds.left >= 0 && bounds.right <= innerWidth
+        && bounds.top >= header.top && bounds.bottom <= header.bottom && link.contains(hit)};
+    })};
+  });
+  assert.ok(Math.abs(state.top) <= 1 && state.bottom < 900, `The navbar must stay at the viewport top at ${width}px`);
+  assert.equal(state.links.length, 5, 'The navbar must retain all main links');
+  for (const link of state.links) assert.ok(link.visible, `${link.name} must remain visible above the topic layers at ${width}px`);
+  const title = await readTopicHeading(longest.topic);
+  assert.ok(title.readable && title.top >= state.bottom && title.top <= state.bottom + 64,
+    `The topic title must clear the responsive navbar at ${width}px (${JSON.stringify(title)})`);
+  for (const [name, target] of [['Browse books', 'catalog'], ['Staff picks', 'staff-picks'],
+    ['Events', 'events'], ['Our story', 'about'], ['Visit us', 'contact']]) {
+    await nav.getByRole('link', {name, exact:true}).click();
+    await settleLayout();
+    assert.equal(new URL(page.url()).hash, `#${target}`);
+    const heading = await page.locator(`#${target} h2`).evaluate(heading => {
+      const bounds = heading.getBoundingClientRect();
+      const hit = document.elementFromPoint(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
+      return {top:bounds.top, bottom:bounds.bottom, readable:heading.contains(hit),
+        headerBottom:document.querySelector('.site-header').getBoundingClientRect().bottom};
+    });
+    assert.ok(heading.readable && heading.top >= heading.headerBottom && heading.bottom <= 900,
+      `${name} must reveal its heading below the navbar at ${width}px (${JSON.stringify(heading)})`);
   }
 }
 async function assertTopicStack({width, context, screenshotPath}) {
@@ -245,9 +282,10 @@ async function assertTopicStack({width, context, screenshotPath}) {
     const bounds = button.getBoundingClientRect();
     const hit = document.elementFromPoint(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
     return {active:document.activeElement === button, keyboard:button.matches(':focus-visible'),
-      top:bounds.top, bottom:bounds.bottom, reachable:button.contains(hit)};
+      top:bounds.top, bottom:bounds.bottom, reachable:button.contains(hit),
+      headerBottom:document.querySelector('.site-header').getBoundingClientRect().bottom};
   });
-  assert.ok(focused.active && focused.keyboard && focused.reachable && focused.top >= 0 && focused.bottom <= 900,
+  assert.ok(focused.active && focused.keyboard && focused.reachable && focused.top >= focused.headerBottom && focused.bottom <= 900,
     `${context}: keyboard focus must reveal and allow input to a covered Save button (${JSON.stringify(focused)})`);
   await coveredSave.evaluate(button => button.blur());
   await settleLayout();
@@ -295,10 +333,9 @@ try {
   assert.equal(await page.locator('#events article').count(), 3);
   assert.equal(await page.locator('#staff-picks article').count(), 3);
   assert.equal(await page.locator('#staff-picks blockquote').count(), 3);
-  await page.getByRole('link', {name:'Staff picks', exact:true}).click();
-  assert.equal(new URL(page.url()).hash, '#staff-picks');
-  await page.getByRole('link', {name:'Events', exact:true}).click();
-  assert.equal(new URL(page.url()).hash, '#events');
+  for (const width of [1280, 375, 240]) await assertStickyNavbar(width);
+  await page.setViewportSize({width:1280, height:900});
+  await settleLayout();
   assert.match(await page.getByRole('link', {name:'Ask about a seat →'}).first().getAttribute('href'), /^mailto:.*subject=Seat%20inquiry/);
   const first = books[0];
   await page.locator('#catalog').getByRole('button', {name:`Save ${first.name}`, exact:true}).click();
@@ -389,5 +426,5 @@ try {
   await assertBookPrices(catalog, catalogPrices);
   await assertBookPrices(page.locator('#staff-picks'), catalogPrices);
   assert.deepEqual(errors, []);
-  console.log(`Passed: ${books.length} cards in ${topics.length} topic groups, visible dollar prices within $4.99–$49.99 consistent across staff picks/saves/filters/reload, multi-select/reset/keyboard filtering, synchronized saves retained across filters, desktop/mobile stacking geometry and hit-testing, sticky current-topic titles and next-topic replacement across filters and reduced motion, tall-section reachability, keyboard access to covered Save buttons, reduced-motion normal flow, cards within 450px with contained prices/Save buttons and ellipsized descriptions, no overflow at 10 all-topic and 4 filtered widths, no runtime errors.`);
+  console.log(`Passed: ${books.length} cards in ${topics.length} topic groups, visible dollar prices within $4.99–$49.99 consistent across staff picks/saves/filters/reload, multi-select/reset/keyboard filtering, synchronized saves retained across filters, desktop/mobile stacking geometry and hit-testing, responsive sticky navbar and unobscured anchor navigation at 1280/375/240px, sticky current-topic titles and next-topic replacement across filters and reduced motion, tall-section reachability, keyboard access to covered Save buttons, reduced-motion normal flow, cards within 450px with contained prices/Save buttons and ellipsized descriptions, no overflow at 10 all-topic and 4 filtered widths, no runtime errors.`);
 } finally { await browser.close(); server.kill(); }

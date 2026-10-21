@@ -28,6 +28,8 @@ Every catalog and staff-pick card shows a demo price between $4.99 and $49.99. `
 
 The layout starts with one column and expands at sm, md, and lg breakpoints. Containers, wrapping navigation, and shrinkable grid children prevent horizontal overflow without hiding content.
 
+The navbar stays at the top while scrolling. Its measured height keeps topic headings and anchor destinations below it, including when navigation wraps on smaller screens.
+
 Topic shelves stack over the previous shelf as you scroll, with a subtle parallax depth effect. Each topic heading and book count stays visible above its books until the next topic takes over. Taller shelves scroll through all their books before pinning. Stack offsets respond to viewport and filter changes. Reduced-motion preferences and keyboard focus inside the shelves use normal document flow while keeping topic headings sticky and every book accessible.
 
 ## Browser checks
