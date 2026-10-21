@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-For the creating the search embeddings use 
+For the creating the search embeddings use
 
 ```sh
 npm run models:prepare
@@ -19,13 +19,13 @@ npm run models:prepare
 
 
 
-## AI generated data in this project, 
+## AI generated data in this project,
 
 - `src/data/books.json` — the books.
 - `public/images/` — book covers.
 - `src/workers/` — search embeddings run in the browser, no backend 🥲
-- `src/scripts/` — model setup and checks.
-- `src/tests/fixtures/` — search test cases.
+- `src/scripts/` — model setup.
+- `tests/` — local checks and test data, ignored by Git. The npm test commands need these local files.
 - `rag/` — local training and experiments, ignored by Git.
 
-To run local training (if you have the local files), use `node rag/scripts/train-search-local.mjs`. Generated checkpoints stay in `rag/`; the search code uses the saved model in `src/data/`. 
+To run local training (if you have the local files), use `node rag/scripts/train-search-local.mjs`. Generated checkpoints stay in `rag/`; the search code uses the saved model in `src/data/`.

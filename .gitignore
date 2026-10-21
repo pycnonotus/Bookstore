@@ -159,3 +159,6 @@ artifacts/
 # Downloaded browser model weights and local diagnostics
 public/models/
 /rag/
+
+# Local verification scripts and fixtures
+/tests/
