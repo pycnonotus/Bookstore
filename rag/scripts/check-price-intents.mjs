@@ -1,4 +1,6 @@
 import assert from 'node:assert/strict';
+import books from '../../mock-data/data.json' with { type: 'json' };
+import { hybridBookMatches } from '../../src/utils/hybridSearch.js';
 import { parsePriceConstraints, matchesPrice } from '../../src/utils/searchConstraints.js';
 import { searchBooks } from '../../src/utils/bookSearch.js';
 import { getBookPrice } from '../../src/utils/bookPrice.js';
@@ -43,3 +45,27 @@ assert.ok(followUp.books.every(book => book.topic === 'math' && getBookPrice(boo
 assert.ok(searchBooks('under $0').books.length === 0);
 assert.ok(searchBooks('math above 100').books.length === 0);
 console.log('Passed: minimum/maximum/range rules, equality boundaries, typo, suffix currencies, contradictory limits, topic and budget follow-ups.');
+
+// Budget ranges must return every eligible catalog book, even when dense scores
+// strongly prefer books outside the requested topic or price range.
+const denseCandidates = books.map(book => ({ id: book.id, score: 0.99 }));
+for (const topic of ['math', 'programming', 'cooking', 'art']) {
+  for (const [min, max] of [[10, 20], [20, 40], [10.5, 19.09], [0, 0], [100, 200]]) {
+    const expected = books.filter(book => book.topic === topic && book.price >= min && book.price <= max).map(book => book.id).sort();
+    for (const range of [`${min}$ to ${max}$`, `$${min} to $${max}`, `${min} to ${max} dollars`, `${min}-${max}`, `between $${min} and $${max}`, `from ${min} to ${max}`]) {
+      const query = `${topic} ${range}`;
+      const parsed = parsePriceConstraints(query);
+      assert.equal(parsed.min, min, query);
+      assert.equal(parsed.max, max, query);
+      assert.equal(parsed.freeText.trim(), topic, query);
+      assert.ok(matchesPrice(min, parsed) && matchesPrice(max, parsed), query);
+      assert.ok(!matchesPrice(min - 0.01, parsed) && !matchesPrice(max + 0.01, parsed), query);
+      for (const candidates of [[], denseCandidates]) {
+        assert.deepEqual(hybridBookMatches(query, candidates).map(row => row.book.id).sort(), expected, query);
+      }
+    }
+  }
+}
+assert.equal(parsePriceConstraints('math 20$ to 10$').invalid, true);
+assert.deepEqual(hybridBookMatches('math 20$ to 10$', denseCandidates), []);
+console.log('Passed: 120 topic/range combinations with and without semantic candidates, inclusive boundaries, and reversed ranges.');

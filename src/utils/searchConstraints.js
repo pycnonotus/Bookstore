@@ -9,7 +9,7 @@ export function parsePriceConstraints(text) {
     }
   }
   collect(String.raw`\b(?:between|from)\s*${amount}\s*(?:and|to|[-–])\s*${amount}`, m => ({ min: +m[1], max: +m[2], minInclusive: true, maxInclusive: true, priority: 2 }));
-  collect(String.raw`${amount}\s*[-–]\s*${amount}`, m => ({ min: +m[1], max: +m[2], minInclusive: true, maxInclusive: true, priority: 2 }));
+  collect(String.raw`${amount}\s*(?:[-–]|\bto\b)\s*${amount}`, m => ({ min: +m[1], max: +m[2], minInclusive: true, maxInclusive: true, priority: 2 }));
   collect(String.raw`\b(?:at least|no less than|not (?:under|below)|minimum(?: of)?|min)\s*${amount}`, m => ({ min: +m[1], minInclusive: true }));
   collect(String.raw`\b(?:over|above|more than|greater than)\s*${amount}`, m => ({ min: +m[1], minInclusive: false }));
   collect(String.raw`${amount}\s*(?:or more|and (?:above|up)|or higher|minimum)\b`, m => ({ min: +m[1], minInclusive: true }));
