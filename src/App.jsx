@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Events from './components/Events';
 import { useState } from 'react';
 import StaffPicks from './components/StaffPicks';
+import BookChat from './components/BookChat';
 
 export default function App() {
   const [savedIds, setSavedIds] = useState(new Set());
@@ -18,7 +19,7 @@ export default function App() {
   }
   return <div className="flex min-h-screen min-w-0 flex-col">
     <Header />
-    <main className="flex-1"><Hero /><MainContent savedIds={savedIds} onSavedChange={setSaved} /><StaffPicks savedIds={savedIds} onSavedChange={setSaved} /><Events /></main>
+    <main className="flex-1"><Hero /><BookChat savedIds={savedIds} onSavedChange={setSaved} /><MainContent savedIds={savedIds} onSavedChange={setSaved} /><StaffPicks savedIds={savedIds} onSavedChange={setSaved} /><Events /></main>
     <Footer />
   </div>;
 }

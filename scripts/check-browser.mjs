@@ -202,12 +202,12 @@ async function assertStickyNavbar(width) {
     })};
   });
   assert.ok(Math.abs(state.top) <= 1 && state.bottom < 900, `The navbar must stay at the viewport top at ${width}px`);
-  assert.equal(state.links.length, 5, 'The navbar must retain all main links');
+  assert.equal(state.links.length, 6, 'The navbar must retain all main links');
   for (const link of state.links) assert.ok(link.visible, `${link.name} must remain visible above the topic layers at ${width}px`);
   const title = await readTopicHeading(longest.topic);
   assert.ok(title.readable && title.top >= state.bottom && title.top <= state.bottom + 64,
     `The topic title must clear the responsive navbar at ${width}px (${JSON.stringify(title)})`);
-  for (const [name, target] of [['Browse books', 'catalog'], ['Staff picks', 'staff-picks'],
+  for (const [name, target] of [['Browse books', 'catalog'], ['Find a book', 'book-chat'], ['Staff picks', 'staff-picks'],
     ['Events', 'events'], ['Our story', 'about'], ['Visit us', 'contact']]) {
     await nav.getByRole('link', {name, exact:true}).click();
     await settleLayout();
@@ -320,6 +320,29 @@ page.on('pageerror', error => errors.push(error.message));
 try {
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.goto('http://127.0.0.1:5174');
+  const chat = page.locator('#book-chat');
+  await chat.getByRole('textbox', {name:'Ask about books'}).fill('book about math');
+  await chat.getByRole('button', {name:'Find books', exact:true}).click();
+  await chat.locator('article').first().waitFor();
+  assert.equal(await chat.locator('article').count(), 3);
+  await chat.getByRole('textbox', {name:'Ask about books'}).fill('js libs');
+  await chat.getByRole('button', {name:'Find books', exact:true}).click();
+  await chat.getByRole('heading', {name:'Jquery', exact:true}).waitFor();
+  await chat.getByRole('button', {name:'Save Jquery', exact:true}).click();
+  await catalog.getByRole('button', {name:'Unsave Jquery', exact:true}).waitFor();
+  await chat.getByRole('button', {name:'Unsave Jquery', exact:true}).click();
+  await chat.getByRole('textbox', {name:'Ask about books'}).fill('under $30');
+  await chat.getByRole('button', {name:'Find books', exact:true}).click();
+  await page.waitForFunction(() => document.querySelector('#book-chat [role="log"]').lastElementChild.textContent.includes('under $30.00'));
+  assert.ok(await chat.locator('article').count() > 0);
+  const chatPrices = await chat.locator('[data-book-price]').allTextContents();
+  assert.ok(chatPrices.every(price => Number(price.replace('$', '')) < 30), 'Chat results must respect the requested budget');
+  for (const width of [240, 375, 768, 1280]) {
+    await page.setViewportSize({width, height:900});
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Chat overflow at ${width}px`);
+  }
+  await chat.getByRole('button', {name:'Clear chat', exact:true}).click();
+  assert.equal(await chat.locator('article').count(), 0);
   await catalog.locator('article').first().waitFor();
   await assertCatalog(topics);
   const catalogPrices = await assertBookPrices(catalog);

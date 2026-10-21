@@ -8,7 +8,7 @@
 @layer base {
   html { scroll-padding-top: calc(var(--site-header-height, 0px) + 1rem); }
   body { @apply m-0 min-w-0 bg-paper text-ink antialiased; }
-  button, select, a { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-spruce; }
+  button, select, input, a { @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-spruce; }
   button { @apply cursor-pointer; }
 }
 

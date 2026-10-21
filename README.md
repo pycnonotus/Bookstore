@@ -32,6 +32,22 @@ The navbar stays at the top while scrolling. Its measured height keeps topic hea
 
 Topic shelves stack over the previous shelf as you scroll, with a subtle parallax depth effect. Each topic heading and book count stays visible above its books until the next topic takes over. Taller shelves scroll through all their books before pinning. Stack offsets respond to viewport and filter changes. Reduced-motion preferences and keyboard focus inside the shelves use normal document flow while keeping topic headings sticky and every book accessible.
 
+## Client-side book chat
+
+Use **Find a book** in the navbar. Try `book about math`, `js libs`, a title or author, then `under $30` or `something cheaper`. Results come from the actual catalog, with the same Save state as the shelves. Clear chat starts a new search.
+
+The chat uses a small in-memory text index, synonym expansion, and grounded template replies. It is retrieval-based search, not a running generative LLM or full semantic RAG. There is no chat backend, model download, API key, or external request in the website. The index builds once from the bundled catalog; editing the catalog and rebuilding updates search.
+
+Your local Qwen can enrich the catalog offline with extra keywords. In PowerShell:
+
+```powershell
+$env:BOOK_CHAT_BASE_URL = 'http://127.0.0.1:1234/v1'
+$env:BOOK_CHAT_MODEL = 'qwen3.5-4b'
+npm run search:enrich
+```
+
+This authoring script sends book titles and descriptions to your configured local model and writes validated `searchKeywords` into the existing data file only after all books succeed. Review the generated keywords with `git diff`, then run `npm run test:search` and `npm run build`. No training is required. The model server can be shut down once the keywords are saved.
+
 ## Browser checks
 
 ```sh
