@@ -105,10 +105,69 @@
     outline-offset: 3px;
   }
 
+  .topic-stack {
+    position: relative;
+    isolation: isolate;
+    margin-inline: -0.5rem;
+  }
+
   .topic-section {
+    position: sticky;
+    top: var(--stack-top, 1.5rem);
+    z-index: var(--stack-level, 1);
+    min-width: 0;
+  }
+
+  .topic-panel {
+    position: relative;
+    border: 1px solid rgb(31 92 77 / 18%);
+    border-radius: 1.5rem;
+    background: var(--color-paper);
+    padding: 1.25rem 0.5rem;
+    box-shadow: 0 -10px 30px rgb(29 43 58 / 8%);
+    transform-origin: center bottom;
+    transform: translateY(calc(-0.75rem * var(--stack-progress, 0)))
+      scale(calc(1 - 0.018 * var(--stack-progress, 0)));
+  }
+
+  .topic-panel::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--color-spruce-deep);
+    opacity: calc(0.1 * var(--stack-progress, 0));
+    pointer-events: none;
+    content: '';
+  }
+
+  .topic-section-content {
     min-width: 0;
     animation: topic-reveal 340ms ease-out both;
     animation-delay: var(--reveal-delay, 0ms);
+  }
+
+  .topic-stack:has(:focus-visible) .topic-section,
+  .topic-section:only-child {
+    position: relative;
+    top: auto;
+  }
+
+  .topic-stack:has(:focus-visible) .topic-panel {
+    transform: none;
+  }
+
+  .topic-stack:has(:focus-visible) .topic-panel::after {
+    opacity: 0;
+  }
+
+  @media (min-width: 640px) {
+    .topic-stack {
+      margin-inline: 0;
+    }
+
+    .topic-panel {
+      padding: 1.5rem;
+    }
   }
 
   .topic-book {
@@ -118,7 +177,6 @@
   }
 
   .topic-book > article {
-    flex: 1;
     transition: border-color 200ms ease, box-shadow 200ms ease,
       transform 200ms ease;
   }
@@ -166,11 +224,22 @@
     .topic-check svg,
     .topic-chip-count,
     .topic-section,
+    .topic-section-content,
+    .topic-panel,
     .topic-book,
     .topic-book > article {
       animation: none;
       transition: none;
       transform: none;
+    }
+
+    .topic-section {
+      position: relative;
+      top: auto;
+    }
+
+    .topic-panel::after {
+      opacity: 0;
     }
 
     .topic-option:hover .topic-chip,
