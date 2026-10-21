@@ -5,7 +5,7 @@
     "image": "4d7c20ef-c340-48f0-8e26-869a09dd1d5d.jpeg",
     "topic": "art",
     "auth": "Elena Marlowe",
-    "descriptoin": "A visual journey through classical sculpture, quiet forms, and the enduring beauty of marble."
+    "description": "A visual journey through classical sculpture, quiet forms, and the enduring beauty of marble."
   },
   {
     "id": "417d3301-4be7-4ae9-bcaf-435d03d13c90",
@@ -13,7 +13,7 @@
     "image": "e958430c-c83f-4253-952c-0d649333989a.jpeg",
     "topic": "art",
     "auth": "Julian Voss",
-    "descriptoin": "An expressive collection exploring color, emotion, and the dramatic language of floral painting."
+    "description": "An expressive collection exploring color, emotion, and the dramatic language of floral painting."
   },
   {
     "id": "347de658-9ddf-436a-a0dc-035b7c6a3c21",
@@ -21,7 +21,7 @@
     "image": "ad05f839-b1af-45f9-b0fc-af29d5af5f22.jpeg",
     "topic": "art",
     "auth": "Mira Bellamy",
-    "descriptoin": "A curated tour of imagined landscapes, distant mountains, and tranquil waters."
+    "description": "A curated tour of imagined landscapes, distant mountains, and tranquil waters."
   },
   {
     "id": "04df4951-cb38-44e0-88bd-9baace4607eb",
@@ -29,7 +29,7 @@
     "image": "155c600f-a6e6-4d1a-b606-bf7fa90dcd1d.jpeg",
     "topic": "programming",
     "auth": "Theo Calder",
-    "descriptoin": "An exploration of geometric abstraction and the algorithms behind generative visual art."
+    "description": "An exploration of geometric abstraction and the algorithms behind generative visual art."
   },
   {
     "id": "577370df-9b8e-4389-8b53-307c6c8d415b",
@@ -37,7 +37,7 @@
     "image": "a5d2d9bb-6692-4597-aeca-2f34dc1b7d05.jpeg",
     "topic": "art",
     "auth": "Amara Winslow",
-    "descriptoin": "Portraits across eras that reveal the changing ways artists depict identity and expression."
+    "description": "Portraits across eras that reveal the changing ways artists depict identity and expression."
   },
   {
     "id": "263fc74a-b6f6-4acd-a559-0146a50d68b8",
@@ -45,7 +45,7 @@
     "image": "4cd0d76a-c735-4ef1-9b1b-4e46ae3b0e48.jpeg",
     "topic": "art",
     "auth": "Clara Renwick",
-    "descriptoin": "An intimate study of still-life painting, delicate flowers, and the passing of time."
+    "description": "An intimate study of still-life painting, delicate flowers, and the passing of time."
   },
   {
     "id": "2e29f4d7-63d1-47f4-8b28-4c5fcc1021ed",
@@ -53,7 +53,7 @@
     "image": "abc14d96-dc1d-4f82-8f58-a5d4b4a7201f.jpeg",
     "topic": "art",
     "auth": "Naomi Takeda",
-    "descriptoin": "A celebration of Japanese woodblock prints and the artistic legacy of waves and motion."
+    "description": "A celebration of Japanese woodblock prints and the artistic legacy of waves and motion."
   },
   {
     "id": "8b21d83e-69a9-4cb0-9b91-b2a0e3d3a04f",
@@ -61,23 +61,7 @@
     "image": "b8567487-fe6d-4cd9-a5c4-31adb17f2582.jpeg",
     "topic": "art",
     "auth": "Elias Verne",
-    "descriptoin": "A study of evocative interiors and the memories, spaces, and identities they hold."
-  },
-  {
-    "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
-    "name": "Places Beyond",
-    "image": "96095aaa-f1ab-418b-8570-e9ca4477cebc.jpeg",
-    "topic": "art",
-    "auth": "Sofia Arden",
-    "descriptoin": "A collection of dreamlike cityscapes and imagined architecture beyond familiar horizons."
-  },
-  {
-    "id": "1dda2362-29e9-4316-903b-1e9074eaf60a",
-    "name": "Matter and Meaning",
-    "image": "c171a56c-bb0c-408a-83d3-fa6a2d134d72.jpeg",
-    "topic": "art",
-    "auth": "Adrian Kessler",
-    "description": "A creative coding perspective on textures, layered compositions, and procedural art."
+    "description": "A study of evocative interiors and the memories, spaces, and identities they hold."
   },
   {
     "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
@@ -86,6 +70,14 @@
     "topic": "art",
     "auth": "Sofia Arden",
     "description": "A collection of dreamlike cityscapes and imagined architecture beyond familiar horizons."
+  },
+  {
+    "id": "1dda2362-29e9-4316-903b-1e9074eaf60a",
+    "name": "Matter and Meaning",
+    "image": "c171a56c-bb0c-408a-83d3-fa6a2d134d72.jpeg",
+    "topic": "art",
+    "auth": "Adrian Kessler",
+    "description": "A creative coding perspective on textures, layered compositions, and procedural art."
   },
   {
     "id": "c34d81c9-8e39-4752-b17f-5fdaa41005e8",

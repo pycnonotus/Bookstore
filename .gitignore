@@ -152,3 +152,6 @@ vite.config.ts.timestamp-*
 
 # Code Generation
 pug
+
+# Local browser verification artifacts
+artifacts/
