@@ -54,7 +54,7 @@ npm run test:embeddings
 npm run test:browser:embeddings
 ```
 
-Model weights are ignored by Git and downloaded by `models:prepare`. Vite copies them from `public/models/` into the built site. Source and model licenses remain with their original publishers.
+Model weights are ignored by Git and downloaded by `models:prepare`. `npm run build` runs this preparation automatically before Vite copies them from `public/models/` into the built site. Existing downloads are reused. Never force-add `public/models/` to Git. Source and model licenses remain with their original publishers.
 
 Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the generated intent artifact is retained in `src/data/search-intent-model.json` for later experiments; the strict search UI uses raw embedding similarity. To start a new 30-minute interval while retaining existing examples:
 
