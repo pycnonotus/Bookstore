@@ -32,15 +32,15 @@ The navbar stays at the top while scrolling. Its measured height keeps topic hea
 
 Topic shelves stack over the previous shelf as you scroll, with a subtle parallax depth effect. Each topic heading and book count stays visible above its books until the next topic takes over. Taller shelves scroll through all their books before pinning. Stack offsets respond to viewport and filter changes. Reduced-motion preferences and keyboard focus inside the shelves use normal document flow while keeping topic headings sticky and every book accessible.
 
-## Client-side book chat
+## Client-side book search
 
-Use **Find a book** in the navbar. Try `book about math`, `js libs`, a title or author, then `under $30` or `something cheaper`. Results come from the actual catalog, with the same Save state as the shelves. Clear chat starts a new search.
+Use **Find a book** in the navbar. Enter a free-text description and press Search or Enter. Each submission is an independent query; there is no chat history or inherited budget. All matching books are shown, with their raw cosine similarity, only when the score is **at least 0.9**. This strict cutoff can produce no results for broad queries. Keyword scores and the trained topic classifier cannot bypass it.
 
-Text search works immediately. Enable semantic search to compute MiniLM embeddings locally in a Web Worker. Models are static assets served with the website; no AI server or API key is used at runtime. The model and catalog vectors are cached in the browser. Changing catalog descriptions invalidates the text index.
+MiniLM text embeddings load automatically on first search in a Web Worker. Models are static assets served with the website; no AI server or API key is used at runtime. The model and catalog vectors are cached in the browser. Changing catalog descriptions invalidates the text index. Failed model loading shows an error rather than unscored recommendations.
 
-In the same chat, type a visual description such as `the book with a marble sculpture on its cover`. A separate CLIP worker compares your text embedding with embeddings of all catalog covers. No photo upload is needed. Cover matching is approximate and loads larger model assets (about 147 MB for the vision and text encoders) only on first use. Topic and price constraints still apply.
+For visual search, type a description such as `the book with a marble sculpture on its cover`. A separate CLIP worker compares the text with embeddings of all catalog covers. The same raw 0.9 cutoff applies, so visual queries may return no results. No photo upload is needed. The larger vision and text encoders (about 147 MB) load only on first visual search.
 
-Price queries include `math cost 40$ ore more`, `no more than $30`, `between $20 and $40`, and budget follow-ups. Replies show the top three picks with actual demo prices. A small locally trained Naive Bayes intent model helps topic ranking; deterministic rules enforce price limits.
+Topic and price constraints use the current query and the JSON catalog prices. Queries can include `math cost 40$ ore more`, `no more than $30`, or `between $20 and $40`. Save controls stay synchronized with the catalog and staff picks.
 
 Prepare static models before building on a fresh checkout:
 
@@ -48,6 +48,7 @@ Prepare static models before building on a fresh checkout:
 npm run models:prepare
 npm run build
 npm run test:search
+npm run test:search:strict
 npm run test:prices
 npm run test:embeddings
 npm run test:browser:embeddings
@@ -55,7 +56,7 @@ npm run test:browser:embeddings
 
 Model weights are ignored by Git and downloaded by `models:prepare`. Vite copies them from `public/models/` into the built site. Source and model licenses remain with their original publishers.
 
-Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the browser uses only `src/data/search-intent-model.json`. To start a new 30-minute interval while retaining existing examples:
+Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the generated intent artifact is retained in `src/data/search-intent-model.json` for later experiments; the strict search UI uses raw embedding similarity. To start a new 30-minute interval while retaining existing examples:
 
 ```powershell
 $env:TRAIN_NEW_RUN = '1'

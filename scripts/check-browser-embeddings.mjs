@@ -1,6 +1,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
+import books from '../mock-data/data.json' with { type: 'json' };
 const server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', '0'], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
 let browser;
 let serverUrl;
@@ -16,32 +17,23 @@ try {
   page.on('requestfailed', request => console.log('Request failed:', request.url(), request.failure()?.errorText));
   await page.goto(serverUrl);
   const chat = page.locator('#book-chat');
-  await chat.getByRole('button', {name:'Enable semantic search', exact:true}).waitFor();
-  await page.evaluate(() => {
-    const status = document.querySelector('#book-chat [role="status"]');
-    new MutationObserver(() => console.log(`Embedding status: ${status.textContent}`)).observe(status, {subtree:true, childList:true, characterData:true});
-  });
-  page.on('console', message => { if (message.text().startsWith('Embedding status:')) console.log(message.text()); });
-  await chat.getByRole('button', {name:'Enable semantic search', exact:true}).click();
-  await chat.getByRole('button', {name:'Semantic search enabled', exact:true}).waitFor({timeout:240000});
-  for (const text of ['book about math', 'JS libs', 'flower', 'stories told through carved stone']) {
-    await chat.getByRole('textbox').fill(text);
-    await chat.getByRole('button', {name:'Find books', exact:true}).click();
-    await page.waitForFunction(() => document.querySelector('#book-chat button[type="submit"]').textContent === 'Find books');
-    assert.ok(await chat.locator('article').count() > 0, `Matches for ${text}`);
-    console.log(text, await chat.locator('article h3').allTextContents());
-    if (text === 'flower') assert.ok((await chat.locator('article h3').allTextContents()).includes('The Fleeting Beauty'));
+  const book = books[0];
+  const exactDocument = `${book.name}. Topic: ${book.topic}. ${book.description}`;
+  async function search(text) {
+    await chat.getByRole('searchbox').fill(text);
+    await chat.getByRole('button', {name:'Search', exact:true}).click();
+    await page.waitForFunction(() => document.querySelector('#book-chat button[type="submit"]').textContent === 'Search', {timeout:180000});
+    const scores = await chat.locator('[data-similarity]').evaluateAll(rows => rows.map(row => Number(row.dataset.similarity)));
+    assert.ok(scores.every(score => score >= 0.9), 'Only raw similarity >= 0.9 may appear');
+    return chat.locator('article h3').allTextContents();
   }
-  await chat.getByRole('textbox').fill('the book with a marble sculpture on its cover');
-  await chat.getByRole('button', {name:'Find books', exact:true}).click();
-  await page.waitForFunction(() => document.querySelector('#book-chat [role="status"]').textContent.includes('Cover-image matches ready'), {timeout:180000});
-  const visualTitles = await chat.locator('article h3').allTextContents();
-  console.log('Visual cover matches:', visualTitles);
-  assert.ok(visualTitles.includes('Forms of Silence'), 'Visual search should retrieve the marble sculpture cover');
+  assert.ok((await search(exactDocument)).includes(book.name), 'Exact indexed document should score near one');
+  assert.deepEqual(await search('zzzznonexistent'), [], 'Unrelated query should return no results');
+  await search('the book with a marble sculpture on its cover');
+  assert.ok((await page.evaluate(async () => (await (await caches.open('book-cover-embeddings-v1')).keys()).length)) > 0, 'Cover index must be cached');
   const cacheSize = await page.evaluate(async () => (await (await caches.open('book-embeddings-v1')).keys()).length);
   assert.ok(cacheSize > 0, 'Book embeddings must be cached');
   await page.reload();
-  await chat.getByRole('button', {name:'Enable semantic search', exact:true}).click();
-  await chat.getByRole('button', {name:'Semantic search enabled', exact:true}).waitFor({timeout:60000});
-  console.log('Passed: real browser model, catalog embeddings, semantic queries, cache reuse.');
+  assert.ok((await search(exactDocument)).includes(book.name), 'Cached index must support the strict cutoff');
+  console.log('Passed: real text and cover models, strict 0.9 cutoff, empty states, independent queries, cache reuse.');
 } finally { await browser?.close(); server.kill(); }
