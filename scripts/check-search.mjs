@@ -14,4 +14,6 @@ assert.ok(budget.books.length > 0);
 assert.ok(budget.books.every(book => getBookPrice(book.name) < 30));
 assert.equal(searchBooks('zzzznonexistent').books.length, 0);
 assert.equal(searchBooks('Forms of Silence').books[0].name, 'Forms of Silence');
+assert.ok(searchBooks('flower').books.some(book => book.name === 'The Fleeting Beauty'), 'Singular flower should find The Fleeting Beauty');
+assert.ok(searchBooks('flowers').books.some(book => book.name === 'The Fleeting Beauty'), 'Plural flowers should find The Fleeting Beauty');
 console.log('Passed: math, JS libraries, budget follow-ups, unknown queries, exact title.');

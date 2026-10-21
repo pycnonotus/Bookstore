@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { searchBooks } from '../utils/bookSearch';
 import BookCard from './BookCard';
+import books from '../../mock-data/data.json' with { type: 'json' };
+import { matchesPrice, explicitTopics } from '../utils/searchConstraints';
+import { getBookPrice } from '../utils/bookPrice';
 
 export default function BookChat({ savedIds, onSavedChange }) {
   const [input, setInput] = useState('');
@@ -12,10 +15,27 @@ export default function BookChat({ savedIds, onSavedChange }) {
   const [busy, setBusy] = useState(false);
   const workerRef = useRef(null);
   const pendingRef = useRef(null);
+  const coverWorkerRef = useRef(null);
   useEffect(() => () => {
     workerRef.current?.terminate();
+    coverWorkerRef.current?.terminate();
     pendingRef.current?.reject(new Error('Search closed'));
   }, []);
+
+  async function searchCovers(text) {
+    if (!coverWorkerRef.current) coverWorkerRef.current = new Worker(new URL('../workers/coverEmbeddings.js', import.meta.url), { type: 'module' });
+    return new Promise((resolve, reject) => {
+      const worker = coverWorkerRef.current;
+      const timer = setTimeout(() => { worker.terminate(); coverWorkerRef.current = null; reject(new Error('Cover search timed out')); }, 180000);
+      worker.onerror = () => { clearTimeout(timer); reject(new Error('Cover search unavailable')); };
+      worker.onmessage = ({ data }) => {
+        if (data.type === 'progress') setProgress(data.message);
+        if (data.type === 'error') { clearTimeout(timer); reject(new Error(data.message)); }
+        if (data.type === 'results') { clearTimeout(timer); resolve(data.matches); }
+      };
+      worker.postMessage({ query: text });
+    });
+  }
 
   function enableSemantic() {
     workerRef.current?.terminate();
@@ -57,7 +77,16 @@ export default function BookChat({ savedIds, onSavedChange }) {
     if (!text || busy) return;
     setBusy(true);
     let result = searchBooks(text, query);
-    if (semanticStatus === 'ready') {
+    if (/\b(cover|picture|image|looks like|photo|front)\b/i.test(result.query)) {
+      setProgress('Searching cover images locally. First use loads the vision model and indexes our covers.');
+      try {
+        const visual = await searchCovers(result.constraints.freeText);
+        const topics = explicitTopics(result.constraints.freeText);
+        const matched = visual.map(match => books.find(book => book.id === match.id)).filter(book => book && matchesPrice(getBookPrice(book.name), result.constraints) && (!topics.length || topics.includes(book.topic))).slice(0, 3);
+        result = { ...result, books: matched, answer: matched.length ? `Top ${matched.length} picks by cover image${result.constraints.description ? ` ${result.constraints.description}` : ''}: ` + matched.map(book => `"${book.name}"`).join('; ') + '. Visual matches are approximate.' : 'No cover matches within those filters. Try a different price range.' };
+        setProgress('Cover-image matches ready. All processing stayed in your browser.');
+      } catch { setProgress('Cover-image search unavailable. Showing catalog text matches.'); }
+    } else if (semanticStatus === 'ready') {
       try { result = searchBooks(text, query, await semanticSearch(result.query)); }
       catch { setProgress('Semantic search failed. Showing text matches.'); }
     }
@@ -80,7 +109,7 @@ export default function BookChat({ savedIds, onSavedChange }) {
       </div>
       <p role="status" className="mt-3 text-xs text-ink/70">{progress || 'Text search ready. Replies use catalog descriptions. Prices are demo prices.'}</p>
       <div role="log" aria-label="Book search conversation" aria-live="polite" className="mt-6 max-h-80 space-y-3 overflow-y-auto rounded-xl bg-paper p-4">
-        {!messages.length && <p className="text-sm">Try “books about math”, “JS libs”, or “flowers under $30”. Follow up with “something cheaper”.</p>}
+        {!messages.length && <p className="text-sm">Try “books about math”, “JS libs”, or “the book with flowers on the cover”. Follow up with “something cheaper”.</p>}
         {messages.map((message, index) => <p key={index} className={`break-words rounded-lg p-3 text-sm leading-relaxed ${message.role === 'user' ? 'ml-auto max-w-xl bg-spruce text-white' : 'bg-white'}`}><span className="font-semibold">{message.role === 'user' ? 'You' : 'Bookshelf'}: </span>{message.text}</p>)}
       </div>
       <form onSubmit={send} className="mt-4 flex min-w-0 flex-col gap-3 sm:flex-row">

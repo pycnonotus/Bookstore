@@ -1,21 +1,26 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { trainIntentModel, predictTopic } from '../src/utils/intentModel.js';
 const duration = Number(process.env.TRAIN_SECONDS || 1800) * 1000;
-const deadline = Date.now() + duration;
-const started = new Date().toISOString();
+let existingReport = null, existingRows = [];
+try {
+  existingReport = JSON.parse(await readFile(new URL('../training/report.json', import.meta.url), 'utf8'));
+  existingRows = JSON.parse(await readFile(new URL('../training/search-queries.json', import.meta.url), 'utf8'));
+} catch { /* First run. */ }
+const started = process.env.TRAIN_NEW_RUN === '1' ? new Date().toISOString() : existingReport?.started || new Date().toISOString();
+const deadline = Date.parse(started) + duration;
 const endpoint = process.env.TRAIN_URL || 'http://127.0.0.1:1234/v1';
 const model = process.env.TRAIN_MODEL || 'qwen3.5-4b';
 const topics = ['art', 'programming', 'cooking', 'math'];
 const catalog = JSON.parse(await readFile(new URL('../mock-data/data.json', import.meta.url), 'utf8'));
 await mkdir(new URL('../training/', import.meta.url), { recursive: true });
-const rows = [], seen = new Set();
-let batches = 0, rejected = 0, errors = 0;
+const rows = existingRows, seen = new Set(rows.map(row => row.query.toLowerCase()));
+let batches = existingReport?.batches || 0, rejected = existingReport?.rejected || 0, errors = existingReport?.errors || 0;
 async function checkpoint() {
   const train = rows.filter((_, index) => index % 5 !== 0);
   const test = rows.filter((_, index) => index % 5 === 0);
   const trained = trainIntentModel(train);
   const hits = test.filter(row => predictTopic(row.query, trained)?.topic === row.topic).length;
-  const report = { started, updated: new Date().toISOString(), elapsedSeconds: Math.round((Date.now() - Date.parse(started)) / 1000), model, batches, examples: rows.length, trainingExamples: train.length, heldOutExamples: test.length, heldOutAccuracy: test.length ? hits / test.length : null, rejected, errors, note: 'Local Qwen generated supervision; multinomial Naive Bayes topic classifier trained offline. Qwen weights unchanged. Price constraints enforced by deterministic parser.' };
+  const report = { started, updated: new Date().toISOString(), elapsedSeconds: Math.round((Date.now() - Date.parse(started)) / 1000), model, batches, examples: rows.length, trainingExamples: train.length, heldOutExamples: test.length, heldOutAccuracy: test.length ? hits / test.length : null, perTopic: Object.fromEntries(topics.map(topic => [topic, rows.filter(row => row.topic === topic).length])), rejected, errors, note: 'Local Qwen generated supervision; multinomial Naive Bayes topic classifier trained offline. Qwen weights unchanged. Price constraints enforced by deterministic parser. Synthetic held-out queries may resemble training examples; this is not a real-user accuracy estimate.' };
   await writeFile(new URL('../src/data/search-intent-model.json', import.meta.url), JSON.stringify(trained));
   await writeFile(new URL('../training/search-queries.json', import.meta.url), JSON.stringify(rows, null, 2));
   await writeFile(new URL('../training/report.json', import.meta.url), JSON.stringify(report, null, 2));
@@ -36,10 +41,19 @@ while (Date.now() < deadline) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const body = await response.json();
     const raw = body.choices?.[0]?.message?.content || '';
-    const candidates = JSON.parse(raw.replace(/^```(?:json)?\s*|\s*```$/g, '').trim());
+    await writeFile(new URL(`../training/last-${topic}.txt`, import.meta.url), raw);
+    const cleaned = raw.replace(/^```(?:json)?\s*|\s*```$/g, '').trim();
+    let candidates;
+    try { candidates = JSON.parse(cleaned); }
+    catch {
+      // Some local chat templates omit the surrounding array brackets.
+      try { candidates = JSON.parse(`[${cleaned.replace(/,\s*$/, '')}]`); }
+      catch { candidates = cleaned.split('\n').flatMap(line => { try { return JSON.parse(line.replace(/,\s*$/, '')); } catch { return []; } }); }
+    }
+    if (!Array.isArray(candidates)) candidates = candidates?.queries || candidates?.examples;
     if (!Array.isArray(candidates)) throw new Error('Invalid examples');
     for (const query of candidates) {
-      if (typeof query !== 'string' || query.length < 8 || query.length > 250 || seen.has(query.toLowerCase())) { rejected++; continue; }
+      if (typeof query !== 'string' || query.length < 8 || query.length > 250 || !/[a-z]/i.test(query) || seen.has(query.toLowerCase())) { rejected++; continue; }
       seen.add(query.toLowerCase()); rows.push({ query, topic });
     }
   } catch (error) { errors++; console.log(`Batch issue: ${error.message}`); }

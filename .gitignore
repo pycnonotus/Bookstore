@@ -155,3 +155,8 @@ pug
 
 # Local browser verification artifacts
 artifacts/
+
+# Downloaded browser model weights and local diagnostics
+public/models/
+training/last-*.txt
+training/debug-model.mjs

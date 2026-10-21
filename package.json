@@ -9,7 +9,11 @@
     "preview": "vite preview",
     "test:browser": "node scripts/check-browser.mjs",
     "test:search": "node scripts/check-search.mjs",
-    "test:embeddings": "node scripts/check-embeddings.mjs"
+    "test:embeddings": "node scripts/check-embeddings.mjs",
+    "test:prices": "node scripts/check-price-intents.mjs",
+    "test:browser:embeddings": "node scripts/check-browser-embeddings.mjs",
+    "train:search": "node scripts/train-search-local.mjs",
+    "models:prepare": "node scripts/prepare-browser-models.mjs"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.1",

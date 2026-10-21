@@ -36,17 +36,34 @@ Topic shelves stack over the previous shelf as you scroll, with a subtle paralla
 
 Use **Find a book** in the navbar. Try `book about math`, `js libs`, a title or author, then `under $30` or `something cheaper`. Results come from the actual catalog, with the same Save state as the shelves. Clear chat starts a new search.
 
-The chat uses a small in-memory text index, synonym expansion, and grounded template replies. It is retrieval-based search, not a running generative LLM or full semantic RAG. There is no chat backend, model download, API key, or external request in the website. The index builds once from the bundled catalog; editing the catalog and rebuilding updates search.
+Text search works immediately. Enable semantic search to compute MiniLM embeddings locally in a Web Worker. Models are static assets served with the website; no AI server or API key is used at runtime. The model and catalog vectors are cached in the browser. Changing catalog descriptions invalidates the text index.
 
-Your local Qwen can enrich the catalog offline with extra keywords. In PowerShell:
+In the same chat, type a visual description such as `the book with a marble sculpture on its cover`. A separate CLIP worker compares your text embedding with embeddings of all catalog covers. No photo upload is needed. Cover matching is approximate and loads larger model assets (about 147 MB for the vision and text encoders) only on first use. Topic and price constraints still apply.
 
-```powershell
-$env:BOOK_CHAT_BASE_URL = 'http://127.0.0.1:1234/v1'
-$env:BOOK_CHAT_MODEL = 'qwen3.5-4b'
-npm run search:enrich
+Price queries include `math cost 40$ ore more`, `no more than $30`, `between $20 and $40`, and budget follow-ups. Replies show the top three picks with actual demo prices. A small locally trained Naive Bayes intent model helps topic ranking; deterministic rules enforce price limits.
+
+Prepare static models before building on a fresh checkout:
+
+```sh
+npm run models:prepare
+npm run build
+npm run test:search
+npm run test:prices
+npm run test:embeddings
+npm run test:browser:embeddings
 ```
 
-This authoring script sends book titles and descriptions to your configured local model and writes validated `searchKeywords` into the existing data file only after all books succeed. Review the generated keywords with `git diff`, then run `npm run test:search` and `npm run build`. No training is required. The model server can be shut down once the keywords are saved.
+Model weights are ignored by Git and downloaded by `models:prepare`. Vite copies them from `public/models/` into the built site. Source and model licenses remain with their original publishers.
+
+Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the browser uses only `src/data/search-intent-model.json`. To start a new 30-minute interval while retaining existing examples:
+
+```powershell
+$env:TRAIN_NEW_RUN = '1'
+$env:TRAIN_SECONDS = '1800'
+npm run train:search
+```
+
+The default local endpoint is `http://127.0.0.1:1234/v1` with model `qwen3.5-4b`; override `TRAIN_URL` and `TRAIN_MODEL` if needed. Review generated examples and report metrics before accepting a checkpoint. Synthetic accuracy is not an estimate of real-user accuracy. Restart the dev server after training to load the final checkpoint.
 
 ## Browser checks
 

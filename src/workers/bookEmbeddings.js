@@ -1,8 +1,10 @@
 import { pipeline, env } from '@huggingface/transformers';
-import books from '../../mock-data/data.json';
+import books from '../../mock-data/data.json' with { type: 'json' };
 import { rankEmbeddings } from '../utils/embeddingSearch';
 
-env.allowLocalModels = false;
+env.allowLocalModels = true;
+env.allowRemoteModels = false;
+env.localModelPath = '/models/';
 env.backends.onnx.wasm.numThreads = 1;
 let indexPromise;
 const modelId = 'Xenova/all-MiniLM-L6-v2';
