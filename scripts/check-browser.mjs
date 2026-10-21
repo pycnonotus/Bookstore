@@ -18,6 +18,36 @@ const topicControls = catalog.getByRole('group', {name:'Browse by topic', exact:
 const topicCheckbox = topic => topicControls.getByRole('checkbox', {name:new RegExp(`^${topicName(topic)}\\b.*\\b${books.filter(book => book.topic === topic).length}\\b`)});
 const toggleTopic = topic => topicCheckbox(topic).locator('..').locator('.topic-chip').click();
 const allTopicsButton = topicControls.getByRole('button', {name:'All topics', exact:true});
+async function assertBookPrices(scope, expectedPrices) {
+  const cards = scope.locator('article');
+  assert.equal(await cards.locator('[data-book-price]:visible').count(), await cards.count(), 'Every book card must show a price');
+  assert.equal(await cards.locator('a[aria-label^="Buy a copy of "]:visible').count(), await cards.count(), 'Every book card must show a Buy a copy link');
+  const rows = await cards.evaluateAll(elements => elements.map(card => ({
+    title: card.querySelector('h3, h4').textContent,
+    prices: [...card.querySelectorAll('[data-book-price]')].map(price => price.textContent.trim()),
+    buyLinks: [...card.querySelectorAll('a[aria-label^="Buy a copy of "]')].map(link => ({href:link.href, label:link.getAttribute('aria-label')})),
+  })));
+  const pricesByTitle = new Map();
+  for (const {title, prices, buyLinks} of rows) {
+    assert.equal(prices.length, 1, `${title} must have one price`);
+    const [price] = prices;
+    assert.match(price, /^\$(?:0|[1-9]\d*)\.\d{2}$/, `${title} must show a dollar price with two decimals`);
+    const amount = Number(price.slice(1));
+    assert.ok(amount >= 4.99 && amount <= 49.99, `${title} price must be between $4.99 and $49.99`);
+    if (expectedPrices) assert.equal(price, expectedPrices.get(title), `${title} price must remain consistent`);
+    assert.equal(buyLinks.length, 1, `${title} must have one Buy a copy link`);
+    assert.equal(buyLinks[0].label, `Buy a copy of ${title}`);
+    const order = new URL(buyLinks[0].href);
+    assert.equal(order.protocol, 'mailto:');
+    assert.equal(order.searchParams.get('subject'), `Book order: ${title}`);
+    const message = order.searchParams.get('body');
+    for (const detail of [title, books.find(book => book.name === title).auth, price]) {
+      assert.ok(message?.includes(detail), `${title} order message must include ${detail}`);
+    }
+    pricesByTitle.set(title, price);
+  }
+  return pricesByTitle;
+}
 async function assertCatalog(expectedTopics) {
   const expectedCount = books.filter(book => expectedTopics.includes(book.topic)).length;
   await page.waitForFunction(({topics, count}) => {
@@ -51,6 +81,9 @@ try {
   await page.goto('http://127.0.0.1:5174');
   await catalog.locator('article').first().waitFor();
   await assertCatalog(topics);
+  const catalogPrices = await assertBookPrices(catalog);
+  assert.ok(new Set(catalogPrices.values()).size > 1, 'Different book titles should have varied prices');
+  await assertBookPrices(page.locator('#staff-picks'), catalogPrices);
   assert.equal(await topicControls.getByRole('checkbox').count(), topics.length);
   assert.equal(await allTopicsButton.getAttribute('aria-pressed'), 'true');
   for (const topic of topics) {
@@ -71,6 +104,7 @@ try {
   await page.locator('#catalog').getByRole('button', {name:`Save ${first.name}`, exact:true}).waitFor();
   await page.locator('#staff-picks').getByRole('button', {name:`Save ${first.name}`, exact:true}).click();
   await page.locator('#catalog').getByRole('button', {name:`Unsave ${first.name}`, exact:true}).waitFor();
+  await assertBookPrices(catalog, catalogPrices);
   const other = topics.find(topic => topic !== first.topic);
   await toggleTopic(other);
   await assertCatalog([other]);
@@ -83,6 +117,8 @@ try {
   assert.equal(await topicCheckbox(first.topic).isChecked(), true);
   await catalog.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).waitFor();
   assert.equal(await catalog.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).getAttribute('aria-pressed'), 'true');
+  await assertBookPrices(catalog, catalogPrices);
+  await assertBookPrices(page.locator('#staff-picks'), catalogPrices);
   await toggleTopic(other);
   await assertCatalog([first.topic]);
   assert.equal(await topicCheckbox(first.topic).isChecked(), true);
@@ -125,6 +161,7 @@ try {
   await page.setViewportSize({width:1280,height:900});
   await catalog.evaluate(element => element.scrollIntoView({block:'start', behavior:'instant'}));
   await page.screenshot({path:'artifacts/catalog-desktop.png', animations:'disabled'});
+  await catalog.locator('article').first().screenshot({path:'artifacts/book-card.png', animations:'disabled'});
   await toggleTopic(first.topic);
   await toggleTopic(other);
   await assertCatalog(selectedTopics);
@@ -132,6 +169,11 @@ try {
   await page.setViewportSize({width:375,height:900});
   await catalog.evaluate(element => element.scrollIntoView({block:'start', behavior:'instant'}));
   await page.screenshot({path:'artifacts/catalog-mobile.png', animations:'disabled'});
+  await page.reload();
+  await catalog.locator('article').first().waitFor();
+  await assertCatalog(topics);
+  await assertBookPrices(catalog, catalogPrices);
+  await assertBookPrices(page.locator('#staff-picks'), catalogPrices);
   assert.deepEqual(errors, []);
-  console.log(`Passed: ${books.length} cards in ${topics.length} topic groups, multi-select/reset/keyboard filtering, synchronized saves retained across filters, reduced-motion support, no overflow at 10 all-topic and 4 filtered widths, no runtime errors.`);
+  console.log(`Passed: ${books.length} cards in ${topics.length} topic groups, visible dollar prices within $4.99–$49.99 consistent across staff picks/saves/filters/reload, Buy a copy links with matching order details, multi-select/reset/keyboard filtering, synchronized saves retained across filters, reduced-motion support, no overflow at 10 all-topic and 4 filtered widths, no runtime errors.`);
 } finally { await browser.close(); server.kill(); }

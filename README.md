@@ -24,6 +24,8 @@ npm run preview
 
 MainContent owns the multi-select topic filter using useState. Select one or more topic checkboxes to show their shelves, each with a heading and book count. Clearing the selection or choosing All topics shows the full catalog. Topic chips, shelves, and cards use CSS transitions and entrance animations that respect reduced-motion preferences. App owns saved-book state so the catalog and StaffPicks share the same selections. Staff recommendations are stored on books in the catalog data array. SaveToggle is controlled through its value and onChange props. Saved selections survive filter changes and reset on reload.
 
+Every catalog and staff-pick card shows a demo price between $4.99 and $49.99. `src/utils/bookPrice.js` hashes the book title to keep prices consistent across filtering, saves, and reloads. Buy a copy opens an email order enquiry to the bookstore's contact address with the title, author, and displayed price filled in.
+
 The layout starts with one column and expands at sm, md, and lg breakpoints. Containers, wrapping navigation, and shrinkable grid children prevent horizontal overflow without hiding content.
 
 ## Browser checks
