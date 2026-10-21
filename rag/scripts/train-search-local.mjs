@@ -1,5 +1,5 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { trainIntentModel, predictTopic } from '../src/utils/intentModel.js';
+import { trainIntentModel, predictTopic } from '../../src/utils/intentModel.js';
 const duration = Number(process.env.TRAIN_SECONDS || 1800) * 1000;
 let existingReport = null, existingRows = [];
 try {
@@ -11,7 +11,7 @@ const deadline = Date.parse(started) + duration;
 const endpoint = process.env.TRAIN_URL || 'http://127.0.0.1:1234/v1';
 const model = process.env.TRAIN_MODEL || 'qwen3.5-4b';
 const topics = ['art', 'programming', 'cooking', 'math'];
-const catalog = JSON.parse(await readFile(new URL('../mock-data/data.json', import.meta.url), 'utf8'));
+const catalog = JSON.parse(await readFile(new URL('../../mock-data/data.json', import.meta.url), 'utf8'));
 await mkdir(new URL('../training/', import.meta.url), { recursive: true });
 const rows = existingRows, seen = new Set(rows.map(row => row.query.toLowerCase()));
 let batches = existingReport?.batches || 0, rejected = existingReport?.rejected || 0, errors = existingReport?.errors || 0;
@@ -21,7 +21,7 @@ async function checkpoint() {
   const trained = trainIntentModel(train);
   const hits = test.filter(row => predictTopic(row.query, trained)?.topic === row.topic).length;
   const report = { started, updated: new Date().toISOString(), elapsedSeconds: Math.round((Date.now() - Date.parse(started)) / 1000), model, batches, examples: rows.length, trainingExamples: train.length, heldOutExamples: test.length, heldOutAccuracy: test.length ? hits / test.length : null, perTopic: Object.fromEntries(topics.map(topic => [topic, rows.filter(row => row.topic === topic).length])), rejected, errors, note: 'Local Qwen generated supervision; multinomial Naive Bayes topic classifier trained offline. Qwen weights unchanged. Price constraints enforced by deterministic parser. Synthetic held-out queries may resemble training examples; this is not a real-user accuracy estimate.' };
-  await writeFile(new URL('../src/data/search-intent-model.json', import.meta.url), JSON.stringify(trained));
+  await writeFile(new URL('../models/search-intent-model.json', import.meta.url), JSON.stringify(trained));
   await writeFile(new URL('../training/search-queries.json', import.meta.url), JSON.stringify(rows, null, 2));
   await writeFile(new URL('../training/report.json', import.meta.url), JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report));

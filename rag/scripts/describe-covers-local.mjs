@@ -1,10 +1,10 @@
 import { readFile, writeFile } from 'node:fs/promises';
-const catalogPath = new URL('../mock-data/data.json', import.meta.url);
+const catalogPath = new URL('../../mock-data/data.json', import.meta.url);
 const books = JSON.parse(await readFile(catalogPath, 'utf8'));
 for (const [index, book] of books.entries()) {
   if (book.coverDescription) continue;
   try {
-    const bytes = await readFile(new URL(`../mock-data/photos/${book.image}`, import.meta.url));
+    const bytes = await readFile(new URL(`../../mock-data/photos/${book.image}`, import.meta.url));
     const mime = book.image.endsWith('.png') ? 'image/png' : 'image/jpeg';
     const response = await fetch('http://127.0.0.1:1234/v1/chat/completions', {
       method: 'POST', headers: { 'Content-Type': 'application/json' }, signal: AbortSignal.timeout(30000),

@@ -42,7 +42,7 @@ The JSON stores subjects, aliases, editorial reading levels (`unspecified` where
 
 Try `math books`, `JS libs`, `flower`, `algebra for beginners`, `math cost 40$ ore more`, or `the book with white flowers on the cover`.
 
-See [the training walkthrough](docs/search-training.md) for indexing versus training, local fine-tuning steps, and the local-Qwen/assistant review process. `training/retrieval-train.json` contains 33 accepted examples; `training/retrieval-rejected.json` explains three rejections. The separate 26-case development regression set and reports are in `training/retrieval-eval*.json`. Run `npm run test:search:hybrid` to regenerate the direct retrieval report. The real-model browser suite writes `training/browser-retrieval-report.json`, including a comparison with the previous 0.9 policy on the same enriched catalog.
+See [the training walkthrough](rag/docs/search-training.md) for indexing versus training, local fine-tuning steps, and the local-Qwen/assistant review process. `rag/training/retrieval-train.json` contains 33 accepted examples; `rag/training/retrieval-rejected.json` explains three rejections. The separate 26-case development regression set and reports are in `rag/training/retrieval-eval*.json`. Run `npm run test:search:hybrid` to regenerate the direct retrieval report. The real-model browser suite writes `rag/training/browser-retrieval-report.json`, including a comparison with the previous 0.9 policy on the same enriched catalog.
 
 Prepare static models before building on a fresh checkout:
 
@@ -58,7 +58,7 @@ npm run test:browser:embeddings
 
 Model weights are ignored by Git and downloaded by `models:prepare`. `npm run build` runs this preparation automatically before Vite copies them from `public/models/` into the built site. Existing downloads are reused. Never force-add `public/models/` to Git. Source and model licenses remain with their original publishers.
 
-Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `training/`; the generated intent artifact is retained in `src/data/search-intent-model.json` for later experiments; the shelf search uses metadata and local embeddings; the topic classifier is retained only for experiments. To start a new 30-minute interval while retaining existing examples:
+Offline training with your local Qwen is optional authoring work. It generates supervised examples and trains the small browser intent classifier, not Qwen itself. Checkpoints and synthetic held-out metrics live in `rag/training/`; the generated intent artifact is retained in `rag/models/search-intent-model.json` for later experiments; the shelf search uses metadata and local embeddings; the topic classifier is retained only for experiments. To start a new 30-minute interval while retaining existing examples:
 
 ```powershell
 $env:TRAIN_NEW_RUN = '1'

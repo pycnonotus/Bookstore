@@ -38,8 +38,8 @@ Prices are deterministic constraints from `price` and `currency` in the JSON. A 
 
 1. Local Qwen generated 36 book-specific candidate queries, with positive book IDs.
 2. The assistant checked the labels against the catalog descriptions. Thirty-three were accepted; three were rejected for an exact-title shortcut or unsupported audience/diet claims.
-3. Accepted examples are in `training/retrieval-train.json`; rejected examples retain reasons in `training/retrieval-rejected.json`.
-4. A separate assistant-authored 26-case regression set is in `training/retrieval-eval.json`. It includes math, JavaScript abbreviations, flowers, spelling, authors, reading levels, cover descriptions, price rules, and no-match cases.
+3. Accepted examples are in `rag/training/retrieval-train.json`; rejected examples retain reasons in `rag/training/retrieval-rejected.json`.
+4. A separate assistant-authored 26-case regression set is in `rag/training/retrieval-eval.json`. It includes math, JavaScript abbreviations, flowers, spelling, authors, reading levels, cover descriptions, price rules, and no-match cases.
 5. `npm run test:search:hybrid` writes the report. Hit@3 asks whether at least one labeled relevant book appears among the first three. Precision@3 counts the proportion of displayed top-three results that are labeled relevant. Constraint failures count price/topic violations.
 
 These are small synthetic regression sets, not evidence of broad real-user accuracy. Repeatedly editing the algorithm after inspecting this set makes it a development set, not an untouched test set. Add new user queries and keep a new, unseen test set before claiming general improvement.

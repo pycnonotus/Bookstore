@@ -11,11 +11,11 @@
     "test:browser": "node scripts/check-browser.mjs",
     "test:search": "node scripts/check-search.mjs",
     "test:search:strict": "node scripts/check-strict-search.mjs",
-    "test:search:hybrid": "node scripts/evaluate-hybrid-search.mjs",
+    "test:search:hybrid": "node rag/scripts/evaluate-hybrid-search.mjs",
     "test:embeddings": "node scripts/check-embeddings.mjs",
     "test:prices": "node scripts/check-price-intents.mjs",
     "test:browser:embeddings": "node scripts/check-browser-embeddings.mjs",
-    "train:search": "node scripts/train-search-local.mjs",
+    "train:search": "node rag/scripts/train-search-local.mjs",
     "models:prepare": "node scripts/prepare-browser-models.mjs"
   },
   "dependencies": {

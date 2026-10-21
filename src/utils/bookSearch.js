@@ -2,7 +2,7 @@ import books from '../../mock-data/data.json' with { type: 'json' };
 import { getBookPrice } from './bookPrice.js';
 import { parsePriceConstraints, matchesPrice, explicitTopics } from './searchConstraints.js';
 import { predictTopic } from './intentModel.js';
-import intentModel from '../data/search-intent-model.json' with { type: 'json' };
+import intentModel from '../../rag/models/search-intent-model.json' with { type: 'json' };
 
 const stopWords = new Set('a an the i me my we you it is are was be have has do does can could would please find show recommend want need looking for some something book books read reading about on of and or to in with that this like enjoy more'.split(' '));
 const aliases = { js: 'javascript jquery react vue angular', libs: 'library libraries jquery react vue angular', libraries: 'library jquery react vue angular', maths: 'math mathematics', mathematics: 'math', coding: 'programming code software', developer: 'programming software', painting: 'art color', paintings: 'art color', flowers: 'floral blooms', nature: 'landscapes mountains waters', calm: 'quiet tranquil silence', peaceful: 'quiet tranquil silence', beginner: 'introduction foundations basics', tech: 'technology programming', scifi: 'science fiction', space: 'cosmic universe astronomy' };

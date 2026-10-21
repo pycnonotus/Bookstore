@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
-const books = JSON.parse(await readFile(new URL('../mock-data/data.json', import.meta.url), 'utf8'));
+const books = JSON.parse(await readFile(new URL('../../mock-data/data.json', import.meta.url), 'utf8'));
 const names = ['Forms of Silence', 'Spectral Blooms', 'The Fleeting Beauty', 'Jquery', 'HTMX', 'React, Angular, or Vue, Pug!', 'Algebra Made Simple', 'Calculus Step by Step', 'Abstract Algebra', 'Pasta Forever', 'Plant Forward', "The Baker's Table"];
 const output = [];
 for (const name of names) {

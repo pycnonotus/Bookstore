@@ -158,5 +158,5 @@ artifacts/
 
 # Downloaded browser model weights and local diagnostics
 public/models/
-training/last-*.txt
-training/debug-model.mjs
+rag/training/last-*.txt
+rag/scripts/debug-model.mjs
