@@ -1,0 +1,332 @@
+[
+  {
+    "query": "books about classical sculpture",
+    "relevantIds": [
+      "b3aed4d5-d7da-4096-8ece-81ab735eb87a"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "visual guides to marble art",
+    "relevantIds": [
+      "b3aed4d5-d7da-4096-8ece-81ab735eb87a"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "books about flowers and painting",
+    "relevantIds": [
+      "417d3301-4be7-4ae9-bcaf-435d03d13c90"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "expressive floral art books",
+    "relevantIds": [
+      "417d3301-4be7-4ae9-bcaf-435d03d13c90"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "color and emotion in painting",
+    "relevantIds": [
+      "417d3301-4be7-4ae9-bcaf-435d03d13c90"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "books about still life painting",
+    "relevantIds": [
+      "263fc74a-b6f6-4acd-a559-0146a50d68b8"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "books on flowers and time",
+    "relevantIds": [
+      "263fc74a-b6f6-4acd-a559-0146a50d68b8"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "intimate studies of floral art",
+    "relevantIds": [
+      "263fc74a-b6f6-4acd-a559-0146a50d68b8"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "books about jQuery history",
+    "relevantIds": [
+      "cd92e446-70e5-4865-a963-21ab07550111"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "legacy jQuery vs modern JavaScript",
+    "relevantIds": [
+      "cd92e446-70e5-4865-a963-21ab07550111"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "jQuery selectors and AJAX tutorials",
+    "relevantIds": [
+      "cd92e446-70e5-4865-a963-21ab07550111"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "books about HTMX web development",
+    "relevantIds": [
+      "c34d81c9-8e39-4752-b17f-5fdaa41005e8"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "how to use HTMX for dynamic pages",
+    "relevantIds": [
+      "c34d81c9-8e39-4752-b17f-5fdaa41005e8"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "frontend framework comparison React Angular Vue Pug",
+    "relevantIds": [
+      "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "best frontend stack for modern web development",
+    "relevantIds": [
+      "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "Pug templating language vs JavaScript frameworks",
+    "relevantIds": [
+      "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "beginner algebra books",
+    "relevantIds": [
+      "7e360e1d-49b3-4565-bc65-1fb618e054ea"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "simple algebra guides for beginners",
+    "relevantIds": [
+      "7e360e1d-49b3-4565-bc65-1fb618e054ea"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "visual explanations of algebra concepts",
+    "relevantIds": [
+      "7e360e1d-49b3-4565-bc65-1fb618e054ea"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "step by step calculus for beginners",
+    "relevantIds": [
+      "157ac9bb-50f3-4925-874a-bd76a08e63c4"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "introductory calculus with visuals",
+    "relevantIds": [
+      "157ac9bb-50f3-4925-874a-bd76a08e63c4"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "understand calculus through examples",
+    "relevantIds": [
+      "157ac9bb-50f3-4925-874a-bd76a08e63c4"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "abstract algebra books for advanced students",
+    "relevantIds": [
+      "e9f3ef08-6efc-4113-aa25-6fe4e6ce00c2"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "understand abstract algebra with visuals",
+    "relevantIds": [
+      "e9f3ef08-6efc-4113-aa25-6fe4e6ce00c2"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "approachable abstract algebra guide",
+    "relevantIds": [
+      "e9f3ef08-6efc-4113-aa25-6fe4e6ce00c2"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "books about Italian pasta recipes",
+    "relevantIds": [
+      "05e682cb-57e3-42c6-b375-b2f7b42c6406"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "cookbooks featuring slow-simmered sauces and handmade ribbons",
+    "relevantIds": [
+      "05e682cb-57e3-42c6-b375-b2f7b42c6406"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "seasonal pasta dishes with regional inspiration",
+    "relevantIds": [
+      "05e682cb-57e3-42c6-b375-b2f7b42c6406"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "plant-based vegetable recipes",
+    "relevantIds": [
+      "85400acb-5a7c-4fd9-b6f2-e6a6c9085e1f"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "healthy herb and fresh produce cooking",
+    "relevantIds": [
+      "85400acb-5a7c-4fd9-b6f2-e6a6c9085e1f"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "recipes for fresh bread and pastries",
+    "relevantIds": [
+      "6e26cef3-0196-4df2-9c14-b816ea6c62e7"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "step-by-step baking guides",
+    "relevantIds": [
+      "6e26cef3-0196-4df2-9c14-b816ea6c62e7"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  },
+  {
+    "query": "how to make doughs and finish loaves",
+    "relevantIds": [
+      "6e26cef3-0196-4df2-9c14-b816ea6c62e7"
+    ],
+    "source": "local-qwen",
+    "reviewed": true,
+    "reviewedBy": "assistant",
+    "reviewBasis": "Book title, description, and editorial metadata; label establishes relevance, not uniqueness."
+  }
+]

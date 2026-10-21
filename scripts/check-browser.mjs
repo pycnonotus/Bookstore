@@ -202,12 +202,12 @@ async function assertStickyNavbar(width) {
     })};
   });
   assert.ok(Math.abs(state.top) <= 1 && state.bottom < 900, `The navbar must stay at the viewport top at ${width}px`);
-  assert.equal(state.links.length, 6, 'The navbar must retain all main links');
+  assert.equal(state.links.length, 5, 'The navbar must retain all main links');
   for (const link of state.links) assert.ok(link.visible, `${link.name} must remain visible above the topic layers at ${width}px`);
   const title = await readTopicHeading(longest.topic);
   assert.ok(title.readable && title.top >= state.bottom && title.top <= state.bottom + 64,
     `The topic title must clear the responsive navbar at ${width}px (${JSON.stringify(title)})`);
-  for (const [name, target] of [['Browse books', 'catalog'], ['Find a book', 'book-chat'], ['Staff picks', 'staff-picks'],
+  for (const [name, target] of [['Browse books', 'catalog'], ['Staff picks', 'staff-picks'],
     ['Events', 'events'], ['Our story', 'about'], ['Visit us', 'contact']]) {
     await nav.getByRole('link', {name, exact:true}).click();
     await settleLayout();
@@ -320,25 +320,43 @@ page.on('pageerror', error => { errors.push(error.message); console.log('Browser
 try {
   await page.emulateMedia({reducedMotion:'no-preference'});
   await page.goto('http://127.0.0.1:5174');
-  const chat = page.locator('#book-chat');
-  const searchBook = books[0];
-  const exactDocument = `${searchBook.name}. Topic: ${searchBook.topic}. ${searchBook.description}`;
-  await chat.getByRole('searchbox', {name:'Search books'}).fill(exactDocument);
-  await chat.getByRole('button', {name:'Search', exact:true}).click();
-  await chat.getByRole('heading', {name:searchBook.name, exact:true}).waitFor({timeout:120000});
-  assert.equal(await chat.getByRole('log').count(), 0, 'Search must not render chat history');
-  assert.ok((await chat.locator('[data-similarity]').evaluateAll(rows => rows.map(row => Number(row.dataset.similarity)))).every(score => score >= 0.9));
-  await chat.getByRole('button', {name:`Save ${searchBook.name}`, exact:true}).click();
-  await catalog.getByRole('button', {name:`Unsave ${searchBook.name}`, exact:true}).waitFor();
-  await chat.getByRole('button', {name:`Unsave ${searchBook.name}`, exact:true}).click();
-  for (const width of [240, 375, 768, 1280]) {
-    await page.setViewportSize({width, height:900});
-    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `Search overflow at ${width}px`);
+  const searchPanel = page.locator('#book-search');
+  async function runShelfSearch(text) {
+    await searchPanel.getByRole('searchbox', {name:'Search our shelves'}).fill(text);
+    await searchPanel.getByRole('button', {name:'Search',exact:true}).click();
+    await page.waitForFunction(() => document.querySelector('#book-search button[type="submit"]').textContent === 'Search', {timeout:180000});
   }
-  await chat.getByRole('searchbox').fill('zzzznonexistent');
-  await chat.getByRole('button', {name:'Search', exact:true}).click();
-  await page.waitForFunction(() => document.querySelector('#book-chat [role="status"]').textContent.includes('No results'));
-  assert.equal(await chat.locator('article').count(), 0, 'A new query must not retain previous results');
+  await runShelfSearch('math books');
+  assert.equal(await catalog.locator('article').count(), books.filter(book => book.topic === 'math').length, 'Show all math matches, not only three');
+  await toggleTopic('cooking');
+  await page.waitForFunction(() => document.querySelectorAll('#catalog article').length === 0);
+  await allTopicsButton.click();
+  await page.waitForFunction(count => document.querySelectorAll('#catalog article').length === count, books.filter(book => book.topic === 'math').length);
+  await runShelfSearch('JS libs');
+  assert.ok(await catalog.locator('article').count() > 3, 'Library search must not be capped at three');
+  await catalog.getByRole('button', {name:'Save Jquery',exact:true}).click();
+  await catalog.getByRole('button', {name:'Unsave Jquery',exact:true}).waitFor();
+  await catalog.getByRole('button', {name:'Unsave Jquery',exact:true}).click();
+  await runShelfSearch('flower');
+  await catalog.getByRole('heading', {name:'The Fleeting Beauty',exact:true}).waitFor();
+  await runShelfSearch('math cost 40$ ore more');
+  const searchPrices = await catalog.locator('[data-book-price]').allTextContents();
+  assert.ok(searchPrices.length > 0 && searchPrices.every(price => Number(price.slice(1)) >= 40));
+  for (const width of [240,375,768,1280]) {
+    await page.setViewportSize({width,height:900});
+    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth),false, `Search overflow at ${width}px`);
+  }
+  await runShelfSearch('zzzznonexistent');
+  assert.equal(await catalog.locator('article').count(),0);
+  await searchPanel.getByRole('button',{name:'Clear search',exact:true}).click();
+  await page.waitForFunction(count => document.querySelectorAll('#catalog article').length === count, books.length);
+  await toggleTopic('cooking');
+  await runShelfSearch('JS libs');
+  assert.equal(await catalog.locator('article').count(),0);
+  await searchPanel.getByRole('button',{name:'Clear search',exact:true}).click();
+  await page.waitForFunction(count => document.querySelectorAll('#catalog article').length === count, books.filter(book => book.topic === 'cooking').length);
+  await allTopicsButton.click();
+  assert.equal(await page.locator('#book-chat').count(),0,'Standalone search section must be removed');
   await catalog.locator('article').first().waitFor();
   await assertCatalog(topics);
   const catalogPrices = await assertBookPrices(catalog);

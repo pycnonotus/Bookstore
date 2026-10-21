@@ -1,6 +1,6 @@
 import { AutoProcessor, AutoTokenizer, CLIPTextModelWithProjection, CLIPVisionModelWithProjection, RawImage, env } from '@huggingface/transformers';
 import books from '../../mock-data/data.json' with { type: 'json' };
-import { cosine, MIN_SIMILARITY } from '../utils/embeddingSearch';
+import { cosine } from '../utils/embeddingSearch';
 env.allowLocalModels = true;
 env.allowRemoteModels = false;
 env.localModelPath = '/models/';
@@ -50,7 +50,7 @@ self.onmessage = async ({ data }) => {
   try {
     const { embedText, vectors } = await getIndex();
     const query = await embedText(data.query);
-    const matches = books.map((book, index) => ({ id: book.id, score: cosine(query, vectors[index]) })).filter(match => match.score >= MIN_SIMILARITY).sort((a, b) => b.score - a.score);
+    const matches = books.map((book, index) => ({ id: book.id, score: cosine(query, vectors[index]) })).filter(match => Number.isFinite(match.score)).sort((a, b) => b.score - a.score);
     self.postMessage({ type: 'results', id: data.id, matches });
   } catch { self.postMessage({ type: 'error', id: data.id, message: 'Cover search could not load. Please try again or search by title.' }); }
 };

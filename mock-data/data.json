@@ -21,7 +21,15 @@
       "stone art"
     ],
     "price": 11.56,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A sepia-toned classical bust of a woman with curly hair in profile dominates the cover, set against a plain background with black serif typography below.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "sculpture",
+      "marble"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "417d3301-4be7-4ae9-bcaf-435d03d13c90",
@@ -49,7 +57,15 @@
       "botanical art"
     ],
     "price": 30.92,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A large, textured red poppy dominates the upper portion of a black background, with white serif typography reading \"SPECTRAL BLOOMS\" and smaller text below it positioned in the lower half.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "flowers",
+      "painting"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "347de658-9ddf-436a-a0dc-035b7c6a3c21",
@@ -72,7 +88,14 @@
       "curated"
     ],
     "price": 14.08,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "The cover features a serene landscape painting of misty mountains reflected in calm water, rendered in muted blues and grays with dark green foliage along the shoreline.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "landscape painting"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "04df4951-cb38-44e0-88bd-9baace4607eb",
@@ -96,7 +119,15 @@
       "computational"
     ],
     "price": 16.47,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "The cover features a beige background with abstract geometric shapes: a large red circle in the upper left, two black rectangles (one horizontal, one vertical), and intersecting thin black lines creating an asymmetrical composition.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "generative art",
+      "geometry"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "577370df-9b8e-4389-8b53-307c6c8d415b",
@@ -114,7 +145,14 @@
       "eras"
     ],
     "price": 16.35,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A dark-toned portrait of a young woman with curly hair and pale skin dominates the cover, set against a black background with white serif typography below.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "portrait painting"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "263fc74a-b6f6-4acd-a559-0146a50d68b8",
@@ -133,7 +171,15 @@
       "delicate"
     ],
     "price": 35.92,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A dark background features a still life arrangement of white, pink, and peach flowers with green leaves, positioned above the title \"The Fleeting Beauty\" in light-colored serif lettering.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "flowers",
+      "still life painting"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "2e29f4d7-63d1-47f4-8b28-4c5fcc1021ed",
@@ -154,7 +200,14 @@
       "celebration"
     ],
     "price": 48.18,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "The cover features a large, blue wave crashing over white foam in the foreground, with a distant mountain and small boat visible against a pale background.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "Japanese woodblock prints"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "8b21d83e-69a9-4cb0-9b91-b2a0e3d3a04f",
@@ -174,7 +227,14 @@
       "evocative"
     ],
     "price": 12.19,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A dimly lit interior room with a table, chairs, and an arched window casting bright light onto the stone floor. Dominant colors are dark browns and warm yellows from sunlight; composition is vertical, focusing on architectural details like walls, doorways, and furniture arranged in depth.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "interior painting"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
@@ -196,7 +256,15 @@
       "art book"
     ],
     "price": 38.59,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A monochromatic painting depicts a misty European cityscape featuring Gothic spires on the right and a classical dome on the left, rendered in shades of grey, beige, and black against a hazy sky.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "architecture",
+      "cityscapes"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "1dda2362-29e9-4316-903b-1e9074eaf60a",
@@ -214,7 +282,14 @@
       "procedural art"
     ],
     "price": 20.86,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "The cover features a vertical abstract painting with textured brushstrokes in black, yellow, white, and gray against an off-white background, overlaid by centered sans-serif text reading \"MATTER AND MEANING\" and smaller text below it.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "abstract art"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified"
   },
   {
     "id": "c34d81c9-8e39-4752-b17f-5fdaa41005e8",
@@ -238,7 +313,19 @@
       "frameworks"
     ],
     "price": 28.55,
-    "currency": "USD"
+    "currency": "USD",
+    "coverDescription": "A computer window displaying code is covered in green slime and features a grotesque face with wide eyes and an open mouth, set against a dark background with the word \"HTMX\" and a vomiting emoji above it. Dominant colors are black, green, and white; composition centers on the monstrous screen.",
+    "coverDescriptionSource": "local-qwen-vision",
+    "subjects": [
+      "HTMX"
+    ],
+    "aliases": [
+      "JavaScript",
+      "JS",
+      "web development",
+      "JS libraries"
+    ],
+    "readingLevel": "unspecified"
   },
   {
     "id": "555976f8-f46c-4bbf-ad5f-669c7c6c362f",
@@ -262,7 +349,18 @@
       "web development"
     ],
     "price": 44.69,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "HTML",
+      "CSS"
+    ],
+    "aliases": [
+      "pseudo classes",
+      "CSS selectors"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A cat in a lab coat wears glasses reflecting code while contemplating a glowing crystal ball displaying celestial bodies and CSS terms, surrounded by books on pseudoscience and a chalkboard with alien drawings. Dominant colors are deep blue, gold, and purple against a starry background. Composition centers the cat and orb amidst stacks of themed books and scattered papers.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5",
@@ -286,7 +384,21 @@
       "tech stack"
     ],
     "price": 44.06,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "React",
+      "Angular",
+      "Vue"
+    ],
+    "aliases": [
+      "JavaScript",
+      "JS",
+      "web development",
+      "JS libraries"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A pug wearing glasses and a hoodie sits at a desk with a laptop displaying coding symbols, surrounded by floating software logos against a dark blue background illuminated by neon light.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "cd92e446-70e5-4865-a963-21ab07550111",
@@ -310,7 +422,19 @@
       "library"
     ],
     "price": 21.84,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "jQuery"
+    ],
+    "aliases": [
+      "JavaScript",
+      "JS",
+      "web development",
+      "JS libraries"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover is split vertically into cream and black halves, featuring large typography with \"Rem\" in black/white, a gradient \"16px\", and \"or is it?\", alongside code snippets, measurement lines, and 3D-rendered computer windows.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "5f0fcd15-bdb5-4d05-813f-92ca2776ae45",
@@ -334,7 +458,14 @@
       "layout consistency"
     ],
     "price": 41.13,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "CSS"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A distressed blue spherical character with white crescent markings sits huddled against a graffiti-covered wall in an urban setting, surrounded by modern tech logos and code snippets under a twilight sky.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "c556a18b-82ed-4472-b70f-4f1ed29659bc",
@@ -358,7 +489,14 @@
       "html"
     ],
     "price": 44.01,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "HTML"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A computer screen displays the question \"If HTML is so good where is HTML 2?\" with an arrow pointing to a cheerful, sunglasses-wearing HTML5 character standing next to a sad, dusty HTML2 figure on a desk.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "92234e61-e3cf-4801-944e-50cc684c0317",
@@ -382,7 +520,14 @@
       "programming history"
     ],
     "price": 38.72,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "version control"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a split landscape with two cliffs separated by mist; the left cliff is dark grey and holds chained filing cabinets labeled \"SVN,\" while the right cliff, bathed in golden sunset light, has a hiker standing on it next to a wooden sign reading \"GIT.\"",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "bec8cf6d-34c1-484e-9e48-a4039d469d91",
@@ -406,7 +551,20 @@
       "fun"
     ],
     "price": 47.23,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "React",
+      "HTML"
+    ],
+    "aliases": [
+      "JavaScript",
+      "JS",
+      "web development",
+      "JS libraries"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A cartoon girl in a yellow hoodie smiles while working on a laptop adorned with blue atom stickers, surrounded by colorful books, a coffee mug, and a dog at her desk against a dark blue background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "395fa775-bb0f-4f5c-9eb4-73ff7820cd94",
@@ -430,7 +588,14 @@
       "joy on the table"
     ],
     "price": 17.34,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "beginner",
+    "coverDescription": "A photograph of two yellow lemons with green leaves arranged diagonally on a textured, light-colored surface. The composition is minimalist and naturalistic, featuring only the fruit and foliage against an off-white background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "05e682cb-57e3-42c6-b375-b2f7b42c6406",
@@ -452,7 +617,16 @@
       "simple ingredients"
     ],
     "price": 43.83,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "Italian cooking"
+    ],
+    "aliases": [
+      "noodles"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark-toned cover features a shallow black bowl filled with fettuccine pasta, garnished with green herbs and grated cheese, set against a textured background. The composition is centered on the food, framed by white serif text at top and bottom. Dominant colors are deep charcoal, off-white pasta, and muted greens.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "85400acb-5a7c-4fd9-b6f2-e6a6c9085e1f",
@@ -476,7 +650,17 @@
       "sustainable dining"
     ],
     "price": 21.21,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "vegetables"
+    ],
+    "aliases": [
+      "vegetarian",
+      "plant based"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A top-down photograph of a rustic ceramic bowl filled with a colorful salad containing greens, radishes, and edible flowers, set against a textured off-white background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ef968620-8d4c-48b8-9528-9291852ab7e9",
@@ -500,7 +684,14 @@
       "outdoor cooking"
     ],
     "price": 21.55,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark, moody cover features a seared steak garnished with rosemary in a cast-iron skillet, set against a background of flames and smoke. The artwork is dominated by deep blacks, browns, and warm oranges from the firelight.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "6e26cef3-0196-4df2-9c14-b816ea6c62e7",
@@ -524,7 +715,17 @@
       "sweet"
     ],
     "price": 43.52,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "baking"
+    ],
+    "aliases": [
+      "bread",
+      "pastry"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A sepia-toned photograph features a rustic loaf of flour-dusted bread resting on a linen cloth in the foreground, with blurred greenery and glass jars softly visible behind it against a light background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "3c33cfdb-20a1-41f2-bbe2-7acecc6dcd65",
@@ -548,7 +749,14 @@
       "aromatic"
     ],
     "price": 42.16,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "spices"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark textured background features several wooden bowls containing colorful spices like red chili flakes, turmeric, and peppercorns, alongside scattered herbs and a red pepper.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "3fcfdf42-7e76-481d-993e-5509ca3a29f0",
@@ -572,7 +780,14 @@
       "soup and stew"
     ],
     "price": 49.18,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "soups"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A photograph of a rustic ceramic bowl filled with noodles, halved soft-boiled eggs, dark meat pieces, and green garnishes, resting on a light surface beside wooden chopsticks.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "004619de-ea0c-4509-bb01-425b242d8a80",
@@ -596,7 +811,14 @@
       "tarts"
     ],
     "price": 30.27,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "desserts"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A golden-brown tart with white cream is topped with red raspberries, blueberries, blackberries, and purple edible flowers on a dark background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "0827420d-dc6f-4d89-9a0b-647cc3d8a360",
@@ -620,7 +842,14 @@
       "simple meals"
     ],
     "price": 46.57,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A minimalist book cover features a close-up photograph of a plated dish with yellow mashed topping, greens, and red garnishes on a speckled ceramic plate against a neutral background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "b8c903e8-0b66-431a-b0bc-45740288a915",
@@ -644,7 +873,14 @@
       "cook at home"
     ],
     "price": 34.98,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark-toned cover features a steaming copper pot on a wooden surface, surrounded by fresh herbs and garlic bulbs in rustic glass jars against a moody background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "9d3b1a3c-7ce3-4f88-b748-0e95a395c44b",
@@ -668,7 +904,14 @@
       "weeknight cook"
     ],
     "price": 5.53,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A close-up photograph of a rustic ceramic bowl filled with roasted vegetables, including avocado slices, cherry tomatoes, and broccoli, set against a textured neutral background with fresh herbs.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "9f9c1593-055c-4f86-b53c-61af26165036",
@@ -690,7 +933,14 @@
       "italian ingredients"
     ],
     "price": 36.93,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "Italian cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A close-up photograph of a white ceramic bowl filled with spaghetti mixed with halved cherry tomatoes and dark olives, garnished with fresh green basil leaves, set against a textured beige background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "8b8e7bd1-6184-44ee-972c-ee9ebc4bc151",
@@ -714,7 +964,17 @@
       "healthy"
     ],
     "price": 32.78,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "vegetables"
+    ],
+    "aliases": [
+      "vegetarian",
+      "plant based"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A beige textured background features a large, shallow bowl filled with a colorful salad of sliced avocado, cherry tomatoes, radishes, and greens, surrounded by scattered herbs on the surface.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "2e3bcedd-d9f7-43b5-9a93-e721bfba1c7d",
@@ -738,7 +998,14 @@
       "home cooking"
     ],
     "price": 20.54,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "soups"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A close-up photograph of a green ceramic bowl filled with orange soup, garnished with white cream and fresh herbs, set against a textured beige background alongside root vegetables and sprigs.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "45e91fd5-d659-4df4-a135-42fe61283663",
@@ -762,7 +1029,14 @@
       "fresh"
     ],
     "price": 39.62,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "Mediterranean cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A large ceramic bowl filled with a colorful Greek salad of tomatoes, cucumbers, olives, and feta cheese sits on a rustic table, flanked by glassware containing herbs and oil against a soft blue background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "4e078833-13e8-4708-bdbb-4ad01b1625da",
@@ -779,7 +1053,14 @@
       "everyday asian cuisine"
     ],
     "price": 24.43,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "Asian cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "beginner",
+    "coverDescription": "A dark-toned book cover features a central photograph of a steaming bowl of ramen with noodles, mushrooms, greens, and a soft-boiled egg, set against a black background with white serif typography at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "91dbb479-3844-4218-bad6-96433d52a878",
@@ -797,7 +1078,14 @@
       "joyful meals"
     ],
     "price": 13.39,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A black cast-iron skillet filled with golden-brown baked macaroni and cheese sits on a textured beige cloth against a warm, parchment-colored background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "b2923fe5-5c95-4d82-a01d-552d1c5e3e28",
@@ -821,7 +1109,14 @@
       "dinner ideas"
     ],
     "price": 38.53,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features three colorful tacos filled with vegetables and sauce, arranged diagonally on a wooden surface against a warm beige background, surrounded by fresh herbs and lime wedges.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "db1fbb11-2bbf-4f06-be97-6b066844218d",
@@ -845,7 +1140,14 @@
       "sweets"
     ],
     "price": 12.51,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "desserts"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A two-layer sponge cake with white frosting and cream filling is topped with strawberries, blueberries, raspberries, and powdered sugar against a soft pink background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "8c67d607-acd6-4e31-a6c4-0c22d3cde300",
@@ -869,7 +1171,14 @@
       "cultural food"
     ],
     "price": 7.12,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "Against a dark background, the cover displays several ceramic bowls containing colorful curries and spices, with prominent orange-red sauces, green herbs, and yellow powders arranged in a scattered composition.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "55cc5c7d-e842-4cbd-a976-778ae44b1119",
@@ -893,7 +1202,14 @@
       "kitchen"
     ],
     "price": 30.74,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "seafood"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A close-up photograph of a grilled fish fillet on a speckled white plate, garnished with lemon wedges and herbs against a light blue-grey background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "c5109152-ded0-40d7-9b94-20aa4cccdf5b",
@@ -917,7 +1233,14 @@
       "starter cultures"
     ],
     "price": 20.22,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "fermentation"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "Three glass mason jars filled with colorful fermented vegetables—red, yellow-green, and orange—are arranged on a wooden surface against a dark background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "fb8e3213-0225-4001-b047-1bbdca91efe2",
@@ -937,7 +1260,14 @@
       "food inspiration"
     ],
     "price": 27.22,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "breakfast"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A tall stack of golden-brown pancakes topped with fresh berries and syrup sits on a white plate against a softly blurred background featuring hints of greenery and a ceramic bowl, all rendered in warm tones under bright lighting.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "62ab501d-083d-4f4f-85bb-88f65c3a3d58",
@@ -961,7 +1291,17 @@
       "home baking"
     ],
     "price": 46.74,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "baking"
+    ],
+    "aliases": [
+      "bread",
+      "pastry"
+    ],
+    "readingLevel": "beginner",
+    "coverDescription": "A photograph of six assorted cookies cooling on a wire rack against a textured beige background. The assortment includes chocolate chip, dark chocolate with white chips, and a thumbprint cookie with red jam center. Dominant colors are warm browns, tans, and blacks.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ebe83ff8-ee1d-4034-921a-00342a24eb87",
@@ -985,7 +1325,14 @@
       "spice"
     ],
     "price": 17.27,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "spices"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a dark background with several bowls of colorful spices like turmeric and peppercorns, alongside fresh red peppers and green herbs arranged in a scattered composition. Dominant colors include deep blacks, vibrant oranges, yellows, and greens.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "5aa84653-2546-47a9-a0c7-a2084fbdc1a5",
@@ -1005,7 +1352,17 @@
       "cooking ideas"
     ],
     "price": 49.02,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "vegetables"
+    ],
+    "aliases": [
+      "vegetarian",
+      "plant based"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A rustic ceramic bowl filled with a colorful salad of greens, feta cheese, roasted tomatoes, and pomegranate seeds sits on a textured green surface, framed by sprigs of herbs and a lemon wedge in the corner.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "78d4bdc3-afc2-469f-a784-a22e2f86d004",
@@ -1025,7 +1382,14 @@
       "season"
     ],
     "price": 30.81,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A photograph of fresh carrots and radishes with green leafy tops arranged on a light-colored surface, set against an off-white background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "dc5e950b-2298-4d30-a727-26990735f40b",
@@ -1043,7 +1407,14 @@
       "sunny day recipes"
     ],
     "price": 24.68,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "soups"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A large ceramic bowl filled with orange soup, garnished with a white swirl and green herbs, sits on a wooden surface next to a small glass jar of red sauce and a single red chili pepper. The background is a soft beige gradient.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "8a380af6-7334-4fbc-9075-f386e1942d54",
@@ -1064,7 +1435,14 @@
       "easy prep"
     ],
     "price": 25.92,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cooking"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "A close-up photograph of a colorful salad in a speckled ceramic bowl, featuring chickpeas, avocado, radishes, and greens, set against a textured beige background with scattered crumbs.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ef47c90f-e746-4155-ae48-ea045adecb6e",
@@ -1084,7 +1462,14 @@
       "kitchen tips"
     ],
     "price": 29.56,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "street food"
+    ],
+    "aliases": [],
+    "readingLevel": "unspecified",
+    "coverDescription": "Three tacos filled with meat, vegetables, and cheese are arranged diagonally on a wooden board against a dark background, accompanied by lime wedges and herbs in the foreground.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "9ff1afdc-0c25-4a8c-bc01-acee9ea0b0cc",
@@ -1104,7 +1489,17 @@
       "thought experiments"
     ],
     "price": 11.19,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a white background with black serif typography at the top and bottom, and several colorful wooden number blocks—yellow 1, blue 2, red 3, green 5, and another blue 5—scattered in the lower half.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "7e360e1d-49b3-4565-bc65-1fb618e054ea",
@@ -1124,7 +1519,17 @@
       "basic algebra"
     ],
     "price": 19.09,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "algebra"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "beginner",
+    "coverDescription": "A dark green background features white serif text reading \"2. Algebra Made Simple\" at the top and \"Lena Carter\" at the bottom, with a large handwritten-style equation \"x + 2y = 5\" centered in the middle.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "f1e65c7f-e550-40c5-9788-76bcb89b2eff",
@@ -1144,7 +1549,17 @@
       "applications"
     ],
     "price": 35.55,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "geometry"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A brass compass rests on a sheet of paper with faint geometric sketches, set against a light beige background under soft lighting. The composition is centered and minimalist, emphasizing the tool's metallic sheen and delicate lines.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "157ac9bb-50f3-4925-874a-bd76a08e63c4",
@@ -1168,7 +1583,17 @@
       "applications"
     ],
     "price": 28.36,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "calculus"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "beginner",
+    "coverDescription": "A white line graph curves upward on a dark background, intersecting a circular diagram with radial lines and faint grid markings. The composition is minimalist, dominated by stark black-and-white contrast against the book's cover surface.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e226eff2-2877-4e6b-ae02-4fe5e73994ff",
@@ -1192,7 +1617,18 @@
       "thought experiments"
     ],
     "price": 9.88,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "algebra",
+      "linear algebra"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark blue background features several colorful cubes of varying sizes arranged in a scattered cluster on a light surface, with white text at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e8baaccb-abb2-4d88-9fb3-4e1878e29b7b",
@@ -1214,7 +1650,17 @@
       "applications"
     ],
     "price": 20.67,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "probability"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark blue background features two dice, one red with white pips and one cream-colored with black pips, positioned in the lower half of a book cover that also displays white serif typography at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "55f23886-84eb-4849-8f25-92f7fe8e7aa1",
@@ -1238,7 +1684,17 @@
       "world"
     ],
     "price": 45.88,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "statistics"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A teal-colored bar chart with a grid background is centered on the white cover, flanked by blue vertical bars and topped with dark blue text reading \"7. Statistics in Practice\" above the author's name, Noah Brooks.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "99879ad2-ed5f-44cc-a0c5-896e3bb9c4e6",
@@ -1255,7 +1711,17 @@
       "introductory math"
     ],
     "price": 40.65,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a geometric graph composed of interconnected spheres in blue, orange, red, green, and teal against an off-white background, with black text at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "7d414634-a893-4f3d-b69e-61727792d081",
@@ -1279,7 +1745,17 @@
       "education"
     ],
     "price": 47.27,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "number theory"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A black background features a golden spiral composed of numbers and symbols, with white serif text at the top reading \"9. Number T\" and \"Patterns in In,\" and author name \"Lucas Mey\" at the bottom; to the left is a partial view of a molecular model on a light surface.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "477b13c3-06e9-47ef-b9d1-ca4e6be6b2b4",
@@ -1303,7 +1779,17 @@
       "world"
     ],
     "price": 30.55,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A white background features a central illustration of an illuminated lightbulb with radiating lines, flanked by two small stacks of books at the bottom corners and black text above reading \"10. Mathematical Thinking\" and below stating \"Grace Wilson.\"",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "c6c180e1-d4de-40c3-b610-1b2d78d1844f",
@@ -1323,7 +1809,17 @@
       "thought experiments"
     ],
     "price": 44.57,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A beige background features black serif text at the top reading \"11. Set Theory and Beyond,\" a central Venn diagram with overlapping blue and pink circles labeled A and B, and black text at the bottom reading \"Ethan Moore.\"",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "6ee20cc3-3303-487e-9108-a81aac61659d",
@@ -1347,7 +1843,17 @@
       "guide"
     ],
     "price": 18.85,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "logic and proofs"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark blue book cover features white serif typography displaying the number \"12,\" the phrase \"Logic for Clear Thinking,\" a large logical notation symbol, and the name \"Maya Singh\" at the bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "f520e08b-8c6c-4cae-8ba3-daeae29a847f",
@@ -1371,7 +1877,17 @@
       "examples"
     ],
     "price": 10.8,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A white book cover features a red sine wave graph plotted on blue grid lines against a light background, with dark blue text at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "540ec8a3-8d04-4d3a-b672-6ad1cfe6f113",
@@ -1395,7 +1911,17 @@
       "examples"
     ],
     "price": 14.32,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A white background features black serif typography for the title \"14. Trigonometry\" and author name, with a central diagram of a unit circle in black ink containing an orange right triangle illustrating trigonometric functions.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "0deb43be-c6f6-47a9-b4cf-e9c054234b74",
@@ -1416,7 +1942,17 @@
       "curious readers"
     ],
     "price": 15.89,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a swirling nebula-like spiral in vibrant oranges, purples, and blues against a deep blue background, with white text at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "446a6584-c8d3-4958-a9bf-75f700c94143",
@@ -1440,7 +1976,17 @@
       "tutorial"
     ],
     "price": 39.26,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "advanced",
+    "coverDescription": "The cover features a light blue background with black serif typography for the title \"16. Differential Equations\" and subtitle \"Models for Reality,\" alongside a graph displaying multiple intersecting sine waves in dark blue on a grid, with the author's name at the bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "1ce1c2a8-172f-4926-91dd-56686b96cc33",
@@ -1462,7 +2008,17 @@
       "science"
     ],
     "price": 10.68,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "calculus"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a white background with black serif typography at the top and bottom, centered beneath which is a three-dimensional, rainbow-colored surface plot resembling a saddle shape.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "08376551-81c4-47f1-bcd2-3e5698737d44",
@@ -1486,7 +2042,17 @@
       "memorable visuals"
     ],
     "price": 33.66,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "advanced",
+    "coverDescription": "A minimalist book cover features black serif typography on an off-white background, displaying the number 18, a subtitle fragment, and a mathematical epsilon-delta limit expression centered vertically. A small portion of a pink and orange abstract shape is visible on the left edge.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e9f3ef08-6efc-4113-aa25-6fe4e6ce00c2",
@@ -1506,7 +2072,17 @@
       "higher algebra"
     ],
     "price": 43.28,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "algebra"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "advanced",
+    "coverDescription": "A white book cover features a large, colorful abstract knot composed of interlocking blue, pink, orange, and yellow rings in the lower right quadrant.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "22fd69f7-20df-4691-be7c-e98081a1de78",
@@ -1526,7 +2102,17 @@
       "thought experiments"
     ],
     "price": 33.34,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "topology"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "advanced",
+    "coverDescription": "A light blue background features a central, three-dimensional blue torus shape with soft shadows, positioned below black serif typography reading \"20. Topology\" and \"Shapes Without Limits,\" and above the name \"Chloe Bennett.\"",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "153420a1-041b-48db-9a2a-346945cc5ec9",
@@ -1550,7 +2136,17 @@
       "visuals"
     ],
     "price": 40.93,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A beige background features a central black numerical pyramid (Pascal's triangle) with rows of numbers increasing in width and value, flanked by the book's title at the top and author name at the bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "a47a6adb-32b3-44f4-8b1d-bbb7c67b597b",
@@ -1574,7 +2170,17 @@
       "world"
     ],
     "price": 6.34,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "graph theory"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A white background features a geometric network of interconnected spheres in shades of blue, purple, orange, and red, with black lines connecting them. The composition is centered on the cover's lower half.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "1e626520-1532-4e86-98f5-606923120d9e",
@@ -1598,7 +2204,17 @@
       "exercises"
     ],
     "price": 35.71,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "logic and proofs"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A black pen with a gold tip rests diagonally across a sheet of lined paper displaying the letters \"Q.E.D.\" in large font, set against an off-white background that also features book title and author text.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "fd9c9656-fb4f-480b-9f97-21bbce11c1bf",
@@ -1622,7 +2238,17 @@
       "visualization"
     ],
     "price": 45.8,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark blue background features four chess pieces—three light-colored and one black—arranged in a row on a wooden surface. The composition is centered with the pieces standing upright, casting soft shadows forward. Dominant colors are deep navy, warm wood tones, and contrasting piece hues.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "5b8d4921-c5e2-4ed8-89a3-633d91831e87",
@@ -1644,7 +2270,17 @@
       "curious readers"
     ],
     "price": 33.68,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a realistic image of Earth against a dark background, with white text at the top and bottom; dominant colors are deep blue, black, green, and yellow.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e0c5e282-3aaf-42ab-9427-16cf47d2cbf6",
@@ -1661,7 +2297,17 @@
       "science books"
     ],
     "price": 26.46,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A spiral fractal pattern in fiery orange, yellow, and deep blue against a black background dominates the cover's lower two-thirds, with white serif typography at top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "45938797-d3ef-4c1d-b323-2c65fcfb34e7",
@@ -1685,7 +2331,17 @@
       "applications"
     ],
     "price": 11.69,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "advanced",
+    "coverDescription": "The cover features a white background with black serif typography at the top and bottom, overlaid by a central composition of layered, undulating waveforms rendered in a spectrum of colors transitioning from red to blue.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e9adbcb6-f0c7-42f1-8c92-19961df97d23",
@@ -1709,7 +2365,17 @@
       "exercises"
     ],
     "price": 40.59,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "advanced",
+    "coverDescription": "The cover features a dark background with white text at the top and bottom, and a central illustration of a stylized mountain range rendered in shades of blue and beige using a wireframe or grid pattern.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ec654a4c-d40b-43af-a25c-acf299ff57aa",
@@ -1733,7 +2399,17 @@
       "practical applications"
     ],
     "price": 25.42,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a dark blue background with white sans-serif typography at the top and bottom, overlaid by an abstract graphic of concentric, glowing orange-to-yellow lines radiating outward from a central point.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "940eff5d-a275-4666-9a7b-6565c6b839b8",
@@ -1753,7 +2429,17 @@
       "applied math"
     ],
     "price": 10.6,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a dark blue background with white serif typography at the top and bottom, centered around a prominent 3D topographical map rendered in shades of teal, green, and brown.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ac1b97fb-9511-403b-8e23-5dbe53a5b20d",
@@ -1775,7 +2461,17 @@
       "investment analysis"
     ],
     "price": 46.9,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark green background features four ascending stacks of gold coins on a reflective surface, with white serif typography at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "6eabff67-22c4-4393-b22c-526428fa9de8",
@@ -1799,7 +2495,17 @@
       "science"
     ],
     "price": 49.48,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A green leaf with a spiral pattern rests on a white surface against a light background, framed by black text at the top and bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "b390162d-019f-4d1a-90ef-d425b321f5fe",
@@ -1823,7 +2529,17 @@
       "exercises"
     ],
     "price": 26.58,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "cryptography"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A metallic padlock is centered on a dark blue background patterned with faint binary code, set against the spine of a book titled \"33. Cryptography\".",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "4864bb37-5f69-4731-95a4-25ba077b6352",
@@ -1845,7 +2561,17 @@
       "exercises"
     ],
     "price": 47.35,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a white background with dark blue horizontal bands containing typewritten-style code snippets in light gray and the author's name at the bottom. Dominant colors are white, navy blue, and light gray; objects include text elements arranged vertically without imagery or illustrations. Composition is minimalist and structured around textual content on distinct color blocks.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "d126d1be-8920-4e93-8bec-6c875189bc23",
@@ -1869,7 +2595,17 @@
       "transform understanding"
     ],
     "price": 31.95,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "geometry"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A geometric wireframe sphere composed of interconnected golden-yellow rods rests on a light gray surface against an off-white background. The composition is centered and minimalist, with the spherical structure dominating the lower half of the frame. Dominant colors are gold, white, and gray.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "1c78d18c-6f7e-406c-9713-8cb5fd30e1ae",
@@ -1889,7 +2625,17 @@
       "thought experiments"
     ],
     "price": 14.2,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "fractals"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A dark blue background features a central black circular shape surrounded by vibrant orange, yellow, and purple fractal patterns radiating outward against the deep blue backdrop.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "9b339d0a-736f-439b-a8cc-a5303c9f98bf",
@@ -1911,7 +2657,17 @@
       "practical applications"
     ],
     "price": 23.7,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "puzzles"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A beige background features a central, three-dimensional wooden puzzle cube composed of interlocking blocks in varying shades of brown and tan. The object is positioned slightly right of center on the book cover's surface.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "8d2edb24-351f-4327-b384-7419553e58cf",
@@ -1933,7 +2689,17 @@
       "math examples"
     ],
     "price": 48.1,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a photograph of the Golden Gate Bridge at dusk, with warm orange and yellow light reflecting on dark blue water below, set against a gradient sky transitioning from deep blue to soft orange. The bridge's suspension cables and towers are prominent in the center-right composition. White text overlays the top and bottom sections.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ca1be560-247f-4efa-aea0-b45a8a4aceac",
@@ -1955,7 +2721,17 @@
       "curious readers"
     ],
     "price": 5.64,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The visible artwork on the right book cover features a stylized blue atomic model with orbiting spheres and elliptical paths against a white background. The left side shows a photograph of an orange suspension bridge over water at dusk, framed by dark blue sky.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "4f33907e-a48c-4662-9c9e-e93ca1759239",
@@ -1979,7 +2755,17 @@
       "practical applications"
     ],
     "price": 45.62,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "data science"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A white book cover features the title \"40. Data Science with Math\" in blue serif font above a scatter plot graph with blue dots and a regression line on a grid, set against a light background; the author's name appears below the chart.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "b5e5591b-f73c-4c2d-bd38-e8f4bb99b2b6",
@@ -1999,7 +2785,17 @@
       "curious readers"
     ],
     "price": 38,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A rectangular clay tablet with cuneiform script is centered on a beige background, surrounded by black serif typography and casting a soft shadow to the left.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "2ff705b3-4897-4b29-908c-4cee601daac0",
@@ -2019,7 +2815,17 @@
       "thought experiments"
     ],
     "price": 12.32,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "geometry"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A large yellow sunflower with a brown center is centered on a plain white background, positioned below black serif text and above the author's name at the bottom of the book cover.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e7b1b3e0-521b-4a29-abd9-746bb8d5cef6",
@@ -2039,7 +2845,17 @@
       "applied math"
     ],
     "price": 5.3,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A close-up photograph of a nautilus shell with intricate spiral patterns in warm beige and brown tones, set against a plain off-white background. The composition centers the shell slightly below the top edge, showcasing its natural geometry.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "f791b724-3fd5-434b-a3d6-8b761e719e97",
@@ -2063,7 +2879,17 @@
       "world understanding"
     ],
     "price": 32.08,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A white background features a large, three-dimensional spiral sculpture composed of vibrant rainbow colors, with red text at the top and black text at the bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "ba9b9d10-a8fa-4359-8f2b-84b10ebc40a1",
@@ -2087,7 +2913,17 @@
       "world"
     ],
     "price": 12.11,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A stack of four hardcover books in green, orange, blue, and red rests on a light surface against a plain background. The composition is centered with the spines facing forward, creating a simple, educational visual theme. Dominant colors are white, black, and the vibrant hues of the book covers.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "13f44e96-9f0e-405f-a90e-e1d293026f65",
@@ -2109,7 +2945,17 @@
       "practical math"
     ],
     "price": 19.09,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A black background features a white silhouette of a head in profile with a thought bubble containing mathematical symbols above it, and the name \"Grace Kim\" at the bottom.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "e6e43dd4-e405-4b98-ba8d-57db4834a9e7",
@@ -2131,7 +2977,17 @@
       "math exercises"
     ],
     "price": 22.79,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "children",
+    "coverDescription": "The cover features a row of colorful wooden blocks displaying the numbers 1, plus sign, and equals sign on top, with additional plain colored blocks below, set against an off-white background.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "d54c69b7-6802-4f0e-9b71-55a8322e830e",
@@ -2155,7 +3011,17 @@
       "clear explanations"
     ],
     "price": 15.06,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A black line drawing of a human head in profile, filled with maze-like patterns resembling circuitry or brain activity, set against an off-white background on the right side of the cover.",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "fb8c8400-dd70-4d68-8ce1-f0f5fa791411",
@@ -2179,7 +3045,17 @@
       "math world transformation"
     ],
     "price": 29.33,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "The cover features a dark blue background with a glowing, geometric globe-like structure composed of interconnected lines and bright nodes at the bottom right. Dominant colors are deep navy and electric blue, accented by white text for the title \"49. Future Mathematics\" and author name \"Adrian R.\"",
+    "coverDescriptionSource": "local-qwen-vision"
   },
   {
     "id": "b3bccec5-95a9-49cb-94b2-0fff509daf62",
@@ -2203,6 +3079,16 @@
       "applications"
     ],
     "price": 15.47,
-    "currency": "USD"
+    "currency": "USD",
+    "subjects": [
+      "math"
+    ],
+    "aliases": [
+      "mathematics",
+      "maths"
+    ],
+    "readingLevel": "unspecified",
+    "coverDescription": "A golden Fibonacci spiral is centered on a black background, overlaid with faint geometric lines and radiating light effects. The artwork occupies the lower half of the cover, framed by white text at top and bottom. Dominant colors are gold, black, and white; composition emphasizes symmetry and mathematical precision.",
+    "coverDescriptionSource": "local-qwen-vision"
   }
 ]

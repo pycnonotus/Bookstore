@@ -2,6 +2,8 @@ import { useRef, useState } from 'react';
 import books from '../../mock-data/data.json' with { type: 'json' };
 import BookCard from './BookCard';
 import useStackedSections from '../hooks/useStackedSections';
+import BookSearch from './BookSearch';
+import { filterShelfGroups } from '../utils/hybridSearch';
 
 const topicGroups = [...new Set(books.map(book => book.topic))].sort().map(topic => ({
   topic,
@@ -11,10 +13,11 @@ const topicGroups = [...new Set(books.map(book => book.topic))].sort().map(topic
 
 export default function MainContent({ savedIds, onSavedChange }) {
   const [selectedTopics, setSelectedTopics] = useState([]);
-  const visibleGroups = topicGroups.filter(group => selectedTopics.length === 0 || selectedTopics.includes(group.topic));
+  const [searchMatches, setSearchMatches] = useState(null);
+  const visibleGroups = filterShelfGroups(topicGroups, selectedTopics, searchMatches);
   const visibleBookCount = visibleGroups.reduce((count, group) => count + group.books.length, 0);
   const stackRef = useRef(null);
-  useStackedSections(stackRef, visibleGroups.map(group => group.topic).join('|'));
+  useStackedSections(stackRef, visibleGroups.map(group => `${group.topic}:${group.books.map(book => book.id).join(',')}`).join('|'));
 
   function toggleTopic(topic) {
     setSelectedTopics(previous => previous.includes(topic)
@@ -28,6 +31,7 @@ export default function MainContent({ savedIds, onSavedChange }) {
       <p className="mt-2 text-ink/70">Find a new perspective. Keep a few favorites.</p>
     </div>
     <div className="rounded-2xl border border-spruce/15 bg-white/70 p-4 sm:p-5">
+      <BookSearch onResultsChange={setSearchMatches} />
       <fieldset aria-describedby="topic-filter-hint" className="min-w-0">
         <legend className="text-sm font-semibold text-spruce-deep">Browse by topic</legend>
         <p id="topic-filter-hint" className="mt-1 text-sm text-ink/65">Choose one or more topics. With none selected, explore every shelf.</p>
@@ -49,6 +53,7 @@ export default function MainContent({ savedIds, onSavedChange }) {
     <p role="status" className="mb-8 mt-5 text-sm text-ink/65">
       {visibleBookCount} books · {savedIds.size} saved · {selectedTopics.length === 0 ? 'All topics' : `${selectedTopics.length} ${selectedTopics.length === 1 ? 'topic' : 'topics'} selected`}
     </p>
+    {visibleBookCount === 0 && <p className="mb-6 text-sm text-ink/70">No books match these filters. Clear the search or choose another topic.</p>}
     <div id="topic-results" ref={stackRef} className="topic-stack space-y-12">
       {visibleGroups.map((group, groupIndex) => <section key={group.topic} data-topic={group.topic} aria-labelledby={`topic-${group.topic}-title`} className="topic-section min-w-0" style={{ '--reveal-delay': `${groupIndex * 45}ms`, '--stack-level': groupIndex + 1 }}>
         <div className="topic-panel">

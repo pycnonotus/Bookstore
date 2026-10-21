@@ -1,6 +1,7 @@
 import { pipeline, env } from '@huggingface/transformers';
 import books from '../../mock-data/data.json' with { type: 'json' };
 import { rankEmbeddings } from '../utils/embeddingSearch';
+import { searchDocument } from '../utils/hybridSearch';
 
 env.allowLocalModels = true;
 env.allowRemoteModels = false;
@@ -8,7 +9,7 @@ env.localModelPath = '/models/';
 env.backends.onnx.wasm.numThreads = 1;
 let indexPromise;
 const modelId = 'Xenova/all-MiniLM-L6-v2';
-const texts = books.map(book => `${book.name}. Topic: ${book.topic}. ${book.description}`);
+const texts = books.map(searchDocument);
 
 async function cacheKey() {
   const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(texts)));
@@ -48,7 +49,7 @@ self.onmessage = async ({ data }) => {
     const { embed, vectors } = await getIndex();
     if (data.type === 'init') return self.postMessage({ type: 'ready' });
     const output = await embed(data.query, { pooling: 'mean', normalize: true });
-    const ranked = rankEmbeddings(output.tolist()[0], vectors, books);
+    const ranked = rankEmbeddings(output.tolist()[0], vectors, books, 0);
     self.postMessage({ type: 'results', id: data.id, matches: ranked.map(({ book, score }) => ({ id: book.id, score })) });
   } catch (error) {
     self.postMessage({ type: 'error', id: data.id, message: error.message });

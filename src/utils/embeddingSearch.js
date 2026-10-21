@@ -11,8 +11,8 @@ export function cosine(left, right) {
   return leftNorm && rightNorm ? dot / Math.sqrt(leftNorm * rightNorm) : 0;
 }
 
-export function rankEmbeddings(query, vectors, books) {
+export function rankEmbeddings(query, vectors, books, minimum = MIN_SIMILARITY) {
   if (vectors.length !== books.length) throw new Error('Catalog index is incomplete');
   return books.map((book, index) => ({ book, score: cosine(query, vectors[index]) }))
-    .filter(row => Number.isFinite(row.score) && row.score >= MIN_SIMILARITY).sort((a, b) => b.score - a.score);
+    .filter(row => Number.isFinite(row.score) && row.score >= minimum).sort((a, b) => b.score - a.score);
 }

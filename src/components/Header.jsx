@@ -20,7 +20,6 @@ export default function Header() {
       <a href="#" className="font-serif text-2xl font-bold text-spruce-deep">Book Library<span className="text-amber-600">.</span></a>
       <nav aria-label="Main navigation" className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
         <a className="hover:underline" href="#catalog">Browse books</a>
-        <a className="hover:underline" href="#book-chat">Find a book</a>
         <a className="hover:underline" href="#staff-picks">Staff picks</a>
         <a className="hover:underline" href="#events">Events</a>
         <a className="hover:underline" href="#about">Our story</a>
