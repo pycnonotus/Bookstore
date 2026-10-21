@@ -11,7 +11,7 @@ export default function Events() {
             <span className="text-xs font-semibold uppercase">{event.month}</span><span className="text-3xl font-bold">{event.day}</span>
           </time>
           <div className="flex min-w-0 flex-1 flex-col">
-            <h3 className="break-words font-serif text-xl font-semibold">{event.title}</h3>
+            <h3 className="wrap-break-word font-serif text-xl font-semibold">{event.title}</h3>
             <p className="mt-2 text-sm text-amber-200">{event.meta}</p>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-paper/80">{event.description}</p>
             <a href={`mailto:Totaly@real.mail?subject=${encodeURIComponent(`Seat inquiry: ${event.title}`)}`} className="mt-5 self-start rounded border border-amber-300 px-4 py-2 text-sm font-semibold text-amber-200 hover:bg-white/10">Ask about a seat &rarr;</a>

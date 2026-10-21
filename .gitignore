@@ -156,8 +156,7 @@ pug
 # Local browser verification artifacts
 artifacts/
 
-# Downloaded browser model weights and local diagnostics
-public/models/
+# Local diagnostics
 /rag/
 
 # Local verification scripts and fixtures

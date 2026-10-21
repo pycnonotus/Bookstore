@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "prebuild": "npm run models:prepare",
     "preview": "vite preview",
     "test:browser": "node tests/check-browser.mjs",
     "test:search": "node tests/check-search.mjs",
@@ -14,8 +13,7 @@
     "test:search:hybrid": "node tests/evaluate-hybrid-search.mjs",
     "test:embeddings": "node tests/check-embeddings.mjs",
     "test:prices": "node tests/check-price-intents.mjs",
-    "test:browser:embeddings": "node tests/check-browser-embeddings.mjs",
-    "models:prepare": "node src/scripts/prepare-browser-models.mjs"
+    "test:browser:embeddings": "node tests/check-browser-embeddings.mjs"
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.1",
