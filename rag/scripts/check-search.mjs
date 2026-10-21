@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
-import { searchBooks } from '../src/utils/bookSearch.js';
-import { getBookPrice } from '../src/utils/bookPrice.js';
-import books from '../mock-data/data.json' with { type: 'json' };
+import { searchBooks } from '../../src/utils/bookSearch.js';
+import { getBookPrice } from '../../src/utils/bookPrice.js';
+import books from '../../mock-data/data.json' with { type: 'json' };
 for (const book of books) {
   assert.ok(Number.isFinite(book.price) && book.price >= 0, `${book.name} needs a valid catalog price`);
   assert.equal(book.currency, 'USD');

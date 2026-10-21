@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
-import { cosine, rankEmbeddings } from '../src/utils/embeddingSearch.js';
-import { searchBooks } from '../src/utils/bookSearch.js';
-import books from '../mock-data/data.json' with { type: 'json' };
+import { cosine, rankEmbeddings } from '../../src/utils/embeddingSearch.js';
+import { searchBooks } from '../../src/utils/bookSearch.js';
+import books from '../../mock-data/data.json' with { type: 'json' };
 assert.equal(cosine([1, 0], [1, 0]), 1);
 assert.equal(cosine([1, 0], [0, 1]), 0);
 assert.equal(cosine([0, 0], [0, 0]), 0);

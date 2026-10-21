@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
-import { parsePriceConstraints, matchesPrice } from '../src/utils/searchConstraints.js';
-import { searchBooks } from '../src/utils/bookSearch.js';
-import { getBookPrice } from '../src/utils/bookPrice.js';
+import { parsePriceConstraints, matchesPrice } from '../../src/utils/searchConstraints.js';
+import { searchBooks } from '../../src/utils/bookSearch.js';
+import { getBookPrice } from '../../src/utils/bookPrice.js';
 const minimums = ['40$ or more', '$40 or more', '40 dollars or more', '40$ ore more', 'at least 40', 'no less than $40', 'minimum of 40', 'not under 40'];
 const strictMin = ['over 40', 'above $40', 'more than 40 dollars'];
 const maximums = ['up to $40', 'at most 40', 'no more than $40', 'not over 40', '40$ or less', 'maximum of 40'];
