@@ -52,12 +52,12 @@ export default function MainContent({ savedIds, onSavedChange }) {
     <div id="topic-results" ref={stackRef} className="topic-stack space-y-12">
       {visibleGroups.map((group, groupIndex) => <section key={group.topic} data-topic={group.topic} aria-labelledby={`topic-${group.topic}-title`} className="topic-section min-w-0" style={{ '--reveal-delay': `${groupIndex * 45}ms`, '--stack-level': groupIndex + 1 }}>
         <div className="topic-panel">
+          <div className="topic-heading mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
+            <h3 id={`topic-${group.topic}-title`} className="font-serif text-2xl font-semibold text-spruce-deep sm:text-3xl">{group.title}</h3>
+            <span className="topic-section-count rounded-full bg-spruce/10 px-3 py-1 text-xs font-semibold text-spruce">{group.books.length} books</span>
+            <span aria-hidden="true" className="h-px min-w-8 flex-1 bg-spruce/20" />
+          </div>
           <div className="topic-section-content">
-            <div className="mb-5 flex flex-wrap items-center gap-x-3 gap-y-2">
-              <h3 id={`topic-${group.topic}-title`} className="font-serif text-2xl font-semibold text-spruce-deep sm:text-3xl">{group.title}</h3>
-              <span className="topic-section-count rounded-full bg-spruce/10 px-3 py-1 text-xs font-semibold text-spruce">{group.books.length} books</span>
-              <span aria-hidden="true" className="h-px min-w-8 flex-1 bg-spruce/20" />
-            </div>
             <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {group.books.map((book, bookIndex) => <div key={book.id} className="topic-book flex min-w-0 flex-col" style={{ '--card-delay': `${Math.min(bookIndex, 5) * 35}ms` }}>
                 <BookCard book={book} headingAs="h4" saved={savedIds.has(book.id)} onSavedChange={saved => onSavedChange(book.id, saved)} />

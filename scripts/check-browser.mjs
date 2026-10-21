@@ -147,6 +147,43 @@ async function assertOnlyTopicAccessible(topic) {
   assert.equal(natural.length, 1, 'Filtering to one topic must remove previous stack layers');
   assert.equal(await catalog.locator('.topic-panel').count(), 1, 'One topic must have exactly one visual layer');
   await assertLastCardReachable(topic, natural[0], 'one selected topic');
+  await assertStickyTopicHeading({width:1280, context:'single selected topic on desktop'});
+  await assertStickyTopicHeading({width:375, context:'single selected topic on mobile'});
+}
+async function readTopicHeading(topic) {
+  return catalog.locator(`.topic-section[data-topic="${topic}"] .topic-heading h3`).evaluate(heading => {
+    const bounds = heading.getBoundingClientRect();
+    const hit = document.elementFromPoint(bounds.left + bounds.width / 2, bounds.top + bounds.height / 2);
+    return {title:heading.textContent.trim(), top:bounds.top, bottom:bounds.bottom,
+      readable:heading.contains(hit), scrollY};
+  });
+}
+async function assertStickyTopicHeading({width, context, screenshotPath}) {
+  await page.setViewportSize({width, height:900});
+  const natural = await naturalTopicLayout();
+  const candidates = natural.length > 1 ? natural.slice(0, -1) : natural;
+  const current = candidates.reduce((longest, section) => section.height > longest.height ? section : longest);
+  const assertReadable = (heading, topic) => {
+    assert.equal(heading.title, topicName(topic), `${context}: the current title must match its topic`);
+    assert.ok(heading.readable && heading.top >= 0 && heading.top <= 64 && heading.bottom < 140,
+      `${context}: ${topic}'s title must remain readable near the viewport top (${JSON.stringify(heading)})`);
+  };
+  await scrollToY(current.top + current.height * 0.35);
+  const before = await readTopicHeading(current.topic);
+  assertReadable(before, current.topic);
+  await scrollToY(before.scrollY + 96);
+  const after = await readTopicHeading(current.topic);
+  assertReadable(after, current.topic);
+  assert.ok(Math.abs(after.top - before.top) <= 1,
+    `${context}: the title must stay pinned as its books continue scrolling`);
+  if (screenshotPath) await page.screenshot({path:screenshotPath, animations:'disabled'});
+  const next = natural[natural.indexOf(current) + 1];
+  if (next) {
+    await scrollToY(next.top + 300);
+    assertReadable(await readTopicHeading(next.topic), next.topic);
+    assert.equal((await readTopicHeading(current.topic)).readable, false,
+      `${context}: the next topic title must replace the previous title`);
+  }
 }
 async function assertTopicStack({width, context, screenshotPath}) {
   await page.setViewportSize({width, height:900});
@@ -238,6 +275,7 @@ async function assertReducedMotionFlow(width) {
     `Reduced motion at ${width}px must let the first section scroll normally`);
   assert.ok(Math.abs(after[1].top - before[1].top + 48) <= 1,
     `Reduced motion at ${width}px must let the next section scroll normally`);
+  await assertStickyTopicHeading({width, context:`reduced motion at ${width}px`});
 }
 assert.equal(new Set(books.map(book => book.id)).size, books.length, 'Book IDs must be unique');
 page.on('pageerror', error => errors.push(error.message));
@@ -280,6 +318,7 @@ try {
   const selectedTopics = topics.filter(topic => topic === first.topic || topic === other);
   await assertCatalog(selectedTopics);
   await assertTopicStack({width:1280, context:'two selected topics after filtering to one'});
+  await assertStickyTopicHeading({width:1280, context:'two selected topics on desktop'});
   assert.equal(await topicCheckbox(other).isChecked(), true);
   assert.equal(await topicCheckbox(first.topic).isChecked(), true);
   await catalog.getByRole('button', {name:`Unsave ${first.name}`, exact:true}).waitFor();
@@ -327,7 +366,9 @@ try {
   await assertReducedMotionFlow(375);
   await page.emulateMedia({reducedMotion:'no-preference'});
   await assertNoOverflow([240, 320, 375, 639, 640, 767, 768, 1024, 1280, 1920], 'all topics');
+  await assertStickyTopicHeading({width:1280, context:'all topics on desktop', screenshotPath:'artifacts/catalog-topic-title-desktop.png'});
   await assertTopicStack({width:1280, context:'all topics on desktop after resetting filters', screenshotPath:'artifacts/catalog-stack-desktop.png'});
+  await assertStickyTopicHeading({width:375, context:'all topics on mobile', screenshotPath:'artifacts/catalog-topic-title-mobile.png'});
   await assertTopicStack({width:375, context:'all topics on mobile after resetting filters', screenshotPath:'artifacts/catalog-stack-mobile.png'});
   await page.setViewportSize({width:1280,height:900});
   await catalog.evaluate(element => element.scrollIntoView({block:'start', behavior:'instant'}));
@@ -338,6 +379,7 @@ try {
   await assertCatalog(selectedTopics);
   await assertNoOverflow([240, 375, 768, 1280], 'two selected topics');
   await assertTopicStack({width:375, context:'two selected topics on mobile'});
+  await assertStickyTopicHeading({width:375, context:'two selected topics on mobile'});
   await page.setViewportSize({width:375,height:900});
   await catalog.evaluate(element => element.scrollIntoView({block:'start', behavior:'instant'}));
   await page.screenshot({path:'artifacts/catalog-mobile.png', animations:'disabled'});
@@ -347,5 +389,5 @@ try {
   await assertBookPrices(catalog, catalogPrices);
   await assertBookPrices(page.locator('#staff-picks'), catalogPrices);
   assert.deepEqual(errors, []);
-  console.log(`Passed: ${books.length} cards in ${topics.length} topic groups, visible dollar prices within $4.99–$49.99 consistent across staff picks/saves/filters/reload, multi-select/reset/keyboard filtering, synchronized saves retained across filters, reduced-motion support, cards within 450px with contained prices/Save buttons and ellipsized descriptions, no overflow at 10 all-topic and 4 filtered widths, no runtime errors.`);
+  console.log(`Passed: ${books.length} cards in ${topics.length} topic groups, visible dollar prices within $4.99–$49.99 consistent across staff picks/saves/filters/reload, multi-select/reset/keyboard filtering, synchronized saves retained across filters, desktop/mobile stacking geometry and hit-testing, sticky current-topic titles and next-topic replacement across filters and reduced motion, tall-section reachability, keyboard access to covered Save buttons, reduced-motion normal flow, cards within 450px with contained prices/Save buttons and ellipsized descriptions, no overflow at 10 all-topic and 4 filtered widths, no runtime errors.`);
 } finally { await browser.close(); server.kill(); }

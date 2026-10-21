@@ -146,6 +146,22 @@
     animation-delay: var(--reveal-delay, 0ms);
   }
 
+  .topic-heading {
+    position: sticky;
+    top: 1rem;
+    z-index: 2;
+    margin-top: -0.75rem;
+    margin-inline: -0.5rem;
+    border-bottom: 1px solid rgb(31 92 77 / 15%);
+    border-radius: 0.75rem;
+    background: var(--color-paper);
+    padding: 0.75rem 0.5rem;
+  }
+
+  .topic-stack :focus-visible {
+    scroll-margin-block: 6rem 1rem;
+  }
+
   .topic-stack:has(:focus-visible) .topic-section,
   .topic-section:only-child {
     position: relative;
@@ -167,6 +183,10 @@
 
     .topic-panel {
       padding: 1.5rem;
+    }
+
+    .topic-heading {
+      top: 1.5rem;
     }
   }
 
