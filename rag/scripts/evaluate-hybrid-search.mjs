@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
 import { hybridBookMatches } from '../../src/utils/hybridSearch.js';
 import { matchesPrice, parsePriceConstraints } from '../../src/utils/searchConstraints.js';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../../src/data/books.json' with { type: 'json' };
 
 const cases = JSON.parse(await readFile(new URL('../training/retrieval-eval.json', import.meta.url), 'utf8'));
 const details = cases.map(test => {

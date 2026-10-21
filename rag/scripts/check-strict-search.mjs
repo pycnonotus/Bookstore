@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../../src/data/books.json' with { type: 'json' };
 import { strictBookMatches } from '../../src/utils/strictBookSearch.js';
 import { rankEmbeddings } from '../../src/utils/embeddingSearch.js';
 const ids = books.slice(0, 6).map(book => book.id);

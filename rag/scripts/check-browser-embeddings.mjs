@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../../src/data/books.json' with { type: 'json' };
 import { readFile, writeFile } from 'node:fs/promises';
 import { strictBookMatches } from '../../src/utils/strictBookSearch.js';
 const server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', '0'], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });

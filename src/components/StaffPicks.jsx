@@ -1,4 +1,4 @@
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../data/books.json' with { type: 'json' };
 import BookCard from './BookCard';
 
 const picks = books.filter(book => book.staffPick);

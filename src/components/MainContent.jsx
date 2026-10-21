@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../data/books.json' with { type: 'json' };
 import BookCard from './BookCard';
 import useStackedSections from '../hooks/useStackedSections';
 import BookSearch from './BookSearch';

@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../../src/data/books.json' with { type: 'json' };
 const server = spawn(process.execPath, ['node_modules/vite/bin/vite.js', '--host', '127.0.0.1', '--port', '5174', '--strictPort'], { stdio: ['ignore', 'pipe', 'pipe'], windowsHide: true });
 await new Promise((resolve, reject) => {
   server.stdout.on('data', chunk => { if (chunk.toString().includes('Local:')) resolve(); });

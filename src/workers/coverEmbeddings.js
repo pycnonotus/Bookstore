@@ -1,5 +1,5 @@
 import { AutoProcessor, AutoTokenizer, CLIPTextModelWithProjection, CLIPVisionModelWithProjection, RawImage, env } from '@huggingface/transformers';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../data/books.json' with { type: 'json' };
 import { cosine } from '../utils/embeddingSearch';
 env.allowLocalModels = true;
 env.allowRemoteModels = false;

@@ -1,4 +1,4 @@
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../data/books.json' with { type: 'json' };
 import { getBookPrice } from './bookPrice.js';
 import { parsePriceConstraints, matchesPrice, explicitTopics } from './searchConstraints.js';
 import { predictTopic } from './intentModel.js';

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../../src/data/books.json' with { type: 'json' };
 import { hybridBookMatches } from '../../src/utils/hybridSearch.js';
 import { parsePriceConstraints, matchesPrice } from '../../src/utils/searchConstraints.js';
 import { searchBooks } from '../../src/utils/bookSearch.js';

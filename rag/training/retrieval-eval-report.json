@@ -1,5 +1,5 @@
 {
-  "evaluatedAt": "2026-10-21T21:20:45.853Z",
+  "evaluatedAt": "2026-10-21T21:25:58.726Z",
   "source": "Assistant-reviewed catalog query/book labels; independent of Qwen synthetic classifier training examples",
   "mode": "lexical and structured retrieval; real embedding integration checked separately in browser tests",
   "cases": 26,

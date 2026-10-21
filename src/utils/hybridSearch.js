@@ -1,4 +1,4 @@
-import catalog from '../../mock-data/data.json' with { type: 'json' };
+import catalog from '../data/books.json' with { type: 'json' };
 import { parsePriceConstraints, matchesPrice, explicitTopics } from './searchConstraints.js';
 
 export const TEXT_THRESHOLD = 0.5;

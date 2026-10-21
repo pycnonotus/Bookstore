@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
-const catalogPath = new URL('../../mock-data/data.json', import.meta.url);
+const catalogPath = new URL('../../src/data/books.json', import.meta.url);
 const books = JSON.parse(await readFile(catalogPath, 'utf8'));
 for (const [index, book] of books.entries()) {
   if (book.coverDescription) continue;

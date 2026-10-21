@@ -11,7 +11,7 @@ const deadline = Date.parse(started) + duration;
 const endpoint = process.env.TRAIN_URL || 'http://127.0.0.1:1234/v1';
 const model = process.env.TRAIN_MODEL || 'qwen3.5-4b';
 const topics = ['art', 'programming', 'cooking', 'math'];
-const catalog = JSON.parse(await readFile(new URL('../../mock-data/data.json', import.meta.url), 'utf8'));
+const catalog = JSON.parse(await readFile(new URL('../../src/data/books.json', import.meta.url), 'utf8'));
 await mkdir(new URL('../training/', import.meta.url), { recursive: true });
 const rows = existingRows, seen = new Set(rows.map(row => row.query.toLowerCase()));
 let batches = existingReport?.batches || 0, rejected = existingReport?.rejected || 0, errors = existingReport?.errors || 0;

@@ -1,4 +1,4 @@
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../data/books.json' with { type: 'json' };
 import { MIN_SIMILARITY } from './embeddingSearch.js';
 import { parsePriceConstraints, matchesPrice, explicitTopics } from './searchConstraints.js';
 import { getBookPrice } from './bookPrice.js';

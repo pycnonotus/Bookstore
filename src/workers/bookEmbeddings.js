@@ -1,5 +1,5 @@
 import { pipeline, env } from '@huggingface/transformers';
-import books from '../../mock-data/data.json' with { type: 'json' };
+import books from '../data/books.json' with { type: 'json' };
 import { rankEmbeddings } from '../utils/embeddingSearch';
 import { searchDocument } from '../utils/hybridSearch';
 
