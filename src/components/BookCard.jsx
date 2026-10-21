@@ -2,7 +2,7 @@ import SaveToggle from './SaveToggle';
 import {getBookPrice} from '../utils/bookPrice';
 
 export default function BookCard({book, saved, onSavedChange, headingAs: Heading = 'h3'}) {
-    const image = new URL(`../../mock-data/photos/${book.image}`, import.meta.url).href;
+    const image = `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}`;
     const price = `$${getBookPrice(book).toFixed(2)}`;
     const purchaseSubject = encodeURIComponent(`Book order: ${book.name}`);
     const purchaseBody = encodeURIComponent(`Hi, I'd like to buy a copy of "${book.name}" by ${book.auth}, listed at ${price}.\n\nPlease let me know about availability and how to place my order.\n\nThank you!`);

@@ -19,7 +19,7 @@ npm run preview
 ## Structure
 
 - `src/components/`: Header, Hero, MainContent, Footer, BookCard, and SaveToggle.
-- `mock-data/data.json`: the single catalog array; images live alongside it in `photos/`.
+- `mock-data/data.json`: the single catalog array; images live in `public/images/` and are served at `/images/`.
 - `src/index.css`: Tailwind import, theme colors, and base styles. The old `style.css` has been removed.
 
 MainContent owns the multi-select topic filter using useState. Select one or more topic checkboxes to show their shelves, each with a heading and book count. Clearing the selection or choosing All topics shows the full catalog. Topic chips, shelves, and cards use CSS transitions and entrance animations that respect reduced-motion preferences. App owns saved-book state so the catalog and StaffPicks share the same selections. Staff recommendations are stored on books in the catalog data array. SaveToggle is controlled through its value and onChange props. Saved selections survive filter changes and reset on reload.
