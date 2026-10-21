@@ -1,14 +1,14 @@
 {
   "started": "2026-10-21T20:30:15.319Z",
-  "updated": "2026-10-21T20:30:43.545Z",
-  "elapsedSeconds": 28,
+  "updated": "2026-10-21T20:31:47.625Z",
+  "elapsedSeconds": 92,
   "model": "qwen3.5-4b",
-  "batches": 8,
-  "examples": 64,
-  "trainingExamples": 51,
-  "heldOutExamples": 13,
-  "heldOutAccuracy": 0.9230769230769231,
-  "rejected": 0,
-  "errors": 4,
+  "batches": 26,
+  "examples": 199,
+  "trainingExamples": 159,
+  "heldOutExamples": 40,
+  "heldOutAccuracy": 1,
+  "rejected": 9,
+  "errors": 13,
   "note": "Local Qwen generated supervision; multinomial Naive Bayes topic classifier trained offline. Qwen weights unchanged. Price constraints enforced by deterministic parser."
 }

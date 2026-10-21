@@ -254,5 +254,545 @@
   {
     "query": "recreating classic dishes using a handful of reliable ingredients",
     "topic": "cooking"
+  },
+  {
+    "query": "rust async runtime performance tuning book under $30",
+    "topic": "programming"
+  },
+  {
+    "query": "python dataclass vs namedtuple example code snippets",
+    "topic": "programming"
+  },
+  {
+    "query": "kotlin coroutines suspend functions best practices pdf",
+    "topic": "programming"
+  },
+  {
+    "query": "javascript closure scope chain visual diagram png free",
+    "topic": "programming"
+  },
+  {
+    "query": "scala functional programming concepts for beginners guide no more than 10 pages",
+    "topic": "programming"
+  },
+  {
+    "query": "go context propagation error handling tutorial over $25",
+    "topic": "programming"
+  },
+  {
+    "query": "typescript generics type inference rules cheat sheet print",
+    "topic": "programming"
+  },
+  {
+    "query": "ruby on rails active record polymorphic associations manual",
+    "topic": "programming"
+  },
+  {
+    "query": "c++ move semantics rvalue reference optimization techniques",
+    "topic": "programming"
+  },
+  {
+    "query": "elixir gen.server process supervision tree diagram png",
+    "topic": "programming"
+  },
+  {
+    "query": "java stream parallel processing performance benchmarks chart",
+    "topic": "programming"
+  },
+  {
+    "query": "nodejs event loop phases timing diagram visual guide",
+    "topic": "programming"
+  },
+  {
+    "query": "dart flutter state management provider vs riverpod comparison",
+    "topic": "programming"
+  },
+  {
+    "query": "perl regex metacharacters special characters reference card",
+    "topic": "programming"
+  },
+  {
+    "query": "scala trait inheritance multiple inheritance limitations explained",
+    "topic": "programming"
+  },
+  {
+    "query": "rust ownership borrow checker error messages dictionary",
+    "topic": "programming"
+  },
+  {
+    "query": "grilling steak tips over $40 per serving",
+    "topic": "cooking"
+  },
+  {
+    "query": "no bake cheesecake recipes under 30 minutes",
+    "topic": "cooking"
+  },
+  {
+    "query": "spicy curry blends for over 6 people",
+    "topic": "cooking"
+  },
+  {
+    "query": "slow cooker chicken soup at least 5 hours",
+    "topic": "cooking"
+  },
+  {
+    "query": "fresh pasta dough making guides no more than 20 minutes prep",
+    "topic": "cooking"
+  },
+  {
+    "query": "budget friendly meal plans with ingredients costing less than $15 total",
+    "topic": "cooking"
+  },
+  {
+    "query": "air fryer salmon fillets ready in under 25 minutes",
+    "topic": "cooking"
+  },
+  {
+    "query": "vegetable stir fry using frozen veggies and soy sauce",
+    "topic": "cooking"
+  },
+  {
+    "query": "one pot pasta dishes serving at least 8 people",
+    "topic": "cooking"
+  },
+  {
+    "query": "homemade sourdough starter instructions for beginners",
+    "topic": "cooking"
+  },
+  {
+    "query": "fruit tarts with cream filling without baking the crust",
+    "topic": "cooking"
+  },
+  {
+    "query": "seasonal vegetable soup recipes for cold weather nights",
+    "topic": "cooking"
+  },
+  {
+    "query": "quick grain bowl ideas using roasted chickpeas and tahini",
+    "topic": "cooking"
+  },
+  {
+    "query": "recreating lasagna with a handful of pantry staples",
+    "topic": "cooking"
+  },
+  {
+    "query": "grilled vegetables marinades that cook in under an hour",
+    "topic": "cooking"
+  },
+  {
+    "query": "comfort food noodle soups made the night before",
+    "topic": "cooking"
+  },
+  {
+    "query": "python list comprehension vs map filter performance under 10k items",
+    "topic": "programming"
+  },
+  {
+    "query": "go concurrency channels vs goroutines race detector tutorial",
+    "topic": "programming"
+  },
+  {
+    "query": "javascript closure scope hoisting confusion beginner guide",
+    "topic": "programming"
+  },
+  {
+    "query": "rust lifetimes generic bounds syntax cheat sheet pdf",
+    "topic": "programming"
+  },
+  {
+    "query": "java lambda expressions functional interface stream parallel example",
+    "topic": "programming"
+  },
+  {
+    "query": "typescript strict mode nullish coalescing operator usage",
+    "topic": "programming"
+  },
+  {
+    "query": "c++ smart pointer unique_ptr shared_ptr memory leak prevention",
+    "topic": "programming"
+  },
+  {
+    "query": "scala case classes pattern matching match expression examples",
+    "topic": "programming"
+  },
+  {
+    "query": "elixir async task supervision tree diagram png download",
+    "topic": "programming"
+  },
+  {
+    "query": "dart flutter http package async await example code snippet",
+    "topic": "programming"
+  },
+  {
+    "query": "perl regex non capturing groups lookahead lookbehind reference card",
+    "topic": "programming"
+  },
+  {
+    "query": "ruby on rails strong parameters mass assignment protection tutorial",
+    "topic": "programming"
+  },
+  {
+    "query": "nodejs event loop phases tick check microtask queue visual guide",
+    "topic": "programming"
+  },
+  {
+    "query": "scala trait multiple inheritance limitation workaround example",
+    "topic": "programming"
+  },
+  {
+    "query": "rust borrow checker circular dependency error message explanation",
+    "topic": "programming"
+  },
+  {
+    "query": "python decorator function higher order function syntax cheat sheet",
+    "topic": "programming"
+  },
+  {
+    "query": "cheap chicken recipes for under $10 per serving",
+    "topic": "cooking"
+  },
+  {
+    "query": "how to make vegan curry without coconut milk",
+    "topic": "cooking"
+  },
+  {
+    "query": "best cast iron skillet for searing steaks over 40 dollars",
+    "topic": "cooking"
+  },
+  {
+    "query": "quick breakfast ideas using only eggs and toast",
+    "topic": "cooking"
+  },
+  {
+    "query": "slow cooker beef stew that takes no more than 6 hours",
+    "topic": "cooking"
+  },
+  {
+    "query": "easy pasta carbonara with just 3 ingredients",
+    "topic": "cooking"
+  },
+  {
+    "query": "healthy dinner recipes under 500 calories per plate",
+    "topic": "cooking"
+  },
+  {
+    "query": "how to preserve summer tomatoes for winter cooking",
+    "topic": "cooking"
+  },
+  {
+    "query": "fancy appetizers to serve at a party on a budget",
+    "topic": "cooking"
+  },
+  {
+    "query": "one pot rice dishes that feed the whole family",
+    "topic": "cooking"
+  },
+  {
+    "query": "authentic french onion soup with croutons recipe",
+    "topic": "cooking"
+  },
+  {
+    "query": "grilled fish recipes using lemon and herbs only",
+    "topic": "cooking"
+  },
+  {
+    "query": "baking sheet pizza ideas for under $15 ingredients",
+    "topic": "cooking"
+  },
+  {
+    "query": "how to make homemade stock from bones in one day",
+    "topic": "cooking"
+  },
+  {
+    "query": "spicy thai green curry paste instructions for beginners",
+    "topic": "cooking"
+  },
+  {
+    "query": "comfort food mac and cheese with bacon bits",
+    "topic": "cooking"
+  },
+  {
+    "query": "looking for a book on go concurrency channels and goroutines",
+    "topic": "programming"
+  },
+  {
+    "query": "javascript async await promise all vs race condition tutorial",
+    "topic": "programming"
+  },
+  {
+    "query": "swift ui view modifier list view example code free download",
+    "topic": "programming"
+  },
+  {
+    "query": "rust ownership move semantics borrow checker error explanation",
+    "topic": "programming"
+  },
+  {
+    "query": "python dataclasses pydantic validation schema comparison guide",
+    "topic": "programming"
+  },
+  {
+    "query": "kotlin coroutines suspend function lifecycle diagram png",
+    "topic": "programming"
+  },
+  {
+    "query": "java lambda expressions functional interface stream map filter reduce examples",
+    "topic": "programming"
+  },
+  {
+    "query": "typescript generics type inference constraint violation error fix",
+    "topic": "programming"
+  },
+  {
+    "query": "scala futures forComprehension syntax cheat sheet pdf",
+    "topic": "programming"
+  },
+  {
+    "query": "csharp async await task parallel execution performance optimization",
+    "topic": "programming"
+  },
+  {
+    "query": "ruby gems bundler dependency hell resolution strategy guide",
+    "topic": "programming"
+  },
+  {
+    "query": "perl modules require import autoloading best practices tutorial",
+    "topic": "programming"
+  },
+  {
+    "query": "dart isolate communication message passing example code snippet",
+    "topic": "programming"
+  },
+  {
+    "query": "elixir gen_server process lifecycle state management diagram",
+    "topic": "programming"
+  },
+  {
+    "query": "scala actor model mailbox overflow error explanation and fix",
+    "topic": "programming"
+  },
+  {
+    "query": "nodejs cluster module worker processes load balancing guide",
+    "topic": "programming"
+  },
+  {
+    "query": "quick vegan pasta dinners under 20 dollars",
+    "topic": "cooking"
+  },
+  {
+    "query": "best spices for making curry at home",
+    "topic": "cooking"
+  },
+  {
+    "query": "how to sear a steak without burning it",
+    "topic": "cooking"
+  },
+  {
+    "query": "easy bread recipes for beginners no yeast",
+    "topic": "cooking"
+  },
+  {
+    "query": "sweet potato fries with spicy mayo ideas",
+    "topic": "cooking"
+  },
+  {
+    "query": "one pot chicken and rice meals for two people",
+    "topic": "cooking"
+  },
+  {
+    "query": "fresh herb infused olive oil recipes",
+    "topic": "cooking"
+  },
+  {
+    "query": "dessert cakes that don't need an oven",
+    "topic": "cooking"
+  },
+  {
+    "query": "slow cooker beef stew under 40 dollars",
+    "topic": "cooking"
+  },
+  {
+    "query": "how to make homemade sourdough starter from scratch",
+    "topic": "cooking"
+  },
+  {
+    "query": "lighter versions of classic mac and cheese",
+    "topic": "cooking"
+  },
+  {
+    "query": "grilled vegetable skewers with balsamic glaze",
+    "topic": "cooking"
+  },
+  {
+    "query": "budget friendly dinner ideas for college students",
+    "topic": "cooking"
+  },
+  {
+    "query": "authentic italian tomato sauce without canned tomatoes",
+    "topic": "cooking"
+  },
+  {
+    "query": "fluffy pancakes using only eggs and milk",
+    "topic": "cooking"
+  },
+  {
+    "query": "spicy noodle soup recipes with fresh herbs",
+    "topic": "cooking"
+  },
+  {
+    "query": "python list comprehension vs map filter reduce performance benchmark",
+    "topic": "programming"
+  },
+  {
+    "query": "rust borrow checker lifetime elision error fix tutorial",
+    "topic": "programming"
+  },
+  {
+    "query": "go interface implementation duck typing example code snippet",
+    "topic": "programming"
+  },
+  {
+    "query": "javascript closure scope hoisting variable shadowing debug",
+    "topic": "programming"
+  },
+  {
+    "query": "kotlin coroutines suspend function async await concurrency guide",
+    "topic": "programming"
+  },
+  {
+    "query": "java stream api parallel processing overhead optimization tips",
+    "topic": "programming"
+  },
+  {
+    "query": "scala case class immutability pattern matching match expression",
+    "topic": "programming"
+  },
+  {
+    "query": "typescript union type intersection type narrowing conditional check",
+    "topic": "programming"
+  },
+  {
+    "query": "ruby singleton class method_missing dynamic behavior example",
+    "topic": "programming"
+  },
+  {
+    "query": "perl regex substitution global flag non-greedy matching trick",
+    "topic": "programming"
+  },
+  {
+    "query": "dart async await future error handling try catch block",
+    "topic": "programming"
+  },
+  {
+    "query": "elixir gen_server process supervisor tree architecture diagram",
+    "topic": "programming"
+  },
+  {
+    "query": "scala actor model message passing deadlock prevention strategy",
+    "topic": "programming"
+  },
+  {
+    "query": "nodejs event loop tick phase microtask queue explanation",
+    "topic": "programming"
+  },
+  {
+    "query": "csharp async task parallel execution lock contention resolution",
+    "topic": "programming"
+  },
+  {
+    "query": "html5 semantic elements accessibility a11y best practices guide",
+    "topic": "programming"
+  },
+  {
+    "query": "quick weeknight pasta dishes under 30 dollars",
+    "topic": "cooking"
+  },
+  {
+    "query": "how to roast a whole chicken over high heat",
+    "topic": "cooking"
+  },
+  {
+    "query": "best spices for making homemade curry paste",
+    "topic": "cooking"
+  },
+  {
+    "query": "easy vegan bowl ideas with tofu and greens",
+    "topic": "cooking"
+  },
+  {
+    "query": "fluffy banana bread without using an oven",
+    "topic": "cooking"
+  },
+  {
+    "query": "modern pantry hacks for fresh tomato sauce",
+    "topic": "cooking"
+  },
+  {
+    "query": "comforting soup recipes that take less than an hour",
+    "topic": "cooking"
+  },
+  {
+    "query": "looking for python script to scrape amazon prices under $20",
+    "topic": "programming"
+  },
+  {
+    "query": "how to fix nodejs module not found error in package json",
+    "topic": "programming"
+  },
+  {
+    "query": "best books on java concurrency and thread safety for beginners",
+    "topic": "programming"
+  },
+  {
+    "query": "react hooks useEffect vs useCallback performance comparison guide",
+    "topic": "programming"
+  },
+  {
+    "query": "sql join types inner outer left right explanation with examples",
+    "topic": "programming"
+  },
+  {
+    "query": "docker compose multi stage build python image optimization tips",
+    "topic": "programming"
+  },
+  {
+    "query": "typescript interface vs type alias when to use which in 2024",
+    "topic": "programming"
+  },
+  {
+    "query": "git rebase vs merge strategy for team workflow best practices",
+    "topic": "programming"
+  },
+  {
+    "query": "rust ownership borrowing rules explained simply without pointers",
+    "topic": "programming"
+  },
+  {
+    "query": "kubernetes pod scheduling taints tolerations configuration guide",
+    "topic": "programming"
+  },
+  {
+    "query": "excel vba macro to automate data export to csv file steps",
+    "topic": "programming"
+  },
+  {
+    "query": "spring boot actuator endpoints monitoring metrics setup tutorial",
+    "topic": "programming"
+  },
+  {
+    "query": "javascript closure scope chain example with arrow functions",
+    "topic": "programming"
+  },
+  {
+    "query": "postgresql index creation strategy for large tables optimization",
+    "topic": "programming"
+  },
+  {
+    "query": "terraform aws s3 bucket policy allow deny rules examples",
+    "topic": "programming"
+  },
+  {
+    "query": "c++ virtual function override vs final keyword usage guide",
+    "topic": "programming"
   }
 ]
