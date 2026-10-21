@@ -1,5 +1,4 @@
 import books from '../data/books.json' with { type: 'json' };
-import { getBookPrice } from './bookPrice.js';
 import { parsePriceConstraints, matchesPrice, explicitTopics } from './searchConstraints.js';
 import { predictTopic } from './intentModel.js';
 import intentModel from '../../rag/models/search-intent-model.json' with { type: 'json' };
@@ -42,11 +41,11 @@ export function searchBooks(message, previousQuery = '', semanticMatches = []) {
     score += Math.max(0, (semanticScores.get(book.id) || 0) - 0.25) * 8;
     if (prediction?.confidence > 0.8 && prediction.support >= 2 && prediction.topic === book.topic && score > 0) score += 1.5;
     return { book, score };
-  }).filter(({ book, score }) => (score > 0 || (terms.length === 0 && (price.min !== null || price.max !== null))) && matchesPrice(getBookPrice(book), price) && (!selectedTopics.length || selectedTopics.includes(book.topic)))
-    .sort((a, b) => /\bcheaper\b/i.test(message) ? getBookPrice(a.book) - getBookPrice(b.book) : b.score - a.score)
+  }).filter(({ book, score }) => (score > 0 || (terms.length === 0 && (price.min !== null || price.max !== null))) && matchesPrice(book.price, price) && (!selectedTopics.length || selectedTopics.includes(book.topic)))
+    .sort((a, b) => /\bcheaper\b/i.test(message) ? a.book.price - b.book.price : b.score - a.score)
     .slice(0, 3).map(({ book }) => book);
   return { books: results, query, constraints: price, answer: results.length
-    ? `Top ${results.length} ${results.length === 1 ? 'pick' : 'picks'}${price.description ? ` ${price.description}` : ''}: ${results.map(book => `“${book.name}” ($${getBookPrice(book).toFixed(2)})`).join('; ')}.`
+    ? `Top ${results.length} ${results.length === 1 ? 'pick' : 'picks'}${price.description ? ` ${price.description}` : ''}: ${results.map(book => `“${book.name}” ($${book.price.toFixed(2)})`).join('; ')}.`
     : price.invalid ? 'That price range conflicts. Try a minimum below your maximum, such as “math from $20 to $40”.'
       : `No matching books${price.description ? ` ${price.description}` : ''}. Try a different topic or price range.` };
 }

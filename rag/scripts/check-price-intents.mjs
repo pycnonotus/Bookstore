@@ -3,7 +3,6 @@ import books from '../../src/data/books.json' with { type: 'json' };
 import { hybridBookMatches } from '../../src/utils/hybridSearch.js';
 import { parsePriceConstraints, matchesPrice } from '../../src/utils/searchConstraints.js';
 import { searchBooks } from '../../src/utils/bookSearch.js';
-import { getBookPrice } from '../../src/utils/bookPrice.js';
 const minimums = ['40$ or more', '$40 or more', '40 dollars or more', '40$ ore more', 'at least 40', 'no less than $40', 'minimum of 40', 'not under 40'];
 const strictMin = ['over 40', 'above $40', 'more than 40 dollars'];
 const maximums = ['up to $40', 'at most 40', 'no more than $40', 'not over 40', '40$ or less', 'maximum of 40'];
@@ -37,11 +36,11 @@ for (const text of [...minimums, ...strictMin, ...maximums, ...strictMax]) {
   assert.ok(result.books.length, text);
   for (const book of result.books) {
     assert.equal(book.topic, 'math', text);
-    assert.ok(matchesPrice(getBookPrice(book), result.constraints), `${text}: ${book.name}`);
+    assert.ok(matchesPrice(book.price , result.constraints), `${text}: ${book.name}`);
   }
 }
 const followUp = searchBooks('at least $40', searchBooks('math books').query);
-assert.ok(followUp.books.every(book => book.topic === 'math' && getBookPrice(book) >= 40));
+assert.ok(followUp.books.every(book => book.topic === 'math' && book.price >= 40));
 assert.ok(searchBooks('under $0').books.length === 0);
 assert.ok(searchBooks('math above 100').books.length === 0);
 console.log('Passed: minimum/maximum/range rules, equality boundaries, typo, suffix currencies, contradictory limits, topic and budget follow-ups.');
