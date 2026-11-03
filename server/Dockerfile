@@ -4,5 +4,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 COPY db ./db
 COPY drizzle ./drizzle
+COPY src ./src
 USER node
-CMD ["npm", "run", "db:migrate"]
+EXPOSE 3000
+CMD ["npm", "start"]
