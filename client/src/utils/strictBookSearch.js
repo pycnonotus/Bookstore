@@ -1,8 +1,7 @@
-import books from '../data/books.json' with {type: 'json'};
 import {MIN_SIMILARITY} from './embeddingSearch.js';
 import {parsePriceConstraints, matchesPrice, explicitTopics} from './searchConstraints.js';
 
-export function strictBookMatches(query, matches) {
+export function strictBookMatches(query, matches, books = []) {
     const constraints = parsePriceConstraints(query);
     const topics = explicitTopics(constraints.freeText);
     const byId = new Map(books.map(book => [book.id, book]));

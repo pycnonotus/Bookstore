@@ -160,4 +160,5 @@ artifacts/
 /rag/
 
 # Local verification scripts and fixtures
-/tests/
+/tests/*
+!/tests/check-catalog.mjs

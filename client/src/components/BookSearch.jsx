@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { hybridBookMatches } from '../utils/hybridSearch';
 import { parsePriceConstraints } from '../utils/searchConstraints';
 
-export default function BookSearch({ onResultsChange }) {
+export default function BookSearch({ books, onResultsChange }) {
   const [input, setInput] = useState('');
   const [matches, setMatches] = useState([]);
   const [progress, setProgress] = useState('');
@@ -33,6 +33,7 @@ export default function BookSearch({ onResultsChange }) {
         ? new Worker(new URL('../workers/coverEmbeddings.js', import.meta.url), { type: 'module' })
         : new Worker(new URL('../workers/bookEmbeddings.js', import.meta.url), { type: 'module' });
       workers.current[kind] = worker;
+      worker.postMessage({ type: 'catalog', books });
       worker.onmessage = ({ data }) => {
         if (data.type === 'progress') setProgress(data.message);
         if (data.type === 'results' && pending.current?.id === data.id) pending.current.resolve(data.matches);
@@ -68,13 +69,13 @@ export default function BookSearch({ onResultsChange }) {
       const constraints = parsePriceConstraints(query);
       if (constraints.invalid) throw new Error('The minimum price must not exceed the maximum price.');
       const kind = /\b(cover|picture|image|looks like|photo|front)\b/i.test(query) ? 'cover' : 'text';
-      const quick = hybridBookMatches(query, [], { kind });
+      const quick = hybridBookMatches(query, [], { kind, books });
       setMatches(quick);
       onResultsChange(quick);
       try {
         const results = await retrieve(constraints.freeText.trim() || query, kind);
         if (current !== generation.current) return;
-        const refined = hybridBookMatches(query, results, { kind });
+        const refined = hybridBookMatches(query, results, { kind, books });
         setMatches(refined);
         onResultsChange(refined);
       } catch {

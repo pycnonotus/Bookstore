@@ -1,7 +1,5 @@
-import books from '../data/books.json' with { type: 'json' };
+import picks from '../data/staffPicks.json' with { type: 'json' };
 import BookCard from './BookCard';
-
-const picks = books.filter(book => book.staffPick);
 
 export default function StaffPicks({ savedIds, onSavedChange }) {
   return <section id="staff-picks" aria-labelledby="staff-picks-title" className="border-y border-spruce/15 bg-amber-50">

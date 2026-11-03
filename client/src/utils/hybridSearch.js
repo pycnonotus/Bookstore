@@ -1,4 +1,3 @@
-import catalog from '../data/books.json' with {type: 'json'};
 import {parsePriceConstraints, matchesPrice, explicitTopics} from './searchConstraints.js';
 
 export const TEXT_THRESHOLD = 0.5;
@@ -61,7 +60,7 @@ function oneEdit(left, right) {
 export function hybridBookMatches(query, semanticMatches = [], {
     kind = 'text',
     limit = Infinity,
-    books = catalog
+    books = []
 } = {}) {
     const constraints = parsePriceConstraints(query);
     if (constraints.invalid) return [];

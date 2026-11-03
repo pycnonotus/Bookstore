@@ -11,6 +11,24 @@ npm install
 npm run dev
 ```
 
+Start the backend first with `docker compose up --build -d` from the repository
+root (configure the root `.env` password first). This applies migrations and seeds
+the catalog. The client loads books and categories from `/api`; Vite proxies these
+requests to `http://127.0.0.1:3000`. To use a different backend port, copy
+`client/.env.example` to `client/.env` and update `API_PROXY_TARGET`.
+
+Books, prices, search metadata and catalog cover images now live in the backend.
+The client shows a loading message and a retry button if the catalog is unavailable.
+Browser search receives the fetched catalog, including both embedding workers.
+For production, route `/api` on the frontend origin to the Express server.
+
+With both servers running, `npm run test:catalog` checks the API-connected UI,
+filters, search fallback, error recovery, and the local staff picks and events.
+It uses Playwright Chromium (`npx playwright install chromium`), or an installed
+browser selected with `PLAYWRIGHT_CHANNEL=msedge`. Set `CATALOG_TEST_URL` if Vite
+is not running at `http://127.0.0.1:5173`. Semantic workers are stubbed for this
+check so model availability does not affect the result.
+
 For the creating the search embeddings use
 
 ```sh
@@ -21,11 +39,12 @@ npm run models:prepare
 
 ## AI generated data in this project,
 
-- `src/data/books.json` — the books.
-- `public/images/` — book covers.
-- `src/workers/` — search embeddings run in the browser, no backend 🥲
+- `../server/db/data/books.json` — the initial database catalog.
+- `../server/public/images/` — catalog book covers.
+- `src/data/staffPicks.json` and `public/images/` — the client-only staff picks and their covers.
+- `src/workers/` — search embeddings run in the browser over books fetched from the API.
 - `src/scripts/` — model setup.
-- `tests/` — local checks and test data, ignored by Git. The npm test commands need these local files.
+- `tests/check-catalog.mjs` — the tracked catalog browser check. Other files in `tests/` are local checks and fixtures, ignored by Git; the other npm test commands need those local files.
 - `rag/` — local training and experiments, ignored by Git.
 
 To run local training (if you have the local files), use `node rag/scripts/train-search-local.mjs`. Generated checkpoints stay in `rag/`; the search code uses the saved model in `src/data/`.

@@ -1,22 +1,27 @@
 # Server
 
-PostgreSQL and Drizzle ORM. The schema is in `db/schema.js`; generated SQL and
-Drizzle snapshots are committed in `drizzle/`.
+Express, PostgreSQL and Drizzle ORM. `src/index.js` handles startup and shutdown;
+`src/app.js` mounts routers from `src/routes/` and shared error middleware.
+The schema is in `db/schema.js`; generated SQL and Drizzle snapshots are committed
+in `drizzle/`.
 
 ## API
 
 - `GET /api/books` returns all books, ordered by title then ID. Fields:
-  `id`, `title`, `description`, `categoryId`, `priceCents`.
+  `id`, `title`, `author`, `description`, `categoryId`, `topic`, `priceCents`,
+  `currency`, `image`, `imageUrl`, `searchKeywords`, `subjects`, `aliases`,
+  `readingLevel`, `coverDescription`, `coverDescriptionSource`.
 - `GET /api/categories` returns all categories, ordered by name then ID. Fields:
   `id`, `name`.
+- `GET /api/covers/:filename` serves book cover images from `server/public/images`.
 
 Both endpoints return a JSON array (`[]` for an empty table). Unknown routes
 return 404, unsupported methods return 405, and database failures return 500
 without exposing database details.
 
-Compose runs the API at `http://localhost:3000` after migrations succeed. Set
+Compose runs the API at `http://localhost:3000` after migrations and seeding succeed. Set
 `API_PORT` in the root `.env` to change the host port. For local development,
-configure `server/.env`, apply migrations, then run `npm run dev` from `server/`
+configure `server/.env`, run `npm run db:setup`, then run `npm run dev` from `server/`
 (or `npm start` without automatic reload). `PORT` controls the local server port.
 
 ## Run with Docker
@@ -34,7 +39,7 @@ docker compose logs migrate
 ```
 
 Compose starts PostgreSQL, waits for it to be healthy, and runs a one-off migration
-container. Successful migration exits with code 0. The database is available at
+and seed container. Successful setup exits with code 0. The database is available at
 `localhost:5432` with database/user `bookstore` and the password from `.env`.
 Database data persists in a named volume across restarts.
 `docker compose down` stops the services and keeps the data.
@@ -60,12 +65,26 @@ password used in the root `.env`, then start PostgreSQL from the repository root
 `docker compose up -d db`. Back in `server/`:
 
 ```sh
-npm run db:migrate
+npm run db:setup
 npm run db:studio
 ```
 
 Import `db` from `db/index.js` in server code; close `pool` during shutdown.
 An existing `DATABASE_URL` environment variable takes precedence over `.env`.
+
+## Catalog data
+
+`db/data/books.json` contains the original 98-book catalog, including the original
+UUIDs, integer prices in cents, and metadata for browser search. `npm run db:seed`
+imports missing categories and books in one transaction. Reruns preserve existing
+book records, including any changes made in the database; editing the seed JSON
+does not update existing rows. Events and staff picks remain client content.
+
+The client fetches `/api/books` and `/api/categories`. Its Vite development and
+preview servers proxy `/api` to the backend (see `client/.env.example`). For a
+production deployment, route `/api` on the client origin to this Express server.
+Catalog routes currently remain public; auth, orders, Stripe webhooks and the
+order-status page are the next stage.
 
 ## Change the schema
 

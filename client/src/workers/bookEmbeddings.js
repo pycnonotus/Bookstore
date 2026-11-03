@@ -1,5 +1,4 @@
 import {pipeline, env} from '@huggingface/transformers';
-import books from '../data/books.json' with {type: 'json'};
 import {rankEmbeddings} from '../utils/embeddingSearch';
 import {searchDocument} from '../utils/hybridSearch';
 
@@ -9,7 +8,8 @@ env.localModelPath = '/models/';
 env.backends.onnx.wasm.numThreads = 1;
 let indexPromise;
 const modelId = 'Xenova/all-MiniLM-L6-v2';
-const texts = books.map(searchDocument);
+let books = [];
+let texts = [];
 
 async function cacheKey() {
     const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(JSON.stringify(texts)));
@@ -58,6 +58,12 @@ function getIndex() {
 }
 
 self.onmessage = async ({data}) => {
+    if (data.type === 'catalog') {
+        books = data.books;
+        texts = books.map(searchDocument);
+        indexPromise = null;
+        return;
+    }
     try {
         const {embed, vectors} = await getIndex();
         if (data.type === 'init') return self.postMessage({type: 'ready'});

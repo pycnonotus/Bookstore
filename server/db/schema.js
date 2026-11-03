@@ -1,4 +1,4 @@
-import { pgTable, uuid, text, integer, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, uuid, text, integer, timestamp, jsonb } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
     id: uuid("id").defaultRandom().primaryKey(),
@@ -20,6 +20,15 @@ export const books = pgTable("books", {
         .notNull()
         .references(() => categories.id),
     priceCents: integer("price_cents"),
+    author: text("author").notNull().default(""),
+    image: text("image").notNull().default(""),
+    currency: text("currency").notNull().default("USD"),
+    searchKeywords: jsonb("search_keywords").notNull().default([]),
+    subjects: jsonb("subjects").notNull().default([]),
+    aliases: jsonb("aliases").notNull().default([]),
+    readingLevel: text("reading_level").notNull().default("unspecified"),
+    coverDescription: text("cover_description").notNull().default(""),
+    coverDescriptionSource: text("cover_description_source").notNull().default(""),
 });
 
 export const orders = pgTable("orders", {

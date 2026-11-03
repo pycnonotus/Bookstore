@@ -1,13 +1,13 @@
 import SaveToggle from './SaveToggle';
 
 export default function BookCard({book, saved, onSavedChange, headingAs: Heading = 'h3'}) {
-    const image = `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}`;
-    const price = `$${book.price.toFixed(2)}`;
+    const image = book.imageUrl || (book.image ? `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}` : null);
+    const price = book.price == null ? 'Price unavailable' : new Intl.NumberFormat('en-US', { style: 'currency', currency: book.currency || 'USD' }).format(book.price);
     return (
         <article
             className="mx-auto flex h-112.5 max-h-112.5 w-full max-w-112.5 min-w-0 flex-col rounded-xl border border-spruce/15 bg-white p-4">
-            <img src={image} alt={`Cover of ${book.name}`} loading="lazy"
-                 className="h-40 w-full shrink-0 rounded-lg bg-paper object-cover"/>
+            {image ? <img src={image} alt={`Cover of ${book.name}`} loading="lazy"
+                 className="h-40 w-full shrink-0 rounded-lg bg-paper object-cover"/> : <div className="h-40 shrink-0 rounded-lg bg-paper" aria-label="Cover unavailable" />}
             <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-spruce">{book.topic}</p>
             <Heading title={book.name}
                      className="book-title mt-1 line-clamp-2 wrap-break-word font-serif text-xl font-semibold">{book.name}</Heading>

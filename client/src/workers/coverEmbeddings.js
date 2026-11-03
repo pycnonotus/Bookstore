@@ -6,14 +6,14 @@ import {
     RawImage,
     env
 } from '@huggingface/transformers';
-import books from '../data/books.json' with {type: 'json'};
 import {cosine} from '../utils/embeddingSearch';
 
 env.allowLocalModels = true;
 env.allowRemoteModels = false;
 env.localModelPath = '/models/';
 env.backends.onnx.wasm.numThreads = 1;
-const coverUrl = book => `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}`;
+const coverUrl = book => book.imageUrl || `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}`;
+let books = [];
 let indexPromise;
 
 async function getIndex() {
@@ -70,6 +70,11 @@ async function getIndex() {
 }
 
 self.onmessage = async ({data}) => {
+    if (data.type === 'catalog') {
+        books = data.books;
+        indexPromise = null;
+        return;
+    }
     try {
         const {embedText, vectors} = await getIndex();
         const query = await embedText(data.query);

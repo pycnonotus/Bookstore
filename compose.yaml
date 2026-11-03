@@ -17,7 +17,7 @@ services:
 
   migrate:
     build: ./server
-    command: ["npm", "run", "db:migrate"]
+    command: ["npm", "run", "db:setup"]
     environment:
       DATABASE_URL: postgresql://bookstore@db:5432/bookstore
       PGPASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the root .env file}

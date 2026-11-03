@@ -76,6 +76,7 @@ export function parsePriceConstraints(text) {
 
 export function matchesPrice(value, price) {
     if (price.invalid) return false;
+    if (!Number.isFinite(value)) return price.min === null && price.max === null;
     return (price.min === null || (price.minInclusive ? value >= price.min : value > price.min))
         && (price.max === null || (price.maxInclusive ? value <= price.max : value < price.max));
 }

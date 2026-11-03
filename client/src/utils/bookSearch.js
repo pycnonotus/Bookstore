@@ -1,4 +1,3 @@
-import books from '../data/books.json' with {type: 'json'};
 import {parsePriceConstraints, matchesPrice, explicitTopics} from './searchConstraints.js';
 import {predictTopic} from './intentModel.js';
 import intentModel from '../data/search-intent-model.json' with {type: 'json'};
@@ -29,17 +28,17 @@ export function tokenize(text) {
         .map(word => word === 'flowers' ? 'flower' : word === 'blooms' ? 'bloom' : word);
 }
 
-// Built once at module load; no model, network, or vector database is required.
-const documents = books.map(book => {
-    const words = tokenize(`${book.name} ${book.name} ${book.auth} ${book.topic} ${book.topic} ${book.description} ${book.searchKeywords?.join(' ') || ''}`);
-    const counts = new Map();
-    for (const word of words) counts.set(word, (counts.get(word) || 0) + 1);
-    return {book, counts, length: words.length};
-});
-const frequency = new Map();
-for (const {counts} of documents) for (const word of counts.keys()) frequency.set(word, (frequency.get(word) || 0) + 1);
+export function searchBooks(message, semanticMatches = [], books = []) {
+    // Build the index from the current API catalog.
+    const documents = books.map(book => {
+        const words = tokenize(`${book.name} ${book.name} ${book.auth} ${book.topic} ${book.topic} ${book.description} ${book.searchKeywords?.join(' ') || ''}`);
+        const counts = new Map();
+        for (const word of words) counts.set(word, (counts.get(word) || 0) + 1);
+        return {book, counts, length: words.length};
+    });
+    const frequency = new Map();
+    for (const {counts} of documents) for (const word of counts.keys()) frequency.set(word, (frequency.get(word) || 0) + 1);
 
-export function searchBooks(message, semanticMatches = []) {
     const query = message.slice(-2000);
     const price = parsePriceConstraints(query);
     const selectedTopics = explicitTopics(price.freeText);
