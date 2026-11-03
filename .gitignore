@@ -161,3 +161,6 @@ artifacts/
 
 # Local verification scripts and fixtures
 /tests/
+
+
+.env

@@ -1,4 +1,4 @@
-import { pgTable, uuid, text } from "drizzle-orm/pg-core";
+import { pgTable, uuid, text, integer, timestamp } from "drizzle-orm/pg-core";
 
 export const users = pgTable("users", {
     id: uuid("id").defaultRandom().primaryKey(),
@@ -6,8 +6,6 @@ export const users = pgTable("users", {
     passwordHash: text("password_hash").notNull(),
     passwordSalt: text("password_salt").notNull(),
 });
-
-import { pgTable, uuid, text, integer } from "drizzle-orm/pg-core";
 
 export const categories = pgTable("categories", {
     id: uuid("id").defaultRandom().primaryKey(),
