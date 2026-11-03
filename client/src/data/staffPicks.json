@@ -1,0 +1,44 @@
+[
+  {
+    "id": "b3aed4d5-d7da-4096-8ece-81ab735eb87a",
+    "name": "Forms of Silence",
+    "auth": "Elena Marlowe",
+    "image": "4d7c20ef-c340-48f0-8e26-869a09dd1d5d.jpeg",
+    "topic": "art",
+    "price": 11.56,
+    "currency": "USD",
+    "description": "A visual journey through classical sculpture, quiet forms, and the enduring beauty of marble.",
+    "staffPick": {
+      "staff": "Maya",
+      "quote": "A quiet escape into sculpture. I find something new in these forms every time I return."
+    }
+  },
+  {
+    "id": "417d3301-4be7-4ae9-bcaf-435d03d13c90",
+    "name": "Spectral Blooms",
+    "auth": "Julian Voss",
+    "image": "e958430c-c83f-4253-952c-0d649333989a.jpeg",
+    "topic": "art",
+    "price": 30.92,
+    "currency": "USD",
+    "description": "An expressive collection exploring color, emotion, and the dramatic language of floral painting.",
+    "staffPick": {
+      "staff": "Noah",
+      "quote": "For anyone who loves color. These bold blooms make even a gray afternoon feel brighter."
+    }
+  },
+  {
+    "id": "347de658-9ddf-436a-a0dc-035b7c6a3c21",
+    "name": "Horizons Within",
+    "auth": "Mira Bellamy",
+    "image": "ad05f839-b1af-45f9-b0fc-af29d5af5f22.jpeg",
+    "topic": "art",
+    "price": 14.08,
+    "currency": "USD",
+    "description": "A curated tour of imagined landscapes, distant mountains, and tranquil waters.",
+    "staffPick": {
+      "staff": "Leah",
+      "quote": "An invitation to slow down and wander. Keep this one close when you need a little breathing room."
+    }
+  }
+]
