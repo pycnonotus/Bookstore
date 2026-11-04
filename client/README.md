@@ -15,7 +15,7 @@ Start the backend first with `docker compose up --build -d` from the repository
 root (configure the root `.env` password and run `npm run auth:setup` in `server/`
 first). This applies migrations and seeds
 the catalog. The client loads books and categories from `/api`; Vite proxies these
-requests to `http://127.0.0.1:3000`. To use a different backend port, copy
+requests to `http://127.0.0.1:3001`. To use a different backend port, copy
 `client/.env.example` to `client/.env` and update `API_PROXY_TARGET`.
 
 Books, prices and search metadata live in the backend. Cover images live in

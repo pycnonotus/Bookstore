@@ -4,7 +4,7 @@ books.pycnonotus.dev {
 
 	@api path /api /api/*
 	handle @api {
-		reverse_proxy server:3000
+		reverse_proxy server:3001
 	}
 
 	@assets path /assets/* /images/* /models/*
