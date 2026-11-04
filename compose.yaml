@@ -51,6 +51,11 @@ services:
       default:
       proxy:
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3012/api/categories').then(response => { if (!response.ok) process.exit(1); }).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
     depends_on:
       migrate:
         condition: service_completed_successfully
@@ -65,7 +70,8 @@ services:
       proxy:
         ipv4_address: 172.30.247.2
     depends_on:
-      - server
+      server:
+        condition: service_healthy
     restart: unless-stopped
 
 networks:
