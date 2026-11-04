@@ -12,7 +12,7 @@ env.allowLocalModels = true;
 env.allowRemoteModels = false;
 env.localModelPath = '/models/';
 env.backends.onnx.wasm.numThreads = 1;
-const coverUrl = book => book.imageUrl || `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}`;
+const coverUrl = book => book.image;
 let books = [];
 let indexPromise;
 

@@ -25,6 +25,13 @@ try {
   assert.equal(booksResponse.status(), 200);
   const books = await booksResponse.json();
   assert.ok(books.length > 0, 'Seed the database before running this check');
+  for (const book of books) {
+    assert.match(book.image, /^\/images\//);
+    const cover = await page.request.get(`${base}${book.image}`);
+    assert.equal(cover.status(), 200);
+    assert.match(cover.headers()['content-type'], /^image\//);
+  }
+  assert.equal((await page.request.get(`${base}/api/covers/removed.jpeg`)).status(), 404);
   const categories = await (await page.request.get(`${base}/api/categories`)).json();
   await page.goto(base);
   await page.waitForFunction(count => document.querySelectorAll('#catalog article').length === count, books.length);
@@ -35,7 +42,7 @@ try {
   const firstCard = page.locator('#catalog article').filter({ has: page.getByRole('heading', { name: first.title, exact: true }) });
   await firstCard.scrollIntoViewIfNeeded();
   await firstCard.locator('img').evaluate(image => image.decode());
-  assert.match(await firstCard.locator('img').getAttribute('src'), /^\/api\/covers\//);
+  assert.equal(await firstCard.locator('img').getAttribute('src'), first.image);
   assert.ok((await firstCard.locator('[data-book-price]').textContent()).includes((first.priceCents / 100).toFixed(2)));
 
   const topic = categories[0];

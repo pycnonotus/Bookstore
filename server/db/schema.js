@@ -21,6 +21,7 @@ export const books = pgTable("books", {
         .references(() => categories.id),
     priceCents: integer("price_cents"),
     author: text("author").notNull().default(""),
+    // Public client path, e.g. /images/cover.jpeg.
     image: text("image").notNull().default(""),
     currency: text("currency").notNull().default("USD"),
     searchKeywords: jsonb("search_keywords").notNull().default([]),

@@ -10,10 +10,7 @@ export function booksRouter(db) {
             .from(books)
             .innerJoin(categories, eq(books.categoryId, categories.id))
             .orderBy(books.title, books.id);
-        response.json(rows.map(book => ({
-            ...book,
-            imageUrl: book.image ? `/api/covers/${encodeURIComponent(book.image)}` : null,
-        })));
+        response.json(rows);
     });
     router.all("/", methodNotAllowed);
     return router;

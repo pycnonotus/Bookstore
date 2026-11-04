@@ -1,7 +1,7 @@
 [
   {
     "id": "b3aed4d5-d7da-4096-8ece-81ab735eb87a",
-    "image": "4d7c20ef-c340-48f0-8e26-869a09dd1d5d.jpeg",
+    "image": "/images/4d7c20ef-c340-48f0-8e26-869a09dd1d5d.jpeg",
     "topic": "art",
     "description": "A visual journey through classical sculpture, quiet forms, and the enduring beauty of marble.",
     "searchKeywords": [
@@ -29,7 +29,7 @@
   },
   {
     "id": "417d3301-4be7-4ae9-bcaf-435d03d13c90",
-    "image": "e958430c-c83f-4253-952c-0d649333989a.jpeg",
+    "image": "/images/e958430c-c83f-4253-952c-0d649333989a.jpeg",
     "topic": "art",
     "description": "An expressive collection exploring color, emotion, and the dramatic language of floral painting.",
     "searchKeywords": [
@@ -61,7 +61,7 @@
   },
   {
     "id": "347de658-9ddf-436a-a0dc-035b7c6a3c21",
-    "image": "ad05f839-b1af-45f9-b0fc-af29d5af5f22.jpeg",
+    "image": "/images/ad05f839-b1af-45f9-b0fc-af29d5af5f22.jpeg",
     "topic": "art",
     "description": "A curated tour of imagined landscapes, distant mountains, and tranquil waters.",
     "searchKeywords": [
@@ -87,7 +87,7 @@
   },
   {
     "id": "04df4951-cb38-44e0-88bd-9baace4607eb",
-    "image": "155c600f-a6e6-4d1a-b606-bf7fa90dcd1d.jpeg",
+    "image": "/images/155c600f-a6e6-4d1a-b606-bf7fa90dcd1d.jpeg",
     "topic": "programming",
     "description": "An exploration of geometric abstraction and the algorithms behind generative visual art.",
     "searchKeywords": [
@@ -119,7 +119,7 @@
   },
   {
     "id": "577370df-9b8e-4389-8b53-307c6c8d415b",
-    "image": "a5d2d9bb-6692-4597-aeca-2f34dc1b7d05.jpeg",
+    "image": "/images/a5d2d9bb-6692-4597-aeca-2f34dc1b7d05.jpeg",
     "topic": "art",
     "description": "Portraits across eras that reveal the changing ways artists depict identity and expression.",
     "searchKeywords": [
@@ -144,7 +144,7 @@
   },
   {
     "id": "263fc74a-b6f6-4acd-a559-0146a50d68b8",
-    "image": "4cd0d76a-c735-4ef1-9b1b-4e46ae3b0e48.jpeg",
+    "image": "/images/4cd0d76a-c735-4ef1-9b1b-4e46ae3b0e48.jpeg",
     "topic": "art",
     "description": "An intimate study of still-life painting, delicate flowers, and the passing of time.",
     "searchKeywords": [
@@ -171,7 +171,7 @@
   },
   {
     "id": "2e29f4d7-63d1-47f4-8b28-4c5fcc1021ed",
-    "image": "abc14d96-dc1d-4f82-8f58-a5d4b4a7201f.jpeg",
+    "image": "/images/abc14d96-dc1d-4f82-8f58-a5d4b4a7201f.jpeg",
     "topic": "art",
     "description": "A celebration of Japanese woodblock prints and the artistic legacy of waves and motion.",
     "searchKeywords": [
@@ -199,7 +199,7 @@
   },
   {
     "id": "8b21d83e-69a9-4cb0-9b91-b2a0e3d3a04f",
-    "image": "b8567487-fe6d-4cd9-a5c4-31adb17f2582.jpeg",
+    "image": "/images/b8567487-fe6d-4cd9-a5c4-31adb17f2582.jpeg",
     "topic": "art",
     "description": "A study of evocative interiors and the memories, spaces, and identities they hold.",
     "searchKeywords": [
@@ -226,7 +226,7 @@
   },
   {
     "id": "aadad6cb-d650-4e32-a37c-b93f0bb1bd56",
-    "image": "96095aaa-f1ab-418b-8570-e9ca4477cebc.jpeg",
+    "image": "/images/96095aaa-f1ab-418b-8570-e9ca4477cebc.jpeg",
     "topic": "art",
     "description": "A collection of dreamlike cityscapes and imagined architecture beyond familiar horizons.",
     "searchKeywords": [
@@ -256,7 +256,7 @@
   },
   {
     "id": "1dda2362-29e9-4316-903b-1e9074eaf60a",
-    "image": "c171a56c-bb0c-408a-83d3-fa6a2d134d72.jpeg",
+    "image": "/images/c171a56c-bb0c-408a-83d3-fa6a2d134d72.jpeg",
     "topic": "art",
     "description": "A creative coding perspective on textures, layered compositions, and procedural art.",
     "searchKeywords": [
@@ -281,7 +281,7 @@
   },
   {
     "id": "c34d81c9-8e39-4752-b17f-5fdaa41005e8",
-    "image": "0027dec1-ce64-4820-b838-0753584baa17.png",
+    "image": "/images/0027dec1-ce64-4820-b838-0753584baa17.png",
     "topic": "programming",
     "description": "Discover how HTMX brings dynamic interactions to web pages using familiar HTML attributes instead of large client-side frameworks. Through practical examples, learn requests, swaps, triggers, and progressive enhancement while building responsive interfaces that stay simple, accessible, and easy to maintain.",
     "searchKeywords": [
@@ -317,7 +317,7 @@
   },
   {
     "id": "555976f8-f46c-4bbf-ad5f-669c7c6c362f",
-    "image": "0442d2ae-cc9c-4d1f-ab03-6a7573c7937b.png",
+    "image": "/images/0442d2ae-cc9c-4d1f-ab03-6a7573c7937b.png",
     "topic": "programming",
     "description": "A playful guide to CSS pseudo-classes and the subtle behaviors they unlock in everyday interfaces. Explore hover, focus, checked, structural selectors, and modern patterns through visual examples that make styling forms, navigation, and interactive components feel intuitive rather than mysterious.",
     "searchKeywords": [
@@ -352,7 +352,7 @@
   },
   {
     "id": "c7d1615d-b8ab-40d4-8433-e17f6a78a1f5",
-    "image": "7bf4c9a5-e980-4d31-bd43-b232b1ff35a6.png",
+    "image": "/images/7bf4c9a5-e980-4d31-bd43-b232b1ff35a6.png",
     "topic": "programming",
     "description": "Choosing a frontend stack should be informed, not tribal. Compare React, Angular, Vue, and the surprisingly charming Pug templating language through approachable examples, tradeoffs, and real project scenarios. Find out when each tool shines and when a simpler solution wins.",
     "searchKeywords": [
@@ -390,7 +390,7 @@
   },
   {
     "id": "cd92e446-70e5-4865-a963-21ab07550111",
-    "image": "8182e202-a477-43eb-9568-2f417048bd20.png",
+    "image": "/images/8182e202-a477-43eb-9568-2f417048bd20.png",
     "topic": "programming",
     "description": "Take a nostalgic yet practical tour of jQuery, the library that changed web development. Learn how selectors, events, animations, and AJAX reshaped interactive sites, then see how its classic techniques compare with modern JavaScript and where legacy code still matters.",
     "searchKeywords": [
@@ -426,7 +426,7 @@
   },
   {
     "id": "5f0fcd15-bdb5-4d05-813f-92ca2776ae45",
-    "image": "8fa0449c-7cde-4ce6-8e40-6e5933b86b97.png",
+    "image": "/images/8fa0449c-7cde-4ce6-8e40-6e5933b86b97.png",
     "topic": "programming",
     "description": "One tiny CSS unit raises a surprisingly big question. Unpack rem, em, pixels, root font sizes, browser defaults, and user preferences with clear examples. Build a sizing system that respects accessibility while keeping layouts consistent across devices and screen settings.",
     "searchKeywords": [
@@ -457,7 +457,7 @@
   },
   {
     "id": "c556a18b-82ed-4472-b70f-4f1ed29659bc",
-    "image": "c6e3f775-7056-43d7-beba-b6c0eeb64aea.png",
+    "image": "/images/c6e3f775-7056-43d7-beba-b6c0eeb64aea.png",
     "topic": "programming",
     "description": "Get to know the building blocks of the modern web with a friendly tour of HTML5. From semantic elements and forms to multimedia and accessibility, this book shows how thoughtful markup creates pages that are robust, understandable, and ready for any framework.",
     "searchKeywords": [
@@ -488,7 +488,7 @@
   },
   {
     "id": "92234e61-e3cf-4801-944e-50cc684c0317",
-    "image": "de04448b-157b-4094-80a7-65c26513f166.png",
+    "image": "/images/de04448b-157b-4094-80a7-65c26513f166.png",
     "topic": "programming",
     "description": "Travel back through the history of version control, from copied folders and shared archives to CVS, Subversion, and Git. Explore the problems early teams faced, the workflows they invented, and the ideas that still shape how developers collaborate today.",
     "searchKeywords": [
@@ -519,7 +519,7 @@
   },
   {
     "id": "bec8cf6d-34c1-484e-9e48-a4039d469d91",
-    "image": "fcc18c7d-3e8a-4970-a95e-ef8651f9cf01.png",
+    "image": "/images/fcc18c7d-3e8a-4970-a95e-ef8651f9cf01.png",
     "topic": "programming",
     "description": "Build small, delightful web projects while learning how HTML and React work together. Start with semantic markup, add reusable components and state, then experiment with interactive details. The focus is curiosity, confidence, and enjoying the creative side of frontend development.",
     "searchKeywords": [
@@ -556,7 +556,7 @@
   },
   {
     "id": "395fa775-bb0f-4f5c-9eb4-73ff7820cd94",
-    "image": "3295f64d-5950-43b5-b7e4-57dc522d3cb6.jpeg",
+    "image": "/images/3295f64d-5950-43b5-b7e4-57dc522d3cb6.jpeg",
     "topic": "cooking",
     "description": "Discover how bright ingredients and uncomplicated techniques can turn everyday meals into something memorable. From citrus-forward dressings to fresh herbs and simple pantry staples, this collection offers approachable recipes for busy home cooks who want color, balance, and joy on the table.",
     "searchKeywords": [
@@ -587,7 +587,7 @@
   },
   {
     "id": "05e682cb-57e3-42c6-b375-b2f7b42c6406",
-    "image": "f9b5344e-8b3e-4c5d-aa97-0fe9ae7d6857.jpeg",
+    "image": "/images/f9b5344e-8b3e-4c5d-aa97-0fe9ae7d6857.jpeg",
     "topic": "cooking",
     "description": "Celebrate pasta in all its comforting forms, from slow-simmered sauces and handmade ribbons to speedy weeknight favorites. Learn essential cooking techniques, explore regional inspiration, and find creative ways to reinvent classic dishes using seasonal produce and a handful of reliable ingredients.",
     "searchKeywords": [
@@ -618,7 +618,7 @@
   },
   {
     "id": "85400acb-5a7c-4fd9-b6f2-e6a6c9085e1f",
-    "image": "b8793b36-c568-4799-89cb-50538bed2c1d.jpeg",
+    "image": "/images/b8793b36-c568-4799-89cb-50538bed2c1d.jpeg",
     "topic": "cooking",
     "description": "Bring vegetables, grains, beans, and fresh herbs into the spotlight with vibrant dishes that never feel like a compromise. These practical recipes combine satisfying textures, bold sauces, and clever preparation techniques to make plant-focused cooking delicious for every kind of eater.",
     "searchKeywords": [
@@ -652,7 +652,7 @@
   },
   {
     "id": "ef968620-8d4c-48b8-9528-9291852ab7e9",
-    "image": "71ede022-aeba-4333-b3a1-50ac6d12f28d.jpeg",
+    "image": "/images/71ede022-aeba-4333-b3a1-50ac6d12f28d.jpeg",
     "topic": "cooking",
     "description": "Master the art of cooking over high heat with flavorful marinades, confident searing, and smart grilling methods. From smoky vegetables to perfectly cooked proteins, this book explains how temperature, timing, and seasoning create deeply satisfying food indoors or outside.",
     "searchKeywords": [
@@ -683,7 +683,7 @@
   },
   {
     "id": "6e26cef3-0196-4df2-9c14-b816ea6c62e7",
-    "image": "745be77f-cc93-4fae-8fa9-c7b57d85a0df.jpeg",
+    "image": "/images/745be77f-cc93-4fae-8fa9-c7b57d85a0df.jpeg",
     "topic": "cooking",
     "description": "Fill your kitchen with the warmth of freshly baked bread, tender pastries, and comforting treats. Step-by-step methods make doughs, proofing, shaping, and finishing easier to understand, whether you are preparing a rustic loaf or a weekend sweet for sharing.",
     "searchKeywords": [
@@ -717,7 +717,7 @@
   },
   {
     "id": "3c33cfdb-20a1-41f2-bbe2-7acecc6dcd65",
-    "image": "0b765b91-8851-4570-b2c8-df7df1973cf2.jpeg",
+    "image": "/images/0b765b91-8851-4570-b2c8-df7df1973cf2.jpeg",
     "topic": "cooking",
     "description": "Travel through the world of spices and discover how to build flavor with fragrant blends, toasted seeds, and aromatic pastes. Each recipe introduces practical techniques and ingredient pairings that bring depth, warmth, and personality to familiar dishes and new culinary adventures.",
     "searchKeywords": [
@@ -748,7 +748,7 @@
   },
   {
     "id": "3fcfdf42-7e76-481d-993e-5509ca3a29f0",
-    "image": "b3bf4a79-e26b-412e-9dc2-358024da3e16.jpeg",
+    "image": "/images/b3bf4a79-e26b-412e-9dc2-358024da3e16.jpeg",
     "topic": "cooking",
     "description": "Explore cozy bowls filled with nourishing broths, noodles, rice, vegetables, and satisfying toppings. This collection focuses on thoughtful layering of texture and flavor, helping home cooks create adaptable meals that feel restorative, generous, and easy to make again.",
     "searchKeywords": [
@@ -779,7 +779,7 @@
   },
   {
     "id": "004619de-ea0c-4509-bb01-425b242d8a80",
-    "image": "6dfb812a-c51a-4d46-b714-13b936962473.jpeg",
+    "image": "/images/6dfb812a-c51a-4d46-b714-13b936962473.jpeg",
     "topic": "cooking",
     "description": "Create desserts worth sharing with approachable recipes for fruit tarts, airy creams, rich cakes, and small everyday indulgences. Learn simple baking fundamentals, clever presentation ideas, and reliable finishing touches that make each sweet treat feel special without unnecessary fuss.",
     "searchKeywords": [
@@ -810,7 +810,7 @@
   },
   {
     "id": "0827420d-dc6f-4d89-9a0b-647cc3d8a360",
-    "image": "941c0338-4c44-4a72-9cf8-fb7e04b2753e.jpeg",
+    "image": "/images/941c0338-4c44-4a72-9cf8-fb7e04b2753e.jpeg",
     "topic": "cooking",
     "description": "Transform practical pantry ingredients into fresh, inventive meals with a little imagination and smart preparation. Discover versatile sauces, seasonal pairings, and thoughtful plating ideas that make it easier to cook beautifully using what you already have on hand.",
     "searchKeywords": [
@@ -841,7 +841,7 @@
   },
   {
     "id": "b8c903e8-0b66-431a-b0bc-45740288a915",
-    "image": "386a0a71-57e4-40d2-80d5-b8b7a1c1faee.jpeg",
+    "image": "/images/386a0a71-57e4-40d2-80d5-b8b7a1c1faee.jpeg",
     "topic": "cooking",
     "description": "Rediscover the pleasure of homemade food through reliable techniques, comforting classics, and flexible recipes for ordinary days. From one-pot dinners to slow Sunday cooking, this inviting guide helps build confidence, reduce waste, and make the kitchen a favorite place to gather.",
     "searchKeywords": [
@@ -872,7 +872,7 @@
   },
   {
     "id": "9d3b1a3c-7ce3-4f88-b748-0e95a395c44b",
-    "image": "185a5358-aa0f-4112-bc1b-386d2035b2fd.jpeg",
+    "image": "/images/185a5358-aa0f-4112-bc1b-386d2035b2fd.jpeg",
     "topic": "cooking",
     "description": "Easy, satisfying recipes for busy days, from hearty grain bowls to quick vegetable suppers.",
     "searchKeywords": [
@@ -903,7 +903,7 @@
   },
   {
     "id": "9f9c1593-055c-4f86-b53c-61af26165036",
-    "image": "3482d598-d0a4-4748-83bb-777712a8e5d2.jpeg",
+    "image": "/images/3482d598-d0a4-4748-83bb-777712a8e5d2.jpeg",
     "topic": "cooking",
     "description": "Classic home-style Italian cooking with fresh pasta, bright sauces, and simple techniques.",
     "searchKeywords": [
@@ -932,7 +932,7 @@
   },
   {
     "id": "8b8e7bd1-6184-44ee-972c-ee9ebc4bc151",
-    "image": "b40487c2-54a1-4aa2-b1ae-0dd5164db1b8.jpeg",
+    "image": "/images/b40487c2-54a1-4aa2-b1ae-0dd5164db1b8.jpeg",
     "topic": "cooking",
     "description": "Seasonal plant-based meals filled with herbs, crisp vegetables, and fresh ideas.",
     "searchKeywords": [
@@ -966,7 +966,7 @@
   },
   {
     "id": "2e3bcedd-d9f7-43b5-9a93-e721bfba1c7d",
-    "image": "66a90ec5-579f-4c4f-aec0-78b9f133d2d6.jpeg",
+    "image": "/images/66a90ec5-579f-4c4f-aec0-78b9f133d2d6.jpeg",
     "topic": "cooking",
     "description": "Comforting bowls inspired by garden vegetables and the turning seasons.",
     "searchKeywords": [
@@ -997,7 +997,7 @@
   },
   {
     "id": "45e91fd5-d659-4df4-a135-42fe61283663",
-    "image": "ab450b75-4188-4464-a2a1-65dd44e2a22f.jpeg",
+    "image": "/images/ab450b75-4188-4464-a2a1-65dd44e2a22f.jpeg",
     "topic": "cooking",
     "description": "Sunlit Mediterranean favorites with olive oil, herbs, vegetables, and seafood.",
     "searchKeywords": [
@@ -1028,7 +1028,7 @@
   },
   {
     "id": "4e078833-13e8-4708-bdbb-4ad01b1625da",
-    "image": "d364c564-1573-48db-a75b-c4b1259be35a.jpeg",
+    "image": "/images/d364c564-1573-48db-a75b-c4b1259be35a.jpeg",
     "topic": "cooking",
     "description": "Everyday techniques for broths, noodles, and vibrant Asian-inspired dishes.",
     "searchKeywords": [
@@ -1052,7 +1052,7 @@
   },
   {
     "id": "91dbb479-3844-4218-bad6-96433d52a878",
-    "image": "f2e01a21-167d-4734-8aa2-5cb4b46d5082.jpeg",
+    "image": "/images/f2e01a21-167d-4734-8aa2-5cb4b46d5082.jpeg",
     "topic": "cooking",
     "description": "Beloved comfort-food classics, updated for simple, joyful cooking.",
     "searchKeywords": [
@@ -1077,7 +1077,7 @@
   },
   {
     "id": "b2923fe5-5c95-4d82-a01d-552d1c5e3e28",
-    "image": "684085b0-2704-4ac0-bba5-4c2809b3d4ce.jpeg",
+    "image": "/images/684085b0-2704-4ac0-bba5-4c2809b3d4ce.jpeg",
     "topic": "cooking",
     "description": "Fast, flavorful dinners for nights when you want great food without the fuss.",
     "searchKeywords": [
@@ -1108,7 +1108,7 @@
   },
   {
     "id": "db1fbb11-2bbf-4f06-be97-6b066844218d",
-    "image": "34cad128-4c1e-41de-be93-a11aad9be29b.jpeg",
+    "image": "/images/34cad128-4c1e-41de-be93-a11aad9be29b.jpeg",
     "topic": "cooking",
     "description": "Cakes, cookies, and small celebrations made with love and seasonal fruit.",
     "searchKeywords": [
@@ -1139,7 +1139,7 @@
   },
   {
     "id": "8c67d607-acd6-4e31-a6c4-0c22d3cde300",
-    "image": "64f25b2e-91ef-461c-9359-d0a9cef6b8ba.jpeg",
+    "image": "/images/64f25b2e-91ef-461c-9359-d0a9cef6b8ba.jpeg",
     "topic": "cooking",
     "description": "A culinary tour of spices, sauces, and beloved dishes around the world.",
     "searchKeywords": [
@@ -1170,7 +1170,7 @@
   },
   {
     "id": "55cc5c7d-e842-4cbd-a976-778ae44b1119",
-    "image": "02ea9024-e4aa-45e2-b7d7-7d96d3578719.jpeg",
+    "image": "/images/02ea9024-e4aa-45e2-b7d7-7d96d3578719.jpeg",
     "topic": "cooking",
     "description": "Approachable fish and seafood recipes, from gentle roasting to bright citrus marinades.",
     "searchKeywords": [
@@ -1201,7 +1201,7 @@
   },
   {
     "id": "c5109152-ded0-40d7-9b94-20aa4cccdf5b",
-    "image": "1f120ae8-7b34-4936-bcc9-ec3f160ada54.jpeg",
+    "image": "/images/1f120ae8-7b34-4936-bcc9-ec3f160ada54.jpeg",
     "topic": "cooking",
     "description": "A friendly introduction to pickles, cultured vegetables, and fermented kitchen staples.",
     "searchKeywords": [
@@ -1232,7 +1232,7 @@
   },
   {
     "id": "fb8e3213-0225-4001-b047-1bbdca91efe2",
-    "image": "92e64687-a6fc-4803-a62a-34e20d56e58b.jpeg",
+    "image": "/images/92e64687-a6fc-4803-a62a-34e20d56e58b.jpeg",
     "topic": "cooking",
     "description": "Morning inspiration, from fluffy pancakes to fresh and nourishing breakfasts.",
     "searchKeywords": [
@@ -1259,7 +1259,7 @@
   },
   {
     "id": "62ab501d-083d-4f4f-85bb-88f65c3a3d58",
-    "image": "391f40be-098e-438f-8e1b-2cf0438817bf.jpeg",
+    "image": "/images/391f40be-098e-438f-8e1b-2cf0438817bf.jpeg",
     "topic": "cooking",
     "description": "Accessible cookies, pastries, and simple bakes for every skill level.",
     "searchKeywords": [
@@ -1293,7 +1293,7 @@
   },
   {
     "id": "ebe83ff8-ee1d-4034-921a-00342a24eb87",
-    "image": "b41eedff-7a24-4a08-89e3-356123e0af3c.jpeg",
+    "image": "/images/b41eedff-7a24-4a08-89e3-356123e0af3c.jpeg",
     "topic": "cooking",
     "description": "Unlock the aromas and stories of spices through approachable global recipes.",
     "searchKeywords": [
@@ -1324,7 +1324,7 @@
   },
   {
     "id": "5aa84653-2546-47a9-a0c7-a2084fbdc1a5",
-    "image": "6440a4c8-65b7-4669-a9d1-5a82103448ac.jpeg",
+    "image": "/images/6440a4c8-65b7-4669-a9d1-5a82103448ac.jpeg",
     "topic": "cooking",
     "description": "Creative salads built around greens, grains, vibrant dressings, and seasonal produce.",
     "searchKeywords": [
@@ -1354,7 +1354,7 @@
   },
   {
     "id": "78d4bdc3-afc2-469f-a784-a22e2f86d004",
-    "image": "6e3b1185-54ce-4216-b134-68e61b01c051.jpeg",
+    "image": "/images/6e3b1185-54ce-4216-b134-68e61b01c051.jpeg",
     "topic": "cooking",
     "description": "Let fresh market ingredients lead the way with vegetable-forward cooking for every season.",
     "searchKeywords": [
@@ -1381,7 +1381,7 @@
   },
   {
     "id": "dc5e950b-2298-4d30-a727-26990735f40b",
-    "image": "3c8df783-31d5-4c4a-9201-f026d9024cfd.jpeg",
+    "image": "/images/3c8df783-31d5-4c4a-9201-f026d9024cfd.jpeg",
     "topic": "cooking",
     "description": "Discover rich broths, silky vegetable soups, and warming bowls for cold and sunny days.",
     "searchKeywords": [
@@ -1406,7 +1406,7 @@
   },
   {
     "id": "8a380af6-7334-4fbc-9075-f386e1942d54",
-    "image": "c7675920-66e6-4c50-9df8-3ade43aaad33.jpeg",
+    "image": "/images/c7675920-66e6-4c50-9df8-3ade43aaad33.jpeg",
     "topic": "cooking",
     "description": "Nourishing everyday dishes that balance bold flavor, texture, and easy preparation.",
     "searchKeywords": [
@@ -1434,7 +1434,7 @@
   },
   {
     "id": "ef47c90f-e746-4155-ae48-ea045adecb6e",
-    "image": "41aca67c-910d-43e8-9d97-2f6ee24e5dde.jpeg",
+    "image": "/images/41aca67c-910d-43e8-9d97-2f6ee24e5dde.jpeg",
     "topic": "cooking",
     "description": "Bring the energy of market stalls into your kitchen with tacos, sauces, and snacks.",
     "searchKeywords": [
@@ -1461,7 +1461,7 @@
   },
   {
     "id": "9ff1afdc-0c25-4a8c-bc01-acee9ea0b0cc",
-    "image": "6fed1007-dfa8-4a16-b15b-e4ce29843ba1.jpeg",
+    "image": "/images/6fed1007-dfa8-4a16-b15b-e4ce29843ba1.jpeg",
     "topic": "math",
     "description": "Explore numbers: the building blocks of everything through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1491,7 +1491,7 @@
   },
   {
     "id": "7e360e1d-49b3-4565-bc65-1fb618e054ea",
-    "image": "4263aa68-adb0-4476-8d75-91ca7ecd21f1.jpeg",
+    "image": "/images/4263aa68-adb0-4476-8d75-91ca7ecd21f1.jpeg",
     "topic": "math",
     "description": "Explore algebra made simple through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1521,7 +1521,7 @@
   },
   {
     "id": "f1e65c7f-e550-40c5-9788-76bcb89b2eff",
-    "image": "a9620816-a707-4466-9f3c-60cfa92bad15.jpeg",
+    "image": "/images/a9620816-a707-4466-9f3c-60cfa92bad15.jpeg",
     "topic": "math",
     "description": "Explore geometry in focus through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1551,7 +1551,7 @@
   },
   {
     "id": "157ac9bb-50f3-4925-874a-bd76a08e63c4",
-    "image": "e4f8da53-6378-414c-b47a-d78893556c97.jpeg",
+    "image": "/images/e4f8da53-6378-414c-b47a-d78893556c97.jpeg",
     "topic": "math",
     "description": "Explore calculus step by step through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1585,7 +1585,7 @@
   },
   {
     "id": "e226eff2-2877-4e6b-ae02-4fe5e73994ff",
-    "image": "4d985959-057b-4644-b62d-63ef1e4da74a.jpeg",
+    "image": "/images/4d985959-057b-4644-b62d-63ef1e4da74a.jpeg",
     "topic": "math",
     "description": "Explore linear algebra for real life through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1620,7 +1620,7 @@
   },
   {
     "id": "e8baaccb-abb2-4d88-9fb3-4e1878e29b7b",
-    "image": "e034a255-2b71-4fce-86d3-c9ea3c4fa4df.jpeg",
+    "image": "/images/e034a255-2b71-4fce-86d3-c9ea3c4fa4df.jpeg",
     "topic": "math",
     "description": "Explore probability and uncertainty through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1652,7 +1652,7 @@
   },
   {
     "id": "55f23886-84eb-4849-8f25-92f7fe8e7aa1",
-    "image": "6c04bc09-8cb2-40c4-9d29-cf3cb9234587.jpeg",
+    "image": "/images/6c04bc09-8cb2-40c4-9d29-cf3cb9234587.jpeg",
     "topic": "math",
     "description": "Explore statistics in practice through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1686,7 +1686,7 @@
   },
   {
     "id": "99879ad2-ed5f-44cc-a0c5-896e3bb9c4e6",
-    "image": "046ab920-2b87-4f9d-b601-6aeea642f419.jpeg",
+    "image": "/images/046ab920-2b87-4f9d-b601-6aeea642f419.jpeg",
     "topic": "math",
     "description": "Explore discrete mathematics through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1713,7 +1713,7 @@
   },
   {
     "id": "7d414634-a893-4f3d-b69e-61727792d081",
-    "image": "ed057cad-b6ae-47c3-9c08-1e893ef9b6b7.jpeg",
+    "image": "/images/ed057cad-b6ae-47c3-9c08-1e893ef9b6b7.jpeg",
     "topic": "math",
     "description": "Explore number theory through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1747,7 +1747,7 @@
   },
   {
     "id": "477b13c3-06e9-47ef-b9d1-ca4e6be6b2b4",
-    "image": "d1414514-bdfc-49d4-a7fb-151a1a18ea24.jpeg",
+    "image": "/images/d1414514-bdfc-49d4-a7fb-151a1a18ea24.jpeg",
     "topic": "math",
     "description": "Explore mathematical thinking through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1781,7 +1781,7 @@
   },
   {
     "id": "c6c180e1-d4de-40c3-b610-1b2d78d1844f",
-    "image": "2c6db4b2-9ca3-4cad-a7d9-a5df5b650a63.jpeg",
+    "image": "/images/2c6db4b2-9ca3-4cad-a7d9-a5df5b650a63.jpeg",
     "topic": "math",
     "description": "Explore set theory and beyond through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1811,7 +1811,7 @@
   },
   {
     "id": "6ee20cc3-3303-487e-9108-a81aac61659d",
-    "image": "c08135db-d218-401d-b1eb-3d1fee3b985c.jpeg",
+    "image": "/images/c08135db-d218-401d-b1eb-3d1fee3b985c.jpeg",
     "topic": "math",
     "description": "Explore logic for clear thinking through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1845,7 +1845,7 @@
   },
   {
     "id": "f520e08b-8c6c-4cae-8ba3-daeae29a847f",
-    "image": "c5902678-3e55-4714-80da-7413ea11e83c.jpeg",
+    "image": "/images/c5902678-3e55-4714-80da-7413ea11e83c.jpeg",
     "topic": "math",
     "description": "Explore functions and graphs through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1879,7 +1879,7 @@
   },
   {
     "id": "540ec8a3-8d04-4d3a-b672-6ad1cfe6f113",
-    "image": "6576bd89-8ba9-4b51-ae02-5bf6aed45811.jpeg",
+    "image": "/images/6576bd89-8ba9-4b51-ae02-5bf6aed45811.jpeg",
     "topic": "math",
     "description": "Explore trigonometry: angles, waves and applications through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1913,7 +1913,7 @@
   },
   {
     "id": "0deb43be-c6f6-47a9-b4cf-e9c054234b74",
-    "image": "cbcf27e2-3a2e-4b45-acad-2d98d9051d6b.jpeg",
+    "image": "/images/cbcf27e2-3a2e-4b45-acad-2d98d9051d6b.jpeg",
     "topic": "math",
     "description": "Explore complex numbers: a beautiful world through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1944,7 +1944,7 @@
   },
   {
     "id": "446a6584-c8d3-4958-a9bf-75f700c94143",
-    "image": "6df0973b-71ed-47e1-ae82-d1bf7f2226b1.jpeg",
+    "image": "/images/6df0973b-71ed-47e1-ae82-d1bf7f2226b1.jpeg",
     "topic": "math",
     "description": "Explore differential equations through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -1978,7 +1978,7 @@
   },
   {
     "id": "1ce1c2a8-172f-4926-91dd-56686b96cc33",
-    "image": "3046f3a8-507b-4ecd-8815-19f2264b9bc2.jpeg",
+    "image": "/images/3046f3a8-507b-4ecd-8815-19f2264b9bc2.jpeg",
     "topic": "math",
     "description": "Explore vector calculus through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2010,7 +2010,7 @@
   },
   {
     "id": "08376551-81c4-47f1-bcd2-3e5698737d44",
-    "image": "1e510303-9201-4564-b99e-a069216ade31.jpeg",
+    "image": "/images/1e510303-9201-4564-b99e-a069216ade31.jpeg",
     "topic": "math",
     "description": "Explore real analysis: a deeper look through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2044,7 +2044,7 @@
   },
   {
     "id": "e9f3ef08-6efc-4113-aa25-6fe4e6ce00c2",
-    "image": "359267cd-3540-453b-82ab-76651361a898.jpeg",
+    "image": "/images/359267cd-3540-453b-82ab-76651361a898.jpeg",
     "topic": "math",
     "description": "Explore abstract algebra through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2074,7 +2074,7 @@
   },
   {
     "id": "22fd69f7-20df-4691-be7c-e98081a1de78",
-    "image": "df51bd9d-9358-4152-8c54-c303c5de6527.jpeg",
+    "image": "/images/df51bd9d-9358-4152-8c54-c303c5de6527.jpeg",
     "topic": "math",
     "description": "Explore topology: shapes without limits through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2104,7 +2104,7 @@
   },
   {
     "id": "153420a1-041b-48db-9a2a-346945cc5ec9",
-    "image": "2fc90978-7737-4994-98b2-5d20fd4a4d3a.jpeg",
+    "image": "/images/2fc90978-7737-4994-98b2-5d20fd4a4d3a.jpeg",
     "topic": "math",
     "description": "Explore combinatorics: counting the possibilities through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2138,7 +2138,7 @@
   },
   {
     "id": "a47a6adb-32b3-44f4-8b1d-bbb7c67b597b",
-    "image": "84ba13bc-7b78-48e2-be3d-e96d5df1ae93.jpeg",
+    "image": "/images/84ba13bc-7b78-48e2-be3d-e96d5df1ae93.jpeg",
     "topic": "math",
     "description": "Explore graph theory: connections everywhere through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2172,7 +2172,7 @@
   },
   {
     "id": "1e626520-1532-4e86-98f5-606923120d9e",
-    "image": "4f0513df-ef2b-4365-891d-6de82d37d0ff.jpeg",
+    "image": "/images/4f0513df-ef2b-4365-891d-6de82d37d0ff.jpeg",
     "topic": "math",
     "description": "Explore mathematical proofs: how to think and write through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2206,7 +2206,7 @@
   },
   {
     "id": "fd9c9656-fb4f-480b-9f97-21bbce11c1bf",
-    "image": "5f5d0933-1ac0-40ff-b8bd-60a9f92e087a.jpeg",
+    "image": "/images/5f5d0933-1ac0-40ff-b8bd-60a9f92e087a.jpeg",
     "topic": "math",
     "description": "Explore game theory: strategy and mathematics through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2240,7 +2240,7 @@
   },
   {
     "id": "5b8d4921-c5e2-4ed8-89a3-633d91831e87",
-    "image": "9305c6b5-feba-43ae-8a5d-744388b4f682.jpeg",
+    "image": "/images/9305c6b5-feba-43ae-8a5d-744388b4f682.jpeg",
     "topic": "math",
     "description": "Explore mathematical modeling: from ideas to impact through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2272,7 +2272,7 @@
   },
   {
     "id": "e0c5e282-3aaf-42ab-9427-16cf47d2cbf6",
-    "image": "b98509db-eb30-4590-a2c7-988096f4ead0.jpeg",
+    "image": "/images/b98509db-eb30-4590-a2c7-988096f4ead0.jpeg",
     "topic": "math",
     "description": "Explore chaos theory: order in disorder through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2299,7 +2299,7 @@
   },
   {
     "id": "45938797-d3ef-4c1d-b323-2c65fcfb34e7",
-    "image": "2d391e15-00d5-4e94-87aa-ae80b1cc05a6.jpeg",
+    "image": "/images/2d391e15-00d5-4e94-87aa-ae80b1cc05a6.jpeg",
     "topic": "math",
     "description": "Explore fourier analysis: from waves to signals through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2333,7 +2333,7 @@
   },
   {
     "id": "e9adbcb6-f0c7-42f1-8c92-19961df97d23",
-    "image": "e4f5189b-1413-4555-9763-3afa16502d78.jpeg",
+    "image": "/images/e4f5189b-1413-4555-9763-3afa16502d78.jpeg",
     "topic": "math",
     "description": "Explore measure theory: length, area and beyond through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2367,7 +2367,7 @@
   },
   {
     "id": "ec654a4c-d40b-43af-a25c-acf299ff57aa",
-    "image": "00ffda40-a35d-43d9-92a4-9fea7b8314c0.jpeg",
+    "image": "/images/00ffda40-a35d-43d9-92a4-9fea7b8314c0.jpeg",
     "topic": "math",
     "description": "Explore mathematical optimization: better decisions through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2401,7 +2401,7 @@
   },
   {
     "id": "940eff5d-a275-4666-9a7b-6565c6b839b8",
-    "image": "d56f0634-705f-49a4-809f-9302580b426f.jpeg",
+    "image": "/images/d56f0634-705f-49a4-809f-9302580b426f.jpeg",
     "topic": "math",
     "description": "Explore computational mathematics: ideas into algorithms through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2431,7 +2431,7 @@
   },
   {
     "id": "ac1b97fb-9511-403b-8e23-5dbe53a5b20d",
-    "image": "084879fb-b8cb-4206-88b0-91c5d0abaec5.jpeg",
+    "image": "/images/084879fb-b8cb-4206-88b0-91c5d0abaec5.jpeg",
     "topic": "math",
     "description": "Explore financial mathematics: money, models and markets through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2463,7 +2463,7 @@
   },
   {
     "id": "6eabff67-22c4-4393-b22c-526428fa9de8",
-    "image": "e45a61c1-5c27-4f1c-b14d-121b23ac51aa.jpeg",
+    "image": "/images/e45a61c1-5c27-4f1c-b14d-121b23ac51aa.jpeg",
     "topic": "math",
     "description": "Explore mathematical biology: patterns in life through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2497,7 +2497,7 @@
   },
   {
     "id": "b390162d-019f-4d1a-90ef-d425b321f5fe",
-    "image": "b058a8f8-9abb-4f75-bb80-1cb3f57fb6cc.jpeg",
+    "image": "/images/b058a8f8-9abb-4f75-bb80-1cb3f57fb6cc.jpeg",
     "topic": "math",
     "description": "Explore cryptography: the math of secrets through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2531,7 +2531,7 @@
   },
   {
     "id": "4864bb37-5f69-4731-95a4-25ba077b6352",
-    "image": "3693fd23-7f74-4e8b-b81b-249df636c05e.jpeg",
+    "image": "/images/3693fd23-7f74-4e8b-b81b-249df636c05e.jpeg",
     "topic": "math",
     "description": "Explore coding with mathematics through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2563,7 +2563,7 @@
   },
   {
     "id": "d126d1be-8920-4e93-8bec-6c875189bc23",
-    "image": "99645d46-58c9-46e3-b38f-314dc19d1879.jpeg",
+    "image": "/images/99645d46-58c9-46e3-b38f-314dc19d1879.jpeg",
     "topic": "math",
     "description": "Explore geometry of everyday objects through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2597,7 +2597,7 @@
   },
   {
     "id": "1c78d18c-6f7e-406c-9713-8cb5fd30e1ae",
-    "image": "c5a09f16-1a2e-4366-bff7-9bd0b50d3d61.jpeg",
+    "image": "/images/c5a09f16-1a2e-4366-bff7-9bd0b50d3d61.jpeg",
     "topic": "math",
     "description": "Explore fractals: infinite beauty through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2627,7 +2627,7 @@
   },
   {
     "id": "9b339d0a-736f-439b-a8cc-a5303c9f98bf",
-    "image": "9394a4d4-c9aa-4329-b68b-d7fed7de16f9.jpeg",
+    "image": "/images/9394a4d4-c9aa-4329-b68b-d7fed7de16f9.jpeg",
     "topic": "math",
     "description": "Explore math puzzles and curiosities through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2659,7 +2659,7 @@
   },
   {
     "id": "8d2edb24-351f-4327-b384-7419553e58cf",
-    "image": "6ffa808d-d1da-49b4-987a-5a23d95794b3.jpeg",
+    "image": "/images/6ffa808d-d1da-49b4-987a-5a23d95794b3.jpeg",
     "topic": "math",
     "description": "Explore applied mathematics: solving real problems through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2691,7 +2691,7 @@
   },
   {
     "id": "ca1be560-247f-4efa-aea0-b45a8a4aceac",
-    "image": "d2463c28-6903-43ad-ba5f-1618024c4a7e.jpeg",
+    "image": "/images/d2463c28-6903-43ad-ba5f-1618024c4a7e.jpeg",
     "topic": "math",
     "description": "Explore mathematical physics: the language of nature through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2723,7 +2723,7 @@
   },
   {
     "id": "4f33907e-a48c-4662-9c9e-e93ca1759239",
-    "image": "ee9cd95e-45d2-4879-a146-86e729e97f4c.jpeg",
+    "image": "/images/ee9cd95e-45d2-4879-a146-86e729e97f4c.jpeg",
     "topic": "math",
     "description": "Explore data science with math through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2757,7 +2757,7 @@
   },
   {
     "id": "b5e5591b-f73c-4c2d-bd38-e8f4bb99b2b6",
-    "image": "741691d8-519e-4463-ad11-5df54f737513.jpeg",
+    "image": "/images/741691d8-519e-4463-ad11-5df54f737513.jpeg",
     "topic": "math",
     "description": "Explore history of mathematics: ideas through time through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2787,7 +2787,7 @@
   },
   {
     "id": "2ff705b3-4897-4b29-908c-4cee601daac0",
-    "image": "5198e5e5-737b-472f-8c59-d54aa21c5b6d.jpeg",
+    "image": "/images/5198e5e5-737b-472f-8c59-d54aa21c5b6d.jpeg",
     "topic": "math",
     "description": "Explore geometry in nature: patterns all around through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2817,7 +2817,7 @@
   },
   {
     "id": "e7b1b3e0-521b-4a29-abd9-746bb8d5cef6",
-    "image": "8a926063-fea5-4c23-a97b-53ece431da5e.jpeg",
+    "image": "/images/8a926063-fea5-4c23-a97b-53ece431da5e.jpeg",
     "topic": "math",
     "description": "Explore numbers in nature through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2847,7 +2847,7 @@
   },
   {
     "id": "f791b724-3fd5-434b-a3d6-8b761e719e97",
-    "image": "3b4acf2e-31d4-489b-ab76-36dbf791b7b5.jpeg",
+    "image": "/images/3b4acf2e-31d4-489b-ab76-36dbf791b7b5.jpeg",
     "topic": "math",
     "description": "Explore mathematics for creatives through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2881,7 +2881,7 @@
   },
   {
     "id": "ba9b9d10-a8fa-4359-8f2b-84b10ebc40a1",
-    "image": "89e97253-fdf6-4dbb-9da1-709c888febe6.jpeg",
+    "image": "/images/89e97253-fdf6-4dbb-9da1-709c888febe6.jpeg",
     "topic": "math",
     "description": "Explore teaching mathematics: ideas for every learner through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2915,7 +2915,7 @@
   },
   {
     "id": "13f44e96-9f0e-405f-a90e-e1d293026f65",
-    "image": "c06cc1de-6082-4b09-8614-0e8869bb1fd9.jpeg",
+    "image": "/images/c06cc1de-6082-4b09-8614-0e8869bb1fd9.jpeg",
     "topic": "math",
     "description": "Explore mental math and estimation through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2947,7 +2947,7 @@
   },
   {
     "id": "e6e43dd4-e405-4b98-ba8d-57db4834a9e7",
-    "image": "65275876-86ac-4239-8d75-10953c9fe726.jpeg",
+    "image": "/images/65275876-86ac-4239-8d75-10953c9fe726.jpeg",
     "topic": "math",
     "description": "Explore math for kids: fun and easy through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -2979,7 +2979,7 @@
   },
   {
     "id": "d54c69b7-6802-4f0e-9b71-55a8322e830e",
-    "image": "4d0e7c4b-526f-4c15-a25c-353f6028b463.jpeg",
+    "image": "/images/4d0e7c4b-526f-4c15-a25c-353f6028b463.jpeg",
     "topic": "math",
     "description": "Explore mathematical mindset: thinking like a problem solver through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -3013,7 +3013,7 @@
   },
   {
     "id": "fb8c8400-dd70-4d68-8ce1-f0f5fa791411",
-    "image": "5106b723-2167-4eb3-8190-379307e6df28.jpeg",
+    "image": "/images/5106b723-2167-4eb3-8190-379307e6df28.jpeg",
     "topic": "math",
     "description": "Explore future of mathematics: trends and possibilities through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [
@@ -3047,7 +3047,7 @@
   },
   {
     "id": "b3bccec5-95a9-49cb-94b2-0fff509daf62",
-    "image": "e4b79011-9770-4497-ac93-b8adb5334fd2.jpeg",
+    "image": "/images/e4b79011-9770-4497-ac93-b8adb5334fd2.jpeg",
     "topic": "math",
     "description": "Explore math and beauty: art, patterns and the infinite through clear explanations, memorable visuals, and approachable examples. This fictional guide connects mathematical ideas with real questions, building intuition before introducing deeper techniques. Exercises, thought experiments, and practical applications invite curious readers to discover how mathematics can transform the way they understand the world.",
     "searchKeywords": [

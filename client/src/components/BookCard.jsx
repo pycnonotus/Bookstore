@@ -1,7 +1,7 @@
 import SaveToggle from './SaveToggle';
 
 export default function BookCard({book, saved, onSavedChange, headingAs: Heading = 'h3'}) {
-    const image = book.imageUrl || (book.image ? `${import.meta.env.BASE_URL}images/${encodeURIComponent(book.image)}` : null);
+    const image = book.image || null;
     const price = book.price == null ? 'Price unavailable' : new Intl.NumberFormat('en-US', { style: 'currency', currency: book.currency || 'USD' }).format(book.price);
     return (
         <article

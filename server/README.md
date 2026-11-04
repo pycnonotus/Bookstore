@@ -9,11 +9,13 @@ in `drizzle/`.
 
 - `GET /api/books` returns all books, ordered by title then ID. Fields:
   `id`, `title`, `author`, `description`, `categoryId`, `topic`, `priceCents`,
-  `currency`, `image`, `imageUrl`, `searchKeywords`, `subjects`, `aliases`,
+  `currency`, `image`, `searchKeywords`, `subjects`, `aliases`,
   `readingLevel`, `coverDescription`, `coverDescriptionSource`.
 - `GET /api/categories` returns all categories, ordered by name then ID. Fields:
   `id`, `name`.
-- `GET /api/covers/:filename` serves book cover images from `server/public/images`.
+
+`image` stores the public client path (for example `/images/cover.jpeg`). Image
+files live in `client/public/images/` and are served by the frontend.
 
 Both endpoints return a JSON array (`[]` for an empty table). Unknown routes
 return 404, unsupported methods return 405, and database failures return 500
@@ -79,6 +81,9 @@ UUIDs, integer prices in cents, and metadata for browser search. `npm run db:see
 imports missing categories and books in one transaction. Reruns preserve existing
 book records, including any changes made in the database; editing the seed JSON
 does not update existing rows. Events and staff picks remain client content.
+
+The `0002_client_image_paths` migration updates existing image filenames to
+`/images/...` paths. Already configured paths and URLs are preserved.
 
 The client fetches `/api/books` and `/api/categories`. Its Vite development and
 preview servers proxy `/api` to the backend (see `client/.env.example`). For a

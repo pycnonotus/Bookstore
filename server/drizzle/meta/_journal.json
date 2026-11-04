@@ -15,6 +15,13 @@
       "when": 1793721135237,
       "tag": "0001_catalog_metadata",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793778573363,
+      "tag": "0002_client_image_paths",
+      "breakpoints": true
     }
   ]
 }

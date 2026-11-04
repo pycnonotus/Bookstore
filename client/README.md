@@ -17,7 +17,8 @@ the catalog. The client loads books and categories from `/api`; Vite proxies the
 requests to `http://127.0.0.1:3000`. To use a different backend port, copy
 `client/.env.example` to `client/.env` and update `API_PROXY_TARGET`.
 
-Books, prices, search metadata and catalog cover images now live in the backend.
+Books, prices and search metadata live in the backend. Cover images live in
+`client/public/images/`; the database stores their public `/images/...` paths.
 The client shows a loading message and a retry button if the catalog is unavailable.
 Browser search receives the fetched catalog, including both embedding workers.
 For production, route `/api` on the frontend origin to the Express server.
@@ -40,8 +41,8 @@ npm run models:prepare
 ## AI generated data in this project,
 
 - `../server/db/data/books.json` — the initial database catalog.
-- `../server/public/images/` — catalog book covers.
-- `src/data/staffPicks.json` and `public/images/` — the client-only staff picks and their covers.
+- `public/images/` — all book covers, served by the frontend.
+- `src/data/staffPicks.json` — the client-only staff picks.
 - `src/workers/` — search embeddings run in the browser over books fetched from the API.
 - `src/scripts/` — model setup.
 - `tests/check-catalog.mjs` — the tracked catalog browser check. Other files in `tests/` are local checks and fixtures, ignored by Git; the other npm test commands need those local files.
