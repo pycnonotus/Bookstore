@@ -6,5 +6,5 @@ COPY db ./db
 COPY drizzle ./drizzle
 COPY src ./src
 USER node
-EXPOSE 3001
+EXPOSE 3012
 CMD ["npm", "start"]

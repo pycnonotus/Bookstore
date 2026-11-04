@@ -31,7 +31,7 @@ services:
     environment:
       DATABASE_URL: postgresql://bookstore@db:5432/bookstore
       PGPASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the root .env file}
-      PORT: 3001
+      PORT: 3012
       BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?Run npm run auth:setup in server to generate BETTER_AUTH_SECRET}
       BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:5173}
       AUTH_TRUSTED_ORIGINS: ${AUTH_TRUSTED_ORIGINS:-http://127.0.0.1:5173}
@@ -39,7 +39,7 @@ services:
       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
       STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
     ports:
-      - "127.0.0.1:${API_PORT:-3001}:3001"
+      - "127.0.0.1:${API_PORT:-3012}:3012"
     depends_on:
       migrate:
         condition: service_completed_successfully

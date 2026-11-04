@@ -115,11 +115,11 @@ For local webhooks, install the [Stripe CLI](https://docs.stripe.com/stripe-cli)
 run `stripe login`, then leave this running:
 
 ```sh
-stripe listen --events checkout.session.completed,checkout.session.async_payment_succeeded,checkout.session.async_payment_failed,checkout.session.expired --forward-to http://localhost:3001/api/stripe/webhook
+stripe listen --events checkout.session.completed,checkout.session.async_payment_succeeded,checkout.session.async_payment_failed,checkout.session.expired --forward-to http://localhost:3012/api/stripe/webhook
 ```
 
 Use the **`whsec_...` printed by that listener** in `.env`; it differs from a
-Dashboard endpoint's signing secret. Adjust port 3001 if `API_PORT`/`PORT` differs.
+Dashboard endpoint's signing secret. Adjust port 3012 if `API_PORT`/`PORT` differs.
 After editing root `.env`, run `docker compose up --build -d` to apply migration
 `0005_stripe_payments` and recreate the API with the new settings.
 
@@ -170,7 +170,7 @@ for a non-default frontend URL, and `PLAYWRIGHT_CHANNEL=msedge` to use installed
 Edge instead of Playwright Chromium. Existing `test:auth`, `test:orders`, and
 `test:catalog` scripts exercise the running API and a disposable seeded database.
 
-Compose runs the API at `http://localhost:3001` after migrations and seeding succeed. Set
+Compose runs the API at `http://localhost:3012` after migrations and seeding succeed. Set
 `API_PORT` in the root `.env` to change the host port. For local development,
 configure `server/.env`, run `npm run db:setup`, then run `npm run dev` from `server/`
 (or `npm start` without automatic reload). `PORT` controls the local server port.
