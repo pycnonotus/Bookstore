@@ -16,10 +16,15 @@ const secret = existing[0] || randomBytes(48).toString("base64url");
 for (const [i, file] of files.entries()) {
     let content = contents[i];
     const values = parse(content);
-    for (const [key, value] of Object.entries({
-        BETTER_AUTH_SECRET: secret,
+    const localDefaults = i === 0 ? {
+        BOOKSTORE_URL: "https://books.pycnonotus.dev",
+    } : {
         BETTER_AUTH_URL: "http://localhost:5173",
         AUTH_TRUSTED_ORIGINS: "http://127.0.0.1:5173",
+    };
+    for (const [key, value] of Object.entries({
+        BETTER_AUTH_SECRET: secret,
+        ...localDefaults,
     })) {
         if (values[key]) continue;
         const line = `${key}='${value}'`;

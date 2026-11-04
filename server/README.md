@@ -41,11 +41,11 @@ From `server/`, run `npm run auth:setup` once. It generates a random
 Existing nonempty settings and database passwords are preserved. Secrets stay
 in ignored files and are not printed. No external auth account or API key is needed.
 
-`BETTER_AUTH_URL` is the public frontend URL, default `http://localhost:5173`.
-`AUTH_TRUSTED_ORIGINS` is an optional comma-separated list of additional frontend
-origins (default `http://127.0.0.1:5173`). Match these to the actual frontend port.
-In production use your HTTPS frontend URL and proxy `/api` to Express. The client
-uses same-origin requests; no cross-origin cookie or CORS setup is needed.
+Compose uses `BOOKSTORE_URL` from the root `.env` for Better Auth.
+It defaults to `https://books.pycnonotus.dev`. When running Express directly, use
+`BETTER_AUTH_URL` in `server/.env`, which defaults to `http://localhost:5173`.
+Use `AUTH_TRUSTED_ORIGINS` for any additional frontend origins, separated by
+commas. The client uses same-origin requests through Caddy or Vite.
 
 The client has `/register` and `/login` pages. Registration signs users in;
 sessions persist in PostgreSQL and use HttpOnly cookies. Logout revokes the
@@ -108,8 +108,8 @@ The secret API key comes from Stripe's API keys page. The webhook signing secret
 comes from the specific webhook endpoint (or the CLI listener below). Keep both
 on the server. Hosted Checkout does not need a publishable key in the frontend.
 Missing settings leave browsing, auth and saved orders available, with checkout
-temporarily unavailable. `BETTER_AUTH_URL` must be the frontend origin: it also
-controls the fixed checkout success/cancel URLs.
+temporarily unavailable. The frontend origin from `BOOKSTORE_URL` in Compose
+or `BETTER_AUTH_URL` in local Node controls the checkout success and cancel URLs.
 
 For local webhooks, install the [Stripe CLI](https://docs.stripe.com/stripe-cli),
 run `stripe login`, then leave this running:
@@ -177,27 +177,21 @@ configure `server/.env`, run `npm run db:setup`, then run `npm run dev` from `se
 
 ## Run with Docker
 
-### Production at books.pycnonotus.dev
+### Production on Dokploy
 
-Point the domain's DNS records to the Docker host and make ports 80 and 443
-reachable over TCP. Open UDP 443 if using HTTP/3. Configure the root `.env`
-with a database password and Better Auth secret as described below. If enabling
-payments, set the Stripe key and the signing secret for the production webhook
-URL in that same file.
+Point DNS for `books.pycnonotus.dev` at Dokploy. In the Compose application's
+Domains tab, add `books.pycnonotus.dev` with path `/`, service `caddy`, container
+port `8080`, HTTPS enabled, and the Let's Encrypt certificate option. Redeploy
+after saving the domain. [Dokploy Compose domains](https://docs.dokploy.com/docs/core/docker-compose/domains)
 
-From the repository root, run:
+Set `BOOKSTORE_URL=https://books.pycnonotus.dev`, `POSTGRES_PASSWORD`, and
+`BETTER_AUTH_SECRET` in the application's environment. If enabling payments,
+set the Stripe key and the signing secret for the production webhook there too.
 
-```sh
-docker compose -f compose.yaml -f compose.production.yaml up --build -d
-docker compose -f compose.yaml -f compose.production.yaml logs caddy server migrate
-```
-
-Caddy obtains and renews the HTTPS certificate and stores it in the
-`caddy_data` volume. It serves the Vite build at the domain root, including
-images and search models. Direct links such as `/login` and `/orders/:id`
-load React Router, and Caddy forwards `/api/*` to Express with the path intact.
-The production override sets the HTTPS origin for Better Auth and Stripe
-returns. PostgreSQL and Express use Docker networks with no published ports.
+Traefik handles public HTTPS and forwards requests to Caddy over Docker.
+Caddy serves the Vite build, images, and search models, supports direct links
+such as `/orders/:id`, and forwards `/api/*` to Express with the path intact.
+The host bindings for PostgreSQL and Express listen only on loopback.
 
 ### Local development
 
@@ -209,10 +203,11 @@ characters do not need URL encoding. `.env` files are ignored by Git.
 Run `npm run auth:setup` from `server/` to populate the auth secret before starting
 Compose.
 
-Then run:
+To run the backend alongside Vite, set `BOOKSTORE_URL=http://localhost:5173`
+in the root `.env` and run:
 
 ```sh
-docker compose up --build -d
+docker compose up --build -d server
 docker compose logs migrate
 ```
 

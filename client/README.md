@@ -11,9 +11,10 @@ npm install
 npm run dev
 ```
 
-Start the backend first with `docker compose up --build -d` from the repository
-root (configure the root `.env` password and run `npm run auth:setup` in `server/`
-first). This applies migrations and seeds
+Set `BOOKSTORE_URL=http://localhost:5173` in the root `.env` for Vite. Configure
+the database password and run `npm run auth:setup` in `server/` before starting
+the backend with `docker compose up --build -d server` from the repository root.
+This applies migrations and seeds
 the catalog. The client loads books and categories from `/api`; Vite proxies these
 requests to `http://127.0.0.1:3012`. To use a different backend port, copy
 `client/.env.example` to `client/.env` and update `API_PROXY_TARGET`.
@@ -22,15 +23,14 @@ Books, prices and search metadata live in the backend. Cover images live in
 `client/public/images/`; the database stores their public `/images/...` paths.
 The client shows a loading message and a retry button if the catalog is unavailable.
 Browser search receives the fetched catalog, including both embedding workers.
-For production, route `/api` on the frontend origin to the Express server.
+For production, Caddy serves the frontend and forwards `/api` to Express.
 
 ## Accounts
 
 Open `/register` to create an email/password account or `/login` to sign in.
 The header shows the current user and a logout button. Sessions use HttpOnly
-cookies and survive reloads. Set the server's `BETTER_AUTH_URL` to the frontend
-URL; add alternate origins to `AUTH_TRUSTED_ORIGINS`. Production hosting must
-serve `index.html` for client routes such as `/login` and `/register`.
+cookies and survive reloads. Set `BOOKSTORE_URL` for Compose or `BETTER_AUTH_URL`
+when running Express directly. Add alternate origins to `AUTH_TRUSTED_ORIGINS`.
 
 `npm run test:auth` exercises registration, login, session persistence, logout,
 invalid credentials, password validation, origin checks and `/api/me`. Run it

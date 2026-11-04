@@ -59,15 +59,8 @@ services:
     build:
       context: .
       target: caddy
-    environment:
-      BOOKSTORE_URL: ${BOOKSTORE_URL:-https://books.pycnonotus.dev}
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
-    volumes:
-      - caddy_data:/data
-      - caddy_config:/config
+    expose:
+      - "8080"
     networks:
       proxy:
         ipv4_address: 172.30.247.2
@@ -85,5 +78,3 @@ networks:
 
 volumes:
   postgres_data:
-  caddy_data:
-  caddy_config:
