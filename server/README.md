@@ -218,7 +218,7 @@ docker compose logs migrate
 
 Compose starts PostgreSQL, waits for it to be healthy, and runs a one-off migration
 and seed container. Successful setup exits with code 0. The database is available at
-`localhost:5432` with database/user `bookstore` and the password from `.env`.
+`localhost:5435` with database/user `bookstore` and the password from `.env`.
 Database data persists in a named volume across restarts.
 `docker compose down` stops the services and keeps the data.
 
@@ -226,9 +226,9 @@ PostgreSQL uses `POSTGRES_PASSWORD` only when initializing a new data volume.
 If your database already exists, changing `.env` alone will not change its
 password; update the database role password too before rerunning migrations.
 
-If port 5432 is already in use, set `DB_PORT=5433` in a `.env` file at the
-repository root before starting Compose. Update the port in `server/.env` too
-when running commands locally. Containers always connect to `db:5432`.
+For an existing local setup, set `DB_PORT=5435` in the root `.env` and update
+the port in `DATABASE_URL` in `server/.env`. To publish a different local port,
+set both values to that port. Containers always connect to `db:5435`.
 
 ## Run database commands locally
 
