@@ -11,6 +11,7 @@ services:
       - "127.0.0.1:${DB_PORT:-5435}:5435"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-p", "5435", "-U", "bookstore", "-d", "bookstore"]
       interval: 5s
@@ -18,7 +19,9 @@ services:
       retries: 10
 
   migrate:
-    build: ./server
+    build:
+      context: .
+      target: server
     command: ["npm", "run", "db:setup"]
     environment:
       DATABASE_URL: postgresql://bookstore@db:5435/bookstore
@@ -29,22 +32,58 @@ services:
     restart: "no"
 
   server:
-    build: ./server
+    build:
+      context: .
+      target: server
     environment:
       DATABASE_URL: postgresql://bookstore@db:5435/bookstore
       PGPASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in the root .env file}
       PORT: 3012
       BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?Run npm run auth:setup in server to generate BETTER_AUTH_SECRET}
-      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:5173}
-      AUTH_TRUSTED_ORIGINS: ${AUTH_TRUSTED_ORIGINS:-http://127.0.0.1:5173}
-      TRUSTED_PROXY_IPS: ${TRUSTED_PROXY_IPS:-}
+      BETTER_AUTH_URL: ${BOOKSTORE_URL:-https://books.pycnonotus.dev}
+      AUTH_TRUSTED_ORIGINS: ${AUTH_TRUSTED_ORIGINS:-}
+      TRUSTED_PROXY_IPS: 172.30.247.2
       STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-}
       STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET:-}
     ports:
       - "127.0.0.1:${API_PORT:-3012}:3012"
+    networks:
+      default:
+      proxy:
+    restart: unless-stopped
     depends_on:
       migrate:
         condition: service_completed_successfully
 
+  caddy:
+    build:
+      context: .
+      target: caddy
+    environment:
+      BOOKSTORE_URL: ${BOOKSTORE_URL:-https://books.pycnonotus.dev}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      proxy:
+        ipv4_address: 172.30.247.2
+    depends_on:
+      - server
+    restart: unless-stopped
+
+networks:
+  proxy:
+    ipam:
+      config:
+        - subnet: 172.30.247.0/29
+          # Keep dynamic assignments away from Caddy's fixed address.
+          ip_range: 172.30.247.4/30
+
 volumes:
   postgres_data:
+  caddy_data:
+  caddy_config:

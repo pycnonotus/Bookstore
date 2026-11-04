@@ -1,0 +1,12 @@
+**
+!client/
+!client/**
+!server/
+!server/**
+**/node_modules
+**/dist
+**/.env*
+**/*.local
+**/tests
+**/artifacts
+**/rag

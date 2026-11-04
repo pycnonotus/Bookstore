@@ -1,4 +1,4 @@
-books.pycnonotus.dev {
+{$BOOKSTORE_URL:https://books.pycnonotus.dev} {
 	root * /srv
 	encode zstd gzip
 
