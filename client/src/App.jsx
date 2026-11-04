@@ -9,6 +9,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import CartPage from './pages/CartPage';
 import OrdersPage from './pages/OrdersPage';
+import OrderStatusPage from './pages/OrderStatusPage';
 import RequireSession from './components/RequireSession';
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
             <Route path="/register" element={<AuthPage key="register" mode="register" />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/orders" element={<RequireSession><OrdersPage /></RequireSession>} />
-            <Route path="/orders/:id" element={<RequireSession><OrdersPage /></RequireSession>} />
+            <Route path="/orders/:id" element={<RequireSession><OrderStatusPage /></RequireSession>} />
             <Route path="*" element={<div className="mx-auto max-w-lg px-6 py-20"><h1 className="font-serif text-3xl">Page not found</h1><Link to="/" className="mt-4 inline-block text-spruce underline">Back to the bookstore</Link></div>} />
           </Routes>
         </main>

@@ -30,7 +30,7 @@ function summary(order) {
         id: order.id,
         createdAt: order.createdAt,
         paidAt: order.paidAt,
-        status: order.paidAt ? "paid" : "waiting_for_payment",
+        status: order.paidAt ? "paid" : order.paymentStatus,
         totalCents: order.totalCents,
         currency: order.currency,
     };

@@ -10,6 +10,7 @@
     "test:catalog": "node tests/check-catalog.mjs",
     "test:auth": "node tests/check-auth.mjs",
     "test:orders": "node tests/check-orders.mjs",
+    "test:payments": "node tests/check-payments.mjs",
     "test:browser": "node tests/check-browser.mjs",
     "test:search": "node tests/check-search.mjs",
     "test:search:strict": "node tests/check-strict-search.mjs",

@@ -90,6 +90,9 @@ export const orders = pgTable("orders", {
         .references(() => users.id),
 
     paidAt: timestamp("paid_at", { withTimezone: true }),
+    paymentStatus: text("payment_status").notNull().default("waiting_for_payment"),
+    checkoutAttemptId: uuid("checkout_attempt_id"),
+    stripePaymentIntentId: text("stripe_payment_intent_id").unique(),
 
     createdAt: timestamp("created_at", { withTimezone: true })
         .defaultNow()
@@ -113,3 +116,19 @@ export const orderItems = pgTable("order_items", {
     unitPriceCents: integer("unit_price_cents").notNull().default(0),
     title: text("title").notNull().default(""),
 }, table => [index("order_items_order_id_idx").on(table.orderId)]);
+
+export const checkoutAttempts = pgTable("checkout_attempts", {
+    id: uuid("id").defaultRandom().primaryKey(),
+    orderId: uuid("order_id").notNull().references(() => orders.id),
+    stripeSessionId: text("stripe_session_id").unique(),
+    status: text("status").notNull().default("creating"),
+    // Persist the exact request so retries use the same Stripe idempotency key and parameters.
+    parameters: jsonb("parameters").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+}, table => [index("checkout_attempts_order_id_idx").on(table.orderId)]);
+
+export const stripeEvents = pgTable("stripe_events", {
+    id: text("id").primaryKey(),
+    type: text("type").notNull(),
+    processedAt: timestamp("processed_at", { withTimezone: true }).notNull().defaultNow(),
+});

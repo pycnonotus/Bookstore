@@ -14,6 +14,11 @@ in `drizzle/`.
 - `GET /api/orders` lists the current user's orders, newest first.
 - `GET /api/orders/:id` returns that user's order and its items; other users' IDs
   return 404.
+- `POST /api/orders/:id/checkout` creates/reuses a Stripe Checkout session and
+  returns `{ "url": "https://checkout.stripe.com/..." }`. If Stripe has already
+  completed the checkout, `url` is null and the client reloads payment status.
+- `POST /api/orders/:id/payment-status` checks Stripe and returns the updated order.
+- `POST /api/stripe/webhook` accepts signed Stripe events, without a user session.
 
 - `GET /api/books` returns all books, ordered by title then ID. Fields:
   `id`, `title`, `author`, `description`, `categoryId`, `topic`, `priceCents`,
@@ -78,14 +83,92 @@ mixed currencies, invalid quantities and oversized totals are rejected.
 An order and its items are inserted in one transaction. The response contains
 `id`, `createdAt`, `paidAt`, `status`, `currency`, `totalCents` and `items` with
 `bookId`, `title`, `quantity`, `unitPriceCents`, and `lineTotalCents`. Titles and
-prices are snapshots at creation. No payment is taken; new orders have a null
-`paidAt` and status `waiting_for_payment`. Future payment processing can set
-`paidAt`, which produces status `paid`.
+prices are snapshots at creation. Creating an order does not charge the customer;
+new orders have a null `paidAt` and status `waiting_for_payment`. The detail
+endpoint also returns `checkoutAvailable`. Payment statuses are
+`waiting_for_payment`, `processing`, `payment_failed`, `checkout_expired`, and
+`paid`. Only a verified Stripe payment sets `paidAt` and `paid`.
 
 `requestId` is unique per user. Retrying the same items with the same ID returns
 the original order (200 instead of 201), including for concurrent submissions.
 Reusing an ID with different items returns 409. Use a new ID when the cart changes.
 Migration `0004_order_details` adds the item snapshots, totals, and retry key.
+
+## Stripe payments
+
+Use Stripe **test mode** while developing. Add these to the root `.env` for Docker,
+or to `server/.env` for local Node, then restart/recreate the server:
+
+```dotenv
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+```
+
+The secret API key comes from Stripe's API keys page. The webhook signing secret
+comes from the specific webhook endpoint (or the CLI listener below). Keep both
+on the server. Hosted Checkout does not need a publishable key in the frontend.
+Missing settings leave browsing, auth and saved orders available, with checkout
+temporarily unavailable. `BETTER_AUTH_URL` must be the frontend origin: it also
+controls the fixed checkout success/cancel URLs.
+
+For local webhooks, install the [Stripe CLI](https://docs.stripe.com/stripe-cli),
+run `stripe login`, then leave this running:
+
+```sh
+stripe listen --events checkout.session.completed,checkout.session.async_payment_succeeded,checkout.session.async_payment_failed,checkout.session.expired --forward-to http://localhost:3000/api/stripe/webhook
+```
+
+Use the **`whsec_...` printed by that listener** in `.env`; it differs from a
+Dashboard endpoint's signing secret. Adjust port 3000 if `API_PORT`/`PORT` differs.
+After editing root `.env`, run `docker compose up --build -d` to apply migration
+`0005_stripe_payments` and recreate the API with the new settings.
+
+For a deployed backend, create a Stripe webhook endpoint at
+`https://YOUR_BACKEND_DOMAIN/api/stripe/webhook`, choose snapshot events for your
+account, and subscribe to these four events:
+
+| Event | Result |
+| --- | --- |
+| `checkout.session.completed` | Paid if payment is confirmed; otherwise processing |
+| `checkout.session.async_payment_succeeded` | Confirms a delayed payment |
+| `checkout.session.async_payment_failed` | Shows failure and allows another checkout |
+| `checkout.session.expired` | Allows a new payment link |
+
+Register → add books to cart → place order → pay on the order page. Use Stripe's
+test card `4242 4242 4242 4242`, any future expiry, and any three-digit CVC.
+Returning from Stripe checks payment with the server; `/orders/:id` also polls
+the saved status for up to two minutes and has a manual refresh button.
+`/orders` lists only the signed-in user's orders, including their payment status.
+Cancelling checkout keeps the saved order available to pay later.
+
+The server uses the order's saved prices and USD currency, not submitted totals.
+It persists each checkout request and its Stripe idempotency key before making
+the Stripe call, so retries and concurrent requests reuse the same session.
+Open sessions expire after two hours. A failed or expired attempt can be retried.
+If a session creation response is lost and recovery is attempted after Stripe
+has discarded its idempotency record, the fixed expiry makes that request fail
+instead of risking a second payable session; investigate that order manually.
+
+Webhooks verify the signature over the raw body, retrieve the latest session
+from Stripe, and match the order, owner, amount, currency, mode, and session.
+Payment changes and processed event IDs are committed in one transaction under
+an order lock. Duplicate/delayed events cannot undo a confirmed payment. The
+authenticated refresh endpoint uses the same verification; a success URL alone
+never marks an order paid. Payment status describes payment, not shipping or
+refunds; those workflows are not implemented.
+
+### Payment tests
+
+For server integration tests, migrate a **disposable** PostgreSQL database, set
+`TEST_DATABASE_URL` to that database (plus `PGPASSWORD` when needed), then run
+`npm run test:payments` from `server/`. Tests create their own users, books and
+orders; they use a fake Stripe API and real Stripe signature verification.
+
+With the frontend running, run `npm run test:payments` from `client/` to check
+checkout and status screens against mocked API responses. Set `PAYMENTS_TEST_URL`
+for a non-default frontend URL, and `PLAYWRIGHT_CHANNEL=msedge` to use installed
+Edge instead of Playwright Chromium. Existing `test:auth`, `test:orders`, and
+`test:catalog` scripts exercise the running API and a disposable seeded database.
 
 Compose runs the API at `http://localhost:3000` after migrations and seeding succeed. Set
 `API_PORT` in the root `.env` to change the host port. For local development,
@@ -157,9 +240,9 @@ The `0002_client_image_paths` migration updates existing image filenames to
 The client fetches `/api/books` and `/api/categories`. Its Vite development and
 preview servers proxy `/api` to the backend (see `client/.env.example`). For a
 production deployment, route `/api` on the client origin to this Express server.
-Catalog routes remain public. Orders use `requireAuth(auth)` from
-`src/middleware/require-auth.js`. Stripe checkout and payment webhooks are the
-next stage.
+Catalog routes remain public. Orders and checkout use `requireAuth(auth)` from
+`src/middleware/require-auth.js`. Stripe webhooks authenticate using their
+signature and must reach Express with the body unchanged.
 
 ## Change the schema
 

@@ -64,7 +64,7 @@ export default function CartPage() {
           {!unavailable && currencies.size === 1 && <p className="text-xl font-semibold">Total: {formatMoney(total, currency)}</p>}
           {unavailable && <p role="alert">Remove unavailable books before placing your order.</p>}
           {currencies.size > 1 && <p role="alert">Please order books in one currency at a time.</p>}
-          <p className="mt-2 text-sm text-ink/70">Your order will be saved as waiting for payment. No payment is taken yet.</p>
+          <p className="mt-2 text-sm text-ink/70">Place your order, then pay securely with Stripe on the next page.</p>
           {error && <p role="alert" className="mt-3 text-sm text-red-800">{error}</p>}
           {isPending ? <p role="status" className="mt-4">Checking your session…</p> : session ?
             <button disabled={busy || unavailable || currencies.size !== 1} onClick={submit} className="mt-5 rounded-lg bg-spruce px-6 py-3 font-semibold text-white disabled:opacity-50">{busy ? 'Placing order…' : 'Place order'}</button> :
