@@ -162,3 +162,5 @@ artifacts/
 # Local verification scripts and fixtures
 /tests/*
 !/tests/check-catalog.mjs
+!/tests/check-auth.mjs
+!/tests/check-orders.mjs

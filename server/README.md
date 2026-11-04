@@ -7,6 +7,14 @@ in `drizzle/`.
 
 ## API
 
+- `/api/auth/*` is handled by Better Auth (email/password registration, login,
+  logout and session management).
+- `GET /api/me` returns the signed-in user, or 401 without a valid session.
+- `POST /api/orders` creates an order for the signed-in user.
+- `GET /api/orders` lists the current user's orders, newest first.
+- `GET /api/orders/:id` returns that user's order and its items; other users' IDs
+  return 404.
+
 - `GET /api/books` returns all books, ordered by title then ID. Fields:
   `id`, `title`, `author`, `description`, `categoryId`, `topic`, `priceCents`,
   `currency`, `image`, `searchKeywords`, `subjects`, `aliases`,
@@ -17,9 +25,67 @@ in `drizzle/`.
 `image` stores the public client path (for example `/images/cover.jpeg`). Image
 files live in `client/public/images/` and are served by the frontend.
 
-Both endpoints return a JSON array (`[]` for an empty table). Unknown routes
+Both catalog endpoints return a JSON array (`[]` for an empty table). Unknown routes
 return 404, unsupported methods return 405, and database failures return 500
 without exposing database details.
+
+## Authentication
+
+From `server/`, run `npm run auth:setup` once. It generates a random
+`BETTER_AUTH_SECRET` in the root `.env` (Compose) and `server/.env` (local Node).
+Existing nonempty settings and database passwords are preserved. Secrets stay
+in ignored files and are not printed. No external auth account or API key is needed.
+
+`BETTER_AUTH_URL` is the public frontend URL, default `http://localhost:5173`.
+`AUTH_TRUSTED_ORIGINS` is an optional comma-separated list of additional frontend
+origins (default `http://127.0.0.1:5173`). Match these to the actual frontend port.
+In production use your HTTPS frontend URL and proxy `/api` to Express. The client
+uses same-origin requests; no cross-origin cookie or CORS setup is needed.
+
+The client has `/register` and `/login` pages. Registration signs users in;
+sessions persist in PostgreSQL and use HttpOnly cookies. Logout revokes the
+session. Auth endpoints have rate limiting and Better Auth's origin checks.
+Email verification, password-reset emails and social login are not configured.
+
+The auth handler obtains client IPs from Express and overwrites the internal
+header used for rate limiting. If deployed behind a reverse proxy, set
+`TRUSTED_PROXY_IPS` to its exact IPs/CIDRs (comma separated) and have that proxy
+forward `X-Forwarded-For`. By default, forwarded addresses are not trusted.
+
+Migration `0003_better_auth` extends `users` and adds `accounts`, `sessions`, and
+`verifications`. User UUIDs and existing order references are preserved. New
+password hashes live in `accounts`; legacy `password_hash`/`password_salt` values
+are retained but are not used by Better Auth. Any preexisting manually created
+users need a separate credential migration before they can log in.
+
+## Orders
+
+The client sends a JSON body with `requestId` (UUID) and `items`, for example:
+
+```json
+{
+  "requestId": "79e2dfee-0bc8-4d7a-b543-7f61371b3fd0",
+  "items": [{ "bookId": "b3aed4d5-d7da-4096-8ece-81ab735eb87a", "quantity": 2 }]
+}
+```
+
+Requests must include a session cookie and an `Origin` configured for the frontend.
+The server accepts 1–100 distinct books, with integer quantities from 1–99.
+Prices, titles, currency and the user ID come from the database/session. Client
+totals, payment flags and user IDs are never used. Unavailable or unpriced books,
+mixed currencies, invalid quantities and oversized totals are rejected.
+
+An order and its items are inserted in one transaction. The response contains
+`id`, `createdAt`, `paidAt`, `status`, `currency`, `totalCents` and `items` with
+`bookId`, `title`, `quantity`, `unitPriceCents`, and `lineTotalCents`. Titles and
+prices are snapshots at creation. No payment is taken; new orders have a null
+`paidAt` and status `waiting_for_payment`. Future payment processing can set
+`paidAt`, which produces status `paid`.
+
+`requestId` is unique per user. Retrying the same items with the same ID returns
+the original order (200 instead of 201), including for concurrent submissions.
+Reusing an ID with different items returns 409. Use a new ID when the cart changes.
+Migration `0004_order_details` adds the item snapshots, totals, and retry key.
 
 Compose runs the API at `http://localhost:3000` after migrations and seeding succeed. Set
 `API_PORT` in the root `.env` to change the host port. For local development,
@@ -32,6 +98,9 @@ From the repository root, copy `.env.example` to `.env` and set
 `POSTGRES_PASSWORD` to your password inside single quotes. Compose requires a
 nonempty password and passes it separately from the connection URL, so special
 characters do not need URL encoding. `.env` files are ignored by Git.
+
+Run `npm run auth:setup` from `server/` to populate the auth secret before starting
+Compose.
 
 Then run:
 
@@ -88,8 +157,9 @@ The `0002_client_image_paths` migration updates existing image filenames to
 The client fetches `/api/books` and `/api/categories`. Its Vite development and
 preview servers proxy `/api` to the backend (see `client/.env.example`). For a
 production deployment, route `/api` on the client origin to this Express server.
-Catalog routes currently remain public; auth, orders, Stripe webhooks and the
-order-status page are the next stage.
+Catalog routes remain public. Orders use `requireAuth(auth)` from
+`src/middleware/require-auth.js`. Stripe checkout and payment webhooks are the
+next stage.
 
 ## Change the schema
 

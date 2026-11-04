@@ -8,6 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:catalog": "node tests/check-catalog.mjs",
+    "test:auth": "node tests/check-auth.mjs",
+    "test:orders": "node tests/check-orders.mjs",
     "test:browser": "node tests/check-browser.mjs",
     "test:search": "node tests/check-search.mjs",
     "test:search:strict": "node tests/check-strict-search.mjs",
@@ -18,8 +20,10 @@
   },
   "dependencies": {
     "@huggingface/transformers": "^4.3.1",
+    "better-auth": "^1.7.16",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.18.5"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.0",

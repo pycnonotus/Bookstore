@@ -22,6 +22,20 @@
       "when": 1793778573363,
       "tag": "0002_client_image_paths",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793778879330,
+      "tag": "0003_better_auth",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793780061833,
+      "tag": "0004_order_details",
+      "breakpoints": true
     }
   ]
 }
