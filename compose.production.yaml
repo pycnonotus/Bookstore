@@ -1,0 +1,44 @@
+services:
+  db:
+    ports: !reset []
+    restart: unless-stopped
+
+  server:
+    environment:
+      BETTER_AUTH_URL: https://books.pycnonotus.dev
+      AUTH_TRUSTED_ORIGINS: ""
+      # Trust forwarded client IPs only from Caddy.
+      TRUSTED_PROXY_IPS: 172.30.247.2
+    ports: !reset []
+    networks:
+      default:
+      proxy:
+    restart: unless-stopped
+
+  caddy:
+    build: ./client
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      proxy:
+        ipv4_address: 172.30.247.2
+    depends_on:
+      - server
+    restart: unless-stopped
+
+networks:
+  proxy:
+    ipam:
+      config:
+        - subnet: 172.30.247.0/29
+          # Keep dynamic assignments away from Caddy's fixed address.
+          ip_range: 172.30.247.4/30
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,19 @@
+books.pycnonotus.dev {
+	root * /srv
+	encode zstd gzip
+
+	@api path /api /api/*
+	handle @api {
+		reverse_proxy server:3000
+	}
+
+	@assets path /assets/* /images/* /models/*
+	handle @assets {
+		file_server
+	}
+
+	handle {
+		try_files {path} /index.html
+		file_server
+	}
+}

@@ -123,8 +123,8 @@ Dashboard endpoint's signing secret. Adjust port 3000 if `API_PORT`/`PORT` diffe
 After editing root `.env`, run `docker compose up --build -d` to apply migration
 `0005_stripe_payments` and recreate the API with the new settings.
 
-For a deployed backend, create a Stripe webhook endpoint at
-`https://YOUR_BACKEND_DOMAIN/api/stripe/webhook`, choose snapshot events for your
+For the production deployment, create a Stripe webhook endpoint at
+`https://books.pycnonotus.dev/api/stripe/webhook`, choose snapshot events for your
 account, and subscribe to these four events:
 
 | Event | Result |
@@ -176,6 +176,30 @@ configure `server/.env`, run `npm run db:setup`, then run `npm run dev` from `se
 (or `npm start` without automatic reload). `PORT` controls the local server port.
 
 ## Run with Docker
+
+### Production at books.pycnonotus.dev
+
+Point the domain's DNS records to the Docker host and make ports 80 and 443
+reachable over TCP. Open UDP 443 if using HTTP/3. Configure the root `.env`
+with a database password and Better Auth secret as described below. If enabling
+payments, set the Stripe key and the signing secret for the production webhook
+URL in that same file.
+
+From the repository root, run:
+
+```sh
+docker compose -f compose.yaml -f compose.production.yaml up --build -d
+docker compose -f compose.yaml -f compose.production.yaml logs caddy server migrate
+```
+
+Caddy obtains and renews the HTTPS certificate and stores it in the
+`caddy_data` volume. It serves the Vite build at the domain root, including
+images and search models. Direct links such as `/login` and `/orders/:id`
+load React Router, and Caddy forwards `/api/*` to Express with the path intact.
+The production override sets the HTTPS origin for Better Auth and Stripe
+returns. PostgreSQL and Express use Docker networks with no published ports.
+
+### Local development
 
 From the repository root, copy `.env.example` to `.env` and set
 `POSTGRES_PASSWORD` to your password inside single quotes. Compose requires a
